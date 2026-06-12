@@ -56,6 +56,11 @@ export async function POST(request: Request) {
           go_fast: true,
           output_format: body.outputFormat || 'webp',
           output_quality: body.outputQuality || 95,
+          // El safety checker del modelo falla técnicamente
+          // ("Unable to infer channel dimension format") y descarta
+          // capas legítimas. Las imágenes son entradas del propio
+          // usuario en el editor; lo deshabilitamos para tener N/N.
+          disable_safety_checker: true,
         },
       }
     )

@@ -56,6 +56,7 @@ export async function POST(request: NextRequest) {
         output_quality: 90,
         negative_prompt: ' ',
         num_inference_steps: numInferenceSteps,
+        disable_safety_checker: true,
       },
     })
 
