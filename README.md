@@ -25,7 +25,9 @@ Editor de imágenes estilo Photoshop construido con Next.js 15, React 19 y Canva
   keys (decompose / edit / transform). Ver
   [`docs/API-PUBLICA-V1.md`](docs/API-PUBLICA-V1.md) ·
   integración Cédula 360:
-  [`docs/INTEGRACION-CEDULA360.md`](docs/INTEGRACION-CEDULA360.md)
+  [`docs/INTEGRACION-CEDULA360.md`](docs/INTEGRACION-CEDULA360.md) ·
+  validación end-to-end del proxy `cedula360.tech/api/imagen/*`:
+  [`docs/VALIDACION-C360-IMAGEN-2026-06-12.md`](docs/VALIDACION-C360-IMAGEN-2026-06-12.md)
 
 ## Stack Tecnológico
 

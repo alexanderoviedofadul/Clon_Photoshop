@@ -5,6 +5,25 @@ Todos los cambios notables de este proyecto se documentan en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
+## [0.4.2] - 2026-06-12
+
+### Validado — Integración Cédula 360 (modo proxy)
+
+- Validación end-to-end del proxy
+  `cedula360.tech/api/imagen/{usage,decompose,edit,transform}` con una
+  clave `c360_live_*` real (plan `despachos`). Resultados: transform
+  ~1 s, **decompose 4 capas en 8.2 s** (regresión confirmada del fix
+  del safety checker 0.4.1), edit 3.5 s, contador de uso incrementa
+  correctamente. Gateo por plan + cuota diaria operativo
+  (`ia: 120/día`, `transform: 800/día` en plan despachos).
+- La alianza queda documentada en dos niveles:
+  modo **directo** (`ck_live_*` server-to-server) en
+  [`docs/INTEGRACION-CEDULA360.md`](docs/INTEGRACION-CEDULA360.md) y
+  modo **proxy** (`c360_live_*` para usuarios externos de C360) en
+  [`docs/VALIDACION-C360-IMAGEN-2026-06-12.md`](docs/VALIDACION-C360-IMAGEN-2026-06-12.md).
+- La clave de prueba **no se versiona** (repo público); los docs usan
+  placeholders.
+
 ## [0.4.1] - 2026-06-12
 
 ### Corregido — Decompose IA devolvía 1 capa en vez de N

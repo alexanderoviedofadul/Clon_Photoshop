@@ -5,6 +5,9 @@ funcionalidades para usuarios de **planes pagos** (separación de imágenes
 en capas con IA, edición por texto y transformaciones raster).
 
 > Contrato completo de endpoints: [`API-PUBLICA-V1.md`](API-PUBLICA-V1.md).
+> Modo proxy validado en producción (consumidores externos con
+> `c360_live_*` → `cedula360.tech/api/imagen/*`):
+> [`VALIDACION-C360-IMAGEN-2026-06-12.md`](VALIDACION-C360-IMAGEN-2026-06-12.md).
 
 ## Credencial
 
