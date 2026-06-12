@@ -5,6 +5,34 @@ Todos los cambios notables de este proyecto se documentan en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
+## [0.4.1] - 2026-06-12
+
+### Corregido — Decompose IA devolvía 1 capa en vez de N
+
+- El modelo Replicate `qwen/qwen-image-layered` tiene un safety checker
+  NSFW integrado que **falla con `Unable to infer channel dimension
+  format`** y marca por defecto como NSFW capas completamente legítimas
+  (foto neutra de Unsplash: 1 de 4 devueltas). El editor cargaba 1 capa
+  en vez de las N solicitadas.
+- Fix: `disable_safety_checker: true` en los 3 puntos que invocan los
+  modelos (`src/lib/ai/replicate.ts`, `src/app/api/layers/decompose`,
+  `src/app/api/layers/edit`). Las imágenes son entradas del propio
+  usuario; el safety checker estaba además técnicamente roto.
+
+### Validado
+
+- API REST directa: 4 de 4 capas, `Total safe images: 4 out of 4`.
+- `/api/v1/decompose` en producción: 4 capas en ~8.5 s.
+- **End-to-end** en el navegador (Playwright contra producción): 0 → 5
+  capas (4 IA + 1 base) tras subir imagen y "Separar Capas con IA".
+- **Auditoría completa de la UI** (mismo run): toolbar (10/10),
+  swap colores, TopBar Exportar, los 8 menús superiores con sus items,
+  4 pestañas del Right Panel, acciones del Layers Panel (nueva,
+  grupo, eliminar por fila, blend mode, opacidad). **42/42 OK,
+  0 errores de consola.**
+
+Detalle: [`docs/FIX-DECOMPOSE-SAFETY-CHECKER-2026-06-12.md`](docs/FIX-DECOMPOSE-SAFETY-CHECKER-2026-06-12.md).
+
 ## [0.4.0] - 2026-05-18
 
 ### Agregado — API pública v1 (consumible por otros proyectos)
