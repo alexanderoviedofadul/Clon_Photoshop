@@ -1,0 +1,95 @@
+{
+ "id": "origen",
+ "num": "01",
+ "titulo": "Origen y nombre",
+ "corto": "Origen",
+ "kicker": "Capítulo 01",
+ "lead": "PhotoClone nació el 28 de diciembre de 2025 como un editor de imágenes por capas en el navegador, con una idea propia: que la IA haga el trabajo pesado de separar la imagen y la persona decida qué cambia.",
+ "paginas": [
+  {
+   "plantilla": "portadilla",
+   "tono": "noche",
+   "fig": "escaneo"
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "cols",
+     "r": "1fr 1fr",
+     "cols": [
+      [
+       {
+        "t": "eyebrow",
+        "x": "El nombre"
+       },
+       {
+        "t": "h2",
+        "x": "Photo · Clone"
+       },
+       {
+        "t": "p",
+        "x": "Una palabra en dos partes. <strong>Photo</strong> es la materia: una imagen. <strong>Clone</strong> es lo que hace con ella: una copia en capas que se puede editar sin tocar el original {f:replicate,export}."
+       },
+       {
+        "t": "p",
+        "x": "Se escribe <strong>PhotoClone</strong>, con dos mayúsculas y sin espacio. «AI» deja de formar parte del nombre: la IA se nombra cuando actúa, no en el logotipo. El servicio vive hoy en <span class=\"mono\">photoshop.cedula360.tech</span> {f:caddy}."
+       }
+      ],
+      [
+       {
+        "t": "eyebrow",
+        "x": "Lo que hace"
+       },
+       {
+        "t": "h2",
+        "x": "De una imagen plana a sus capas"
+       },
+       {
+        "t": "p",
+        "x": "Recibe una imagen, la envía a un modelo que la separa en capas sobre transparente y las pone en un editor con herramientas, modos de fusión y filtros. Una capa se puede volver a pedir cambiada con una instrucción de texto {f:replicate,tools}."
+       },
+       {
+        "t": "lista",
+        "items": [
+         "Para quien necesita mover un objeto, cambiar un rótulo o reutilizar un fondo sin rehacer la imagen.",
+         "Para otros sistemas, por la API, con clave."
+        ]
+       },
+       {
+        "t": "nota",
+        "titulo": "Lo que no es",
+        "x": "No es un programa de retoque profesional ni pretende parecerse a uno: es un editor web por capas con IA. Por eso la marca no usa nombres, iniciales ni colores de productos de otras empresas {f:marca-ajena}.",
+        "tono": "azul"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "eyebrow",
+     "x": "Cronología"
+    },
+    {
+     "t": "h2",
+     "x": "De un commit a un manual"
+    },
+    {
+     "t": "comp",
+     "n": "cronologia"
+    },
+    {
+     "t": "p",
+     "x": "Las fechas salen del historial del repositorio y del CHANGELOG. Hasta esta versión la identidad no se había decidido: se había ido acumulando.",
+     "c": "small muted"
+    }
+   ]
+  }
+ ]
+}

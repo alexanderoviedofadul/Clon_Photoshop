@@ -1,0 +1,120 @@
+{
+ "_nota": "Datos del producto que pintan los componentes del manual y la portada web. Cada dato sale del código (fuente entre llaves); audit_v1.py comprueba herramientas, modos de fusión, filtros, exportaciones, capas y alcances contra el repositorio.",
+ "etapas": [
+  {
+   "icono": "subir",
+   "titulo": "Sube la imagen",
+   "texto": "Cualquier imagen que abra el navegador, o un proyecto .photoclone para seguir donde lo dejó.",
+   "fuente": "menubar"
+  },
+  {
+   "icono": "capas",
+   "titulo": "La IA la separa",
+   "texto": "Entre 2 y 10 capas, 4 si no dice otra cosa. Cada una sobre transparente, lista para moverse sola.",
+   "fuente": "replicate"
+  },
+  {
+   "icono": "varita",
+   "titulo": "Edita una capa con texto",
+   "texto": "Escriba el cambio. La capa y la instrucción van al modelo de edición y vuelve una capa nueva.",
+   "fuente": "replicate,ruta-ia"
+  },
+  {
+   "icono": "pincel",
+   "titulo": "Retoca a mano",
+   "texto": "Diez herramientas, seis modos de fusión, opacidad por capa y filtros sobre la capa o la selección.",
+   "fuente": "tools,blend,ops"
+  },
+  {
+   "icono": "exportar",
+   "titulo": "Exporta",
+   "texto": "La imagen plana, todas las capas por separado o el proyecto entero para reabrirlo.",
+   "fuente": "export"
+  }
+ ],
+ "formatos": [
+  {
+   "ext": ".png",
+   "nombre": "Imagen plana",
+   "color": "pc-capa-fondo",
+   "texto": "La composición tal como se ve, con sus capas visibles.",
+   "fuente": "export"
+  },
+  {
+   "ext": ".zip",
+   "nombre": "Todas las capas",
+   "color": "pc-capa-figura",
+   "texto": "Un PNG por capa y un metadata.json con su nombre, opacidad y modo de fusión.",
+   "fuente": "export"
+  },
+  {
+   "ext": ".photoclone",
+   "nombre": "Proyecto",
+   "color": "pc-capa-texto",
+   "texto": "Las capas y su orden, para volver a abrirlo en el editor y seguir.",
+   "fuente": "export,menubar"
+  }
+ ],
+ "elementos": [
+  {
+   "id": "FONDO",
+   "color": "pc-capa-fondo",
+   "texto": "pc-tinta",
+   "x": "Lo que sostiene la imagen: cielo, paisaje, pared.",
+   "fuente": "replicate"
+  },
+  {
+   "id": "FIGURA",
+   "color": "pc-capa-figura",
+   "texto": "#FFFFFF",
+   "x": "El objeto o los objetos principales, recortados.",
+   "fuente": "replicate"
+  },
+  {
+   "id": "TEXTO",
+   "color": "pc-capa-texto",
+   "texto": "pc-tinta",
+   "x": "Rótulos, titulares y marcas gráficas.",
+   "fuente": "replicate"
+  },
+  {
+   "id": "IA",
+   "color": "pc-azul",
+   "texto": "#FFFFFF",
+   "x": "La acción: separar o editar. Siempre a petición, nunca sola.",
+   "fuente": "ruta-ia"
+  }
+ ],
+ "campos": [
+  "Invertir",
+  "Escala de grises",
+  "Desenfocar",
+  "Enfocar",
+  "Rotar 90°",
+  "Voltear",
+  "Escalar"
+ ],
+ "canales": [
+  {
+   "id": "/editor",
+   "icono": "web",
+   "nombre": "El editor",
+   "texto": "Público y sin cuenta. La cuenta solo hace falta para administrar.",
+   "fuente": "auth"
+  },
+  {
+   "id": "/api/v1",
+   "icono": "codigo",
+   "nombre": "La API",
+   "texto": "Separar, editar y transformar desde otro sistema, con una clave y sus alcances.",
+   "fuente": "api-v1,api-keys"
+  },
+  {
+   "id": "cedula360.tech/api/imagen",
+   "icono": "escudo",
+   "nombre": "Desde Cédula 360",
+   "texto": "Los clientes de Cédula 360 llegan con su clave y su plan.",
+   "fuente": "c360"
+  }
+ ]
+}

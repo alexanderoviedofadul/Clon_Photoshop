@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react'
 import Link from 'next/link'
+import { Simbolo } from '@/components/marca/Logo'
 
 interface U {
   id: number
@@ -203,12 +204,11 @@ export default function AdminPage() {
         <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <Link
             href="/"
+            prefetch={false}
             className="flex items-center gap-2 rounded px-2 py-1 hover:bg-editor-surface-hover transition-colors"
             title="Volver a la página de inicio"
           >
-            <span className="material-symbols-outlined text-editor-accent text-2xl">
-              admin_panel_settings
-            </span>
+            <Simbolo className="w-7 h-7" />
             <span className="font-bold text-editor-text-bright">
               PhotoClone · Cuenta
             </span>
@@ -217,10 +217,10 @@ export default function AdminPage() {
             <span className="hidden sm:inline text-editor-text-muted">
               {me.email} · {me.role}
             </span>
-            <Link href="/" className="text-editor-text-muted hover:text-editor-text-bright transition-colors">
+            <Link href="/" prefetch={false} className="text-editor-text-muted hover:text-editor-text-bright transition-colors">
               Inicio
             </Link>
-            <Link href="/editor" className="text-editor-accent hover:underline">
+            <Link href="/editor" className="text-pc-senal underline underline-offset-2">
               Editor
             </Link>
             <button
@@ -571,10 +571,10 @@ export default function AdminPage() {
         )}
       </main>
       <footer className="border-t border-editor-border py-6 text-center text-xs text-editor-text-muted">
-        PhotoClone AI · en alianza con{' '}
+        PhotoClone · en alianza con{' '}
         <a
           href="https://cedula360.tech"
-          className="text-editor-accent hover:underline"
+          className="text-pc-senal underline underline-offset-2"
         >
           Cédula 360
         </a>{' '}

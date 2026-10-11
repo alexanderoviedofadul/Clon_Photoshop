@@ -1,0 +1,67 @@
+{
+ "id": "portada",
+ "num": "00",
+ "titulo": "Portada",
+ "corto": "Portada",
+ "kicker": "Manual de Marca v1.0",
+ "paginas": [
+  {
+   "plantilla": "portada",
+   "tono": "noche",
+   "bloques": [
+    {
+     "t": "comp",
+     "n": "portada"
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "cols",
+     "r": "1.2fr 1fr",
+     "cols": [
+      [
+       {
+        "t": "eyebrow",
+        "x": "Contenido"
+       },
+       {
+        "t": "h2",
+        "x": "Una imagen, todas sus capas"
+       },
+       {
+        "t": "comp",
+        "n": "indice"
+       }
+      ],
+      [
+       {
+        "t": "tarjeta",
+        "titulo": "Qué es este manual",
+        "x": "El primer manual de marca de PhotoClone. Hasta hoy no había logotipo: un icono de catálogo junto al nombre en texto {f:portada-anterior}, un título que usaba el nombre de un producto de otra empresa {f:layout} y fuentes pedidas a terceros en cada visita {f:globals}. Esta versión fija una identidad propia, la mide y la lleva a la aplicación.",
+        "sub": "Versión 1.0 · octubre de 2026",
+        "tono": "cian",
+        "corrige": true
+       },
+       {
+        "t": "nota",
+        "titulo": "Una sola fuente",
+        "x": "Los colores, las fuentes, los favicons, las capas de la portada y los pósters del recorrido salen de este manual: el build los escribe en src/marca y public/. Si algo se cambia allí a mano, el audit lo detecta.",
+        "tono": "azul"
+       },
+       {
+        "t": "nota",
+        "titulo": "Nada sin fuente",
+        "x": "Cada afirmación lleva un número entre corchetes que remite a la bibliografía del capítulo 10. Si algo no tiene fuente, no está.",
+        "tono": "verde"
+       }
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

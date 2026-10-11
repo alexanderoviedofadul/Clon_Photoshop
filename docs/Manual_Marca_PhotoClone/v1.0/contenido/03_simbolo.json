@@ -1,0 +1,219 @@
+{
+ "id": "simbolo",
+ "num": "03",
+ "titulo": "Símbolo y logotipo",
+ "corto": "Símbolo",
+ "kicker": "Capítulo 03",
+ "lead": "Tres capas separadas sobre el gris del editor: el producto en una imagen de 16 píxeles.",
+ "paginas": [
+  {
+   "plantilla": "portadilla",
+   "tono": "noche",
+   "fig": "isotipo-oscuro"
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "eyebrow",
+     "x": "Anatomía"
+    },
+    {
+     "t": "h2",
+     "x": "Cinco piezas"
+    },
+    {
+     "t": "comp",
+     "n": "anatomia"
+    },
+    {
+     "t": "nota",
+     "titulo": "Por qué así",
+     "x": "Lo que distingue a PhotoClone no es retocar, es separar. El símbolo enseña una imagen ya separada: tres hojas de colores, cada una con su filete, en el cuadro Grafito que es el fondo del propio editor {f:tailwind}.",
+     "tono": "azul"
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "cols",
+     "r": "1fr 1fr",
+     "cols": [
+      [
+       {
+        "t": "eyebrow",
+        "x": "Construcción"
+       },
+       {
+        "t": "h2",
+        "x": "Retícula de 4 u"
+       },
+       {
+        "t": "comp",
+        "n": "construccion"
+       }
+      ],
+      [
+       {
+        "t": "eyebrow",
+        "x": "Geometría"
+       },
+       {
+        "t": "p",
+        "x": "Cuadro de 100 u con radio 22. Tres capas de 44 u con radio 8, desplazadas 12 u en diagonal desde (16, 16): el conjunto queda centrado."
+       },
+       {
+        "t": "p",
+        "x": "Cada capa lleva un filete de 5 u del color del cuadro: separa una hoja de la de detrás aunque los colores se toquen."
+       },
+       {
+        "t": "p",
+        "x": "El nombre va en curvas (Inter 800 a 20 px por cada 36 px de símbolo, tracking −0,02 em): no depende de que la fuente esté instalada {f:inter}."
+       },
+       {
+        "t": "nota",
+        "titulo": "Una sola geometría",
+        "x": "El build dibuja el símbolo, los logotipos, los favicons y el componente Logo de la aplicación desde las mismas cifras. El audit compara las capas del maestro con las del componente.",
+        "tono": "azul"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "eyebrow",
+     "x": "Logotipo"
+    },
+    {
+     "t": "h2",
+     "x": "Horizontal, vertical y cuatro tintas"
+    },
+    {
+     "t": "comp",
+     "n": "lockups"
+    },
+    {
+     "t": "comp",
+     "n": "variantes"
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "cols",
+     "r": "1fr 1fr",
+     "cols": [
+      [
+       {
+        "t": "eyebrow",
+        "x": "Protección"
+       },
+       {
+        "t": "h2",
+        "x": "El aire del radio"
+       },
+       {
+        "t": "comp",
+        "n": "proteccion"
+       }
+      ],
+      [
+       {
+        "t": "eyebrow",
+        "x": "Tamaños mínimos"
+       },
+       {
+        "t": "h2",
+        "x": "Legible a 16 px"
+       },
+       {
+        "t": "comp",
+        "n": "minimos"
+       },
+       {
+        "t": "p",
+        "x": "Por debajo de 130 px de ancho se usa solo el símbolo.",
+        "c": "small muted"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "eyebrow",
+     "x": "Usos incorrectos"
+    },
+    {
+     "t": "h2",
+     "x": "Lo que no se hace"
+    },
+    {
+     "t": "comp",
+     "n": "incorrectos"
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "cols",
+     "r": "1fr 1fr",
+     "cols": [
+      [
+       {
+        "t": "eyebrow",
+        "x": "Favicon"
+       },
+       {
+        "t": "h2",
+        "x": "Del 512 al 16"
+       },
+       {
+        "t": "comp",
+        "n": "favicon"
+       },
+       {
+        "t": "p",
+        "x": "El build genera los PNG desde el SVG maestro con rsvg-convert.",
+        "c": "small muted"
+       }
+      ],
+      [
+       {
+        "t": "eyebrow",
+        "x": "Fondos"
+       },
+       {
+        "t": "h2",
+        "x": "Sobre qué va"
+       },
+       {
+        "t": "comp",
+        "n": "fondos"
+       }
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

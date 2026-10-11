@@ -1,0 +1,38 @@
+/* GENERADO por docs/Manual_Marca_PhotoClone/v1.0/scripts/build_v1.py — no editar a mano.
+   Paleta cerrada de PhotoClone v1.0: 30 colores. Los de CSS salen de la paleta editor.* de
+   tailwind.config.ts y de las clases del mockup de la portada anterior; los de la v1.0 se derivan de ellos
+   para que el texto llegue a AA, con su contraste calculado. */
+:root {
+  --pc-azul: #0078D4;  /* Azul Lienzo · CSS */
+  --pc-azul-hondo: #005A9E;  /* Azul Hondo · v1.0 */
+  --pc-senal: #1A8CFF;  /* Azul Señal · CSS */
+  --pc-seleccion: #094771;  /* Azul Selección · CSS */
+  --pc-cielo: #E5F1FB;  /* Cielo · v1.0 */
+  --pc-noche: #121212;  /* Noche · v1.0 */
+  --pc-grafito: #1E1E1E;  /* Grafito · CSS */
+  --pc-panel: #252526;  /* Panel · CSS */
+  --pc-panel-alto: #2A2D2E;  /* Panel Alto · CSS */
+  --pc-linea: #3C3C3C;  /* Línea · CSS */
+  --pc-linea-clara: #454545;  /* Línea Clara · CSS */
+  --pc-texto: #CCCCCC;  /* Texto · CSS */
+  --pc-tenue: #9A9A9A;  /* Texto Tenue · v1.0 */
+  --pc-tinta: #18181B;  /* Tinta · v1.0 */
+  --pc-pizarra: #52525B;  /* Pizarra · v1.0 */
+  --pc-bruma: #A1A1AA;  /* Bruma · v1.0 */
+  --pc-borde: #E4E4E7;  /* Borde · v1.0 */
+  --pc-niebla: #F4F4F5;  /* Niebla · v1.0 */
+  --pc-humo: #FAFAFA;  /* Humo · v1.0 */
+  --pc-negro: #000000;  /* Negro 100 % K · v1.0 */
+  --pc-trazo: #34D399;  /* Esmeralda Trazo · CSS */
+  --pc-capa-fondo: #0D9488;  /* Teal Fondo · CSS */
+  --pc-capa-figura: #4F46E5;  /* Índigo Figura · v1.0 */
+  --pc-capa-texto: #FBBF24;  /* Ámbar Texto · CSS */
+  --pc-capa-cielo: #38BDF8;  /* Cielo Figura · CSS */
+  --pc-aviso: #F59E0B;  /* Aviso · CSS */
+  --pc-error: #EF4444;  /* Error · CSS */
+  --pc-error-hondo: #B91C1C;  /* Error Hondo · v1.0 */
+  --pc-exito: #22C55E;  /* Éxito · CSS */
+  --pc-exito-hondo: #15803D;  /* Éxito Hondo · v1.0 */
+  --f-display: 'Inter', system-ui, sans-serif;
+  --f-mono: 'JetBrains Mono', ui-monospace, monospace;
+}

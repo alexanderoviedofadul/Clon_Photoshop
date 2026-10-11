@@ -1,0 +1,116 @@
+{
+ "id": "aplicaciones",
+ "num": "07",
+ "titulo": "Aplicaciones",
+ "corto": "Aplicaciones",
+ "kicker": "Capítulo 07",
+ "lead": "Dónde aparece la marca fuera del editor: la portada, la imagen para compartir y los archivos que se exportan.",
+ "paginas": [
+  {
+   "plantilla": "portadilla",
+   "tono": "noche",
+   "fig": "isotipo-oscuro"
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "cols",
+     "r": "1fr 1fr",
+     "cols": [
+      [
+       {
+        "t": "eyebrow",
+        "x": "Movimiento"
+       },
+       {
+        "t": "h2",
+        "x": "Capas vivas"
+       },
+       {
+        "t": "comp",
+        "n": "escaneo"
+       },
+       {
+        "t": "p",
+        "x": "Las capas se levantan de la imagen y vuelven. Con movimiento reducido, la escena queda quieta.",
+        "c": "small muted"
+       }
+      ],
+      [
+       {
+        "t": "eyebrow",
+        "x": "Archivos"
+       },
+       {
+        "t": "h2",
+        "x": "La cabecera de un proyecto"
+       },
+       {
+        "t": "comp",
+        "n": "cabecera-informe"
+       },
+       {
+        "t": "p",
+        "x": "Cuando un documento habla de un proyecto exportado, la cabecera lleva el logotipo negativo, el nombre del archivo, sus medidas y sus capas {f:export}.",
+        "c": "small muted"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "cols",
+     "r": "1fr 1fr",
+     "cols": [
+      [
+       {
+        "t": "eyebrow",
+        "x": "Compartir"
+       },
+       {
+        "t": "h2",
+        "x": "La imagen para redes"
+       },
+       {
+        "t": "comp",
+        "n": "og"
+       },
+       {
+        "t": "p",
+        "x": "1200 × 630, generada desde las capas de la portada.",
+        "c": "small muted"
+       }
+      ],
+      [
+       {
+        "t": "eyebrow",
+        "x": "Correo y firma"
+       },
+       {
+        "t": "h2",
+        "x": "Sobria"
+       },
+       {
+        "t": "p",
+        "x": "En el correo, el logotipo horizontal sobre blanco a 130 px de ancho y el nombre en texto, nunca solo la imagen."
+       },
+       {
+        "t": "nota",
+        "titulo": "Dominio",
+        "x": "El servicio vive en photoshop.cedula360.tech. Ese nombre usa una marca registrada de otra empresa {f:marca-ajena,caddy}; la marca no lo repite en sus piezas y recomienda un dominio propio (capítulo 10).",
+        "tono": "urgente"
+       }
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

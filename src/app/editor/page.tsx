@@ -16,7 +16,8 @@ export default function EditorPage() {
   useEffect(() => { initHistory() }, [])
 
   return (
-    <div className="editor-shell flex flex-col h-screen overflow-hidden">
+    <main className="editor-shell flex flex-col h-screen overflow-hidden">
+      <h1 className="sr-only">Editor de imágenes PhotoClone</h1>
       {/* Top Bar */}
       <TopBar />
 
@@ -31,6 +32,6 @@ export default function EditorPage() {
         {/* Right Panel */}
         <RightPanel />
       </div>
-    </div>
+    </main>
   )
 }

@@ -1,0 +1,66 @@
+{
+ "id": "interfaces",
+ "num": "06",
+ "titulo": "Interfaces",
+ "corto": "Interfaces",
+ "kicker": "Capítulo 06",
+ "lead": "El editor es la marca: Grafito, paneles, el azul de la acción y las capas con su color.",
+ "paginas": [
+  {
+   "plantilla": "portadilla",
+   "tono": "noche",
+   "fig": "escaneo"
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "cols",
+     "r": "1fr 1fr",
+     "cols": [
+      [
+       {
+        "t": "eyebrow",
+        "x": "Arquitectura"
+       },
+       {
+        "t": "h2",
+        "x": "Cuatro zonas"
+       },
+       {
+        "t": "comp",
+        "n": "pantalla"
+       },
+       {
+        "t": "p",
+        "x": "Barra superior con los menús, barra de herramientas a la izquierda, lienzo en el centro y panel de capas, IA e historial a la derecha {f:menubar,tools}.",
+        "c": "small muted"
+       }
+      ],
+      [
+       {
+        "t": "eyebrow",
+        "x": "Componentes"
+       },
+       {
+        "t": "h2",
+        "x": "Botones, capas y tarjetas"
+       },
+       {
+        "t": "comp",
+        "n": "componentes"
+       },
+       {
+        "t": "nota",
+        "titulo": "Accesibilidad",
+        "x": "Foco visible en Azul Señal, texto secundario en Texto Tenue y cada capa con su nombre además de su color. Ninguna acción depende solo del color {f:wcag}.",
+        "tono": "azul"
+       }
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

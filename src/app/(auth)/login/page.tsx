@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { Logo } from '@/components/marca/Logo'
 
 declare global {
   interface Window {
@@ -175,17 +176,13 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-editor-bg flex items-center justify-center p-4">
+    <main className="min-h-screen bg-editor-bg flex items-center justify-center p-4">
       <div className="w-full max-w-md">
+        <h1 className="sr-only">Acceso a PhotoClone</h1>
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <span className="material-symbols-outlined text-editor-accent text-4xl">
-              layers
-            </span>
-            <span className="text-2xl font-bold text-editor-text-bright">
-              PhotoClone AI
-            </span>
-          </div>
+          <Link href="/" prefetch={false} className="inline-flex mb-3" aria-label="PhotoClone, volver a la portada">
+            <Logo alto={40} />
+          </Link>
           <p className="text-editor-text-muted">
             {step === 'login'
               ? 'Inicia sesión para gestionar tu cuenta'
@@ -204,10 +201,12 @@ export default function LoginPage() {
             <>
               <form onSubmit={handleLocalLogin} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-editor-text mb-1">
+                  <label htmlFor="acceso-email" className="block text-sm font-medium text-editor-text mb-1">
                     Email
                   </label>
                   <input
+                    id="acceso-email"
+                    autoComplete="username"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -217,10 +216,12 @@ export default function LoginPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-editor-text mb-1">
+                  <label htmlFor="acceso-clave" className="block text-sm font-medium text-editor-text mb-1">
                     Contraseña
                   </label>
                   <input
+                    id="acceso-clave"
+                    autoComplete="current-password"
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -265,10 +266,11 @@ export default function LoginPage() {
             <form onSubmit={handleVerify} className="space-y-4">
               {methods.length > 1 && (
                 <div>
-                  <label className="block text-sm font-medium text-editor-text mb-1">
+                  <label htmlFor="acceso-metodo" className="block text-sm font-medium text-editor-text mb-1">
                     Método de verificación
                   </label>
                   <select
+                    id="acceso-metodo"
                     value={method}
                     onChange={(e) => changeMethod(e.target.value)}
                     className="input"
@@ -282,10 +284,12 @@ export default function LoginPage() {
                 </div>
               )}
               <div>
-                <label className="block text-sm font-medium text-editor-text mb-1">
+                <label htmlFor="acceso-codigo" className="block text-sm font-medium text-editor-text mb-1">
                   Código ({method})
                 </label>
                 <input
+                  id="acceso-codigo"
+                  autoComplete="one-time-code"
                   type="text"
                   value={code}
                   onChange={(e) => setCode(e.target.value)}
@@ -318,7 +322,7 @@ export default function LoginPage() {
           <p className="mt-6 text-center text-sm text-editor-text-muted">
             <Link
               href="/editor"
-              className="text-editor-accent hover:underline"
+              className="text-pc-senal underline underline-offset-2"
             >
               Usar el editor sin cuenta
             </Link>
@@ -328,12 +332,12 @@ export default function LoginPage() {
           En alianza con{' '}
           <a
             href="https://cedula360.tech"
-            className="text-editor-accent hover:underline"
+            className="text-pc-senal underline underline-offset-2"
           >
             Cédula 360
           </a>
         </p>
       </div>
-    </div>
+    </main>
   )
 }

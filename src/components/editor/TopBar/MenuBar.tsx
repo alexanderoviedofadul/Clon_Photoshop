@@ -346,17 +346,17 @@ export function MenuBar() {
             {helpModal === 'docs' && (
               <>
                 <h2 className="text-lg font-semibold mb-3">Documentación</h2>
-                <p className="text-sm text-editor-text-muted mb-3">PhotoClone AI — editor de imágenes con separación de capas por IA. Arrastra una imagen al lienzo o usa el panel IA para descomponerla en capas. Cada menú (Imagen, Filtro, Capa, Selección) opera sobre la capa activa.</p>
-                <a href="https://github.com/bladealex9848/Clon_Photoshop#readme" target="_blank" rel="noopener noreferrer" className="text-editor-accent text-sm underline">Ver README en GitHub →</a>
+                <p className="text-sm text-editor-text-muted mb-3">PhotoClone — editor de imágenes por capas con separación por IA. Arrastra una imagen al lienzo o usa el panel IA para descomponerla en capas. Cada menú (Imagen, Filtro, Capa, Selección) opera sobre la capa activa.</p>
+                <a href="https://github.com/alexanderoviedofadul/Clon_Photoshop#readme" target="_blank" rel="noopener noreferrer" className="text-pc-senal text-sm underline">Ver README en GitHub →</a>
               </>
             )}
             {helpModal === 'about' && (
               <>
                 <h2 className="text-lg font-semibold mb-3">Acerca de PhotoClone</h2>
-                <p className="text-sm text-editor-text-muted">PhotoClone AI · editor web tipo Photoshop con IA (Replicate qwen-image-layered/edit). En alianza con Cédula 360. Licencia MIT.</p>
+                <p className="text-sm text-editor-text-muted">PhotoClone · editor web de imágenes por capas. La separación y la edición con IA se ejecutan en Replicate, un servicio externo: la imagen sale de su navegador solo cuando las usa. En alianza con Cédula 360. Licencia MIT. Sin relación con Adobe.</p>
               </>
             )}
-            <button className="mt-5 px-4 py-1.5 bg-editor-accent text-white text-sm rounded hover:bg-editor-accent-hover" onClick={() => setHelpModal(null)}>Cerrar</button>
+            <button className="mt-5 px-4 py-1.5 bg-pc-azul text-white text-sm rounded hover:bg-pc-azul-hondo" onClick={() => setHelpModal(null)}>Cerrar</button>
           </div>
         </div>
       )}

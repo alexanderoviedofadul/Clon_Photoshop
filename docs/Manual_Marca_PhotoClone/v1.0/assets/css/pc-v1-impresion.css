@@ -1,0 +1,42 @@
+/* PhotoClone · Manual de Marca v1.0 — Salida de impresión: páginas A4 apaisadas de tamaño fijo.
+   La paginación es EXPLÍCITA (contenido/*.json): si un texto no cabe, la
+   página se recorta (overflow:hidden) y audit_v1.py lo detecta. */
+@page { size: A4 landscape; margin: 0; }
+html, body { background: #475569; }
+body.modo-impresion { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+@media print { html, body { background: none; } }
+
+.paginas { display: flex; flex-direction: column; align-items: center; gap: 8mm; padding: 8mm 0; }
+@media print { .paginas { gap: 0; padding: 0; } }
+
+.page {
+  position: relative; width: 297mm; height: 210mm; overflow: hidden;
+  font-size: 15px; break-after: page; page-break-after: always;
+  display: flex; flex-direction: column;
+}
+.page.densa { font-size: 12px; }
+.page.amplia { font-size: 18px; }
+.page:last-child { break-after: auto; page-break-after: auto; }
+
+.pg-cab {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 7mm 15mm 0; height: 13mm; flex: none;
+  font-family: var(--f-mono); font-size: 7.4px; letter-spacing: .2em; text-transform: uppercase; color: var(--pc-pizarra);
+}
+.sup-noche .pg-cab { color: rgba(230, 237, 247, .62); }
+.pg-cuerpo { flex: 1; min-height: 0; padding: 4mm 15mm 0; overflow: hidden; }
+.pg-pie { height: 12mm; flex: none; display: flex; justify-content: space-between; align-items: center; padding: 0 15mm 4mm; }
+.pg-pie::before { content: ""; width: 9mm; height: 1.2mm; border-radius: 1mm; background: linear-gradient(90deg, var(--pc-tinta) 60%, var(--pc-trazo) 60%); }
+.pg-n { font-family: var(--f-mono); font-weight: 700; font-size: 8px; letter-spacing: .1em; color: var(--pc-tinta); }
+.sup-noche .pg-n { color: var(--pc-trazo); }
+
+.plantilla-portada .pg-cuerpo { padding: 0; }
+.plantilla-portada .portada { font-size: 12px; }
+.plantilla-portadilla .pg-cuerpo { padding: 2mm 15mm 0; }
+.plantilla-portadilla .porta { padding-bottom: 6mm; }
+.plantilla-portadilla .porta-fig { max-height: 150mm; }
+.plantilla-portadilla .porta-fig .paleta-mini { height: 120mm; }
+
+/* El inmersivo añade controles interactivos que en papel no tienen sentido. */
+[data-solo-inmersivo] { display: none !important; }
+.swatch { cursor: default; }

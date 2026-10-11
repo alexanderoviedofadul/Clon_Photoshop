@@ -9,20 +9,20 @@ import Link from 'next/link'
  */
 export default function RegisterPage() {
   return (
-    <div className="min-h-screen bg-editor-bg flex items-center justify-center p-4">
+    <main className="min-h-screen bg-editor-bg flex items-center justify-center p-4">
       <div className="w-full max-w-md text-center">
         <div className="bg-editor-surface rounded-xl border border-editor-border p-8">
           <span className="material-symbols-outlined text-editor-accent text-5xl mb-4">
             verified_user
           </span>
-          <h2 className="text-xl font-bold text-editor-text-bright mb-2">
+          <h1 className="text-xl font-bold text-editor-text-bright mb-2">
             Acceso con Cédula 360
-          </h2>
+          </h1>
           <p className="text-editor-text-muted mb-6">
-            PhotoClone AI funciona en alianza con{' '}
+            PhotoClone funciona en alianza con{' '}
             <a
               href="https://cedula360.tech"
-              className="text-editor-accent hover:underline"
+              className="text-pc-senal underline underline-offset-2"
             >
               Cédula 360
             </a>
@@ -39,6 +39,6 @@ export default function RegisterPage() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }

@@ -1,0 +1,222 @@
+{
+ "_nota": "Fuentes del Manual de Marca PhotoClone v1.0. Las del repositorio se leyeron el 11-oct-2026; cada ruta es relativa a la raíz de github.com/alexanderoviedofadul/Clon_Photoshop salvo que diga otra cosa.",
+ "fuentes": [
+  {
+   "id": "portada-anterior",
+   "autor": "PhotoClone",
+   "titulo": "Portada anterior (src/app/page.tsx, commit 8ca9f8b)",
+   "detalle": "Cabecera con el icono «layers» de Material Symbols en text-editor-accent (#0078D4) junto a «PhotoClone AI» en text-xl font-bold; mockup del editor rotulado «Interfaz real del editor»; capas de ejemplo en amber-400, sky-400 → indigo-500 y emerald-400 → teal-600; prometía «16 modos de fusión», «100% en el navegador» y «herramientas tipo Photoshop»; pie con enlace a github.com/bladealex9848",
+   "url": ""
+  },
+  {
+   "id": "layout",
+   "autor": "PhotoClone",
+   "titulo": "Plantilla raíz (src/app/layout.tsx)",
+   "detalle": "Título «Photoshop Clone - Editor de Imágenes con IA», html lang=es en modo oscuro",
+   "url": ""
+  },
+  {
+   "id": "tailwind",
+   "autor": "PhotoClone",
+   "titulo": "Paleta del editor (tailwind.config.ts)",
+   "detalle": "editor.bg #1e1e1e, surface #252526, surface-hover #2a2d2e, border #3c3c3c, border-light #454545, active #094771, text #cccccc, text-muted #808080, accent #0078d4, accent-hover #1a8cff, warning #f59e0b, error #ef4444, success #22c55e; fuente Inter",
+   "url": ""
+  },
+  {
+   "id": "globals",
+   "autor": "PhotoClone",
+   "titulo": "Estilos globales anteriores (src/app/globals.css)",
+   "detalle": "Inter y Material Symbols Outlined pedidos a los servidores de Google Fonts en cada visita; el editor bloquea el scroll del documento solo en su ruta",
+   "url": ""
+  },
+  {
+   "id": "menubar",
+   "autor": "PhotoClone",
+   "titulo": "Menú del editor (src/components/editor/TopBar/MenuBar.tsx)",
+   "detalle": "Abrir: accept=\"image/*,.photoclone,.json\"; menús Archivo, Editar, Imagen, Capa, Filtro y Vista",
+   "url": ""
+  },
+  {
+   "id": "tools",
+   "autor": "PhotoClone",
+   "titulo": "Herramientas (src/constants/tools.ts)",
+   "detalle": "TOOL_ORDER: move, selection, lasso, brush, eraser, text, crop, eyedropper, zoom, hand, cada una con su atajo de teclado",
+   "url": ""
+  },
+  {
+   "id": "blend",
+   "autor": "PhotoClone",
+   "titulo": "Modos de fusión (src/constants/blendModes.ts)",
+   "detalle": "Seis: normal, multiplicar, pantalla, superponer, oscurecer y aclarar",
+   "url": ""
+  },
+  {
+   "id": "ops",
+   "autor": "PhotoClone",
+   "titulo": "Filtros y transformaciones (src/lib/canvas/ops.ts)",
+   "detalle": "invertColors, grayscale, blur, sharpen, rotate90, flip, scaleContent, sobre la capa activa o la selección",
+   "url": ""
+  },
+  {
+   "id": "export",
+   "autor": "PhotoClone",
+   "titulo": "Exportación (src/lib/export/PNGExporter.ts, ZIPExporter.ts y ProjectExporter.ts)",
+   "detalle": "PNG de la composición; ZIP con un PNG por capa y metadata.json (nombre, opacidad, modo de fusión); proyecto .photoclone (ZIP con project.json y layers/*.png) que el editor vuelve a abrir",
+   "url": ""
+  },
+  {
+   "id": "replicate",
+   "autor": "PhotoClone",
+   "titulo": "Cliente de IA (src/lib/ai/replicate.ts)",
+   "detalle": "Separación con un modelo de capas alojado en Replicate: num_layers entre 2 y 10, 4 por defecto, salida webp; edición de una capa con un modelo de edición por instrucción; ambos con disable_safety_checker",
+   "url": ""
+  },
+  {
+   "id": "ruta-ia",
+   "autor": "PhotoClone",
+   "titulo": "Rutas de la IA del editor (src/app/api/layers/decompose/route.ts y edit/route.ts)",
+   "detalle": "Reciben la imagen en base64 o URL y la reenvían a Replicate; sin cuenta",
+   "url": ""
+  },
+  {
+   "id": "api-v1",
+   "autor": "PhotoClone",
+   "titulo": "API pública v1 (src/app/api/v1/capabilities/route.ts y docs/API-PUBLICA-V1.md)",
+   "detalle": "decompose, edit y transform con clave (Authorization: Bearer o X-API-Key) y alcance por clave; usage y health",
+   "url": ""
+  },
+  {
+   "id": "api-keys",
+   "autor": "PhotoClone",
+   "titulo": "Claves de la API (src/lib/api/keys.ts)",
+   "detalle": "ALL_SCOPES = decompose, edit, transform; claves gestionadas desde /admin, se guarda su hash",
+   "url": ""
+  },
+  {
+   "id": "c360",
+   "autor": "PhotoClone",
+   "titulo": "Integración con Cédula 360 (docs/INTEGRACION-CEDULA360.md y VALIDACION-C360-IMAGEN-2026-06-12.md)",
+   "detalle": "Cédula 360 expone cedula360.tech/api/imagen/* con su clave c360_live_* y llama a la API v1 de PhotoClone; validado de extremo a extremo el 12-jun-2026",
+   "url": ""
+  },
+  {
+   "id": "auth",
+   "autor": "PhotoClone",
+   "titulo": "Cuentas (src/lib/auth/session.ts, cedula360.ts y src/lib/supabase/middleware.ts)",
+   "detalle": "Cuenta local en MariaDB y «Continuar con Cédula 360» con segundo factor; el editor es público: la cuenta solo da acceso a /admin",
+   "url": ""
+  },
+  {
+   "id": "caddy",
+   "autor": "Servidor",
+   "titulo": "Bloque photoshop.cedula360.tech de /etc/caddy/Caddyfile",
+   "detalle": "request_body max_size 50MB, compresión gzip y zstd, proxy a 127.0.0.1:3024",
+   "url": ""
+  },
+  {
+   "id": "readme",
+   "autor": "PhotoClone",
+   "titulo": "README.md y CHANGELOG.md del repositorio",
+   "detalle": "Versiones 0.1.0 (28-dic-2025) a 0.4.2 (12-jun-2026); separación validada con 3 capas en 7,4 s el 17-may-2026",
+   "url": ""
+  },
+  {
+   "id": "git-inicial",
+   "autor": "PhotoClone",
+   "titulo": "Commit 37cdb10 · 28-dic-2025",
+   "detalle": "Commit inicial del proyecto Clon_Photoshop",
+   "url": ""
+  },
+  {
+   "id": "git-ia",
+   "autor": "PhotoClone",
+   "titulo": "Commits 7327027 y b20fc67 · 28-dic-2025",
+   "detalle": "Editor con IA; capas con arrastrar y soltar, separación y edición con IA",
+   "url": ""
+  },
+  {
+   "id": "git-c360",
+   "autor": "PhotoClone",
+   "titulo": "Commit 7a7ee9c · 17-may-2026",
+   "detalle": "Plataforma y alianza «Login con Cédula 360»: autenticación en MariaDB, administración y reCAPTCHA",
+   "url": ""
+  },
+  {
+   "id": "git-replicate",
+   "autor": "PhotoClone",
+   "titulo": "Commit 021f40a · 17-may-2026",
+   "detalle": "IA de capas habilitada en producción (Replicate)",
+   "url": ""
+  },
+  {
+   "id": "git-editor",
+   "autor": "PhotoClone",
+   "titulo": "Commit 6600c08 · 17-may-2026 (v0.3.0)",
+   "detalle": "Todos los menús, herramientas y paneles funcionales",
+   "url": ""
+  },
+  {
+   "id": "git-landing",
+   "autor": "PhotoClone",
+   "titulo": "Commit 8ca9f8b · 18-may-2026",
+   "detalle": "Portada con el mockup del editor",
+   "url": ""
+  },
+  {
+   "id": "git-api",
+   "autor": "PhotoClone",
+   "titulo": "Commit cde0913 · 18-may-2026 (v0.4.0)",
+   "detalle": "API pública v1 con claves gestionadas por el administrador",
+   "url": ""
+  },
+  {
+   "id": "git-capas",
+   "autor": "PhotoClone",
+   "titulo": "Commit f7aed7e · 12-jun-2026 (v0.4.1)",
+   "detalle": "La separación devolvía 1 capa en vez de N por un fallo del filtro de seguridad del modelo",
+   "url": ""
+  },
+  {
+   "id": "manual",
+   "autor": "PhotoClone",
+   "titulo": "Este manual (docs/Manual_Marca_PhotoClone/v1.0)",
+   "detalle": "Primera versión de la marca, 11-oct-2026",
+   "url": ""
+  },
+  {
+   "id": "marca-ajena",
+   "autor": "Adobe",
+   "titulo": "Adobe Trademarks",
+   "detalle": "Photoshop es una marca registrada de Adobe; su guía pide no usarla como parte del nombre de otro producto",
+   "url": "https://www.adobe.com/legal/permissions/trademarks.html"
+  },
+  {
+   "id": "inter",
+   "autor": "Rasmus Andersson",
+   "titulo": "Inter",
+   "detalle": "Licencia SIL Open Font License 1.1; versión variable con eje de tamaño óptico",
+   "url": "https://rsms.me/inter/"
+  },
+  {
+   "id": "jetbrains",
+   "autor": "JetBrains",
+   "titulo": "JetBrains Mono",
+   "detalle": "Licencia SIL Open Font License 1.1",
+   "url": "https://www.jetbrains.com/lp/mono/"
+  },
+  {
+   "id": "material",
+   "autor": "Google",
+   "titulo": "Material Symbols Outlined",
+   "detalle": "Licencia Apache 2.0; aquí, un subconjunto con los iconos que usa el editor",
+   "url": "https://fonts.google.com/icons"
+  },
+  {
+   "id": "wcag",
+   "autor": "W3C",
+   "titulo": "Web Content Accessibility Guidelines (WCAG) 2.1, criterio 1.4.3",
+   "detalle": "Contraste mínimo 4,5 : 1 para texto normal y 3 : 1 para texto grande",
+   "url": "https://www.w3.org/TR/WCAG21/#contrast-minimum"
+  }
+ ]
+}

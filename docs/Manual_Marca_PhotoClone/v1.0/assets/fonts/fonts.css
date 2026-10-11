@@ -1,0 +1,6 @@
+/* AuditorTecnicoIA · Manual de Marca v1.0 — Tipografías autoalojadas (SIL Open Font License 1.1).
+   Generadas por scripts/fuentes_v1.py desde fuentes/: latín y latín extendido A,
+   flechas, operadores y los glifos ✓ ✕ ⚠ ℹ. Sin Google Fonts. */
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 800; font-display: swap; src: url('inter-var.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('jetbrainsmono-400.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 700; font-display: swap; src: url('jetbrainsmono-700.woff2') format('woff2'); }

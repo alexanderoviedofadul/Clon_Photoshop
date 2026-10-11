@@ -101,7 +101,7 @@ function PropertiesPanel() {
       <div>
         <h3 className="text-xs font-semibold text-editor-text-muted uppercase mb-2">Opacidad</h3>
         <div className="flex items-center gap-2">
-          <input type="range" min="0" max="100" disabled={!layer}
+          <input type="range" min="0" max="100" disabled={!layer} aria-label="Opacidad de la capa activa"
             value={layer?.opacity ?? 100}
             onChange={(e) => activeLayerId && updateLayer(activeLayerId, { opacity: parseInt(e.target.value, 10) })}
             className="flex-1 accent-editor-accent" />

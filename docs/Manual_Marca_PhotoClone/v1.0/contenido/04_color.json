@@ -1,0 +1,228 @@
+{
+ "id": "color",
+ "num": "04",
+ "titulo": "Color",
+ "corto": "Color",
+ "kicker": "Capítulo 04",
+ "lead": "Una paleta cerrada de treinta colores. Casi todos ya estaban en el editor; los nuevos existen para que el texto se lea.",
+ "paginas": [
+  {
+   "plantilla": "portadilla",
+   "tono": "noche",
+   "fig": "paleta-mini"
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "eyebrow",
+     "x": "Marca"
+    },
+    {
+     "t": "h2",
+     "x": "El azul del lienzo"
+    },
+    {
+     "t": "comp",
+     "n": "paleta",
+     "ids": [
+      "pc-azul",
+      "pc-azul-hondo",
+      "pc-senal",
+      "pc-seleccion",
+      "pc-cielo",
+      "pc-trazo"
+     ]
+    },
+    {
+     "t": "comp",
+     "n": "degradados"
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "eyebrow",
+     "x": "El editor"
+    },
+    {
+     "t": "h2",
+     "x": "Grafito y sus grises"
+    },
+    {
+     "t": "comp",
+     "n": "paleta",
+     "ids": [
+      "pc-noche",
+      "pc-grafito",
+      "pc-panel",
+      "pc-panel-alto",
+      "pc-linea",
+      "pc-linea-clara",
+      "pc-texto",
+      "pc-tenue"
+     ]
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "eyebrow",
+     "x": "Las capas y los estados"
+    },
+    {
+     "t": "h2",
+     "x": "Color + palabra"
+    },
+    {
+     "t": "comp",
+     "n": "paleta",
+     "ids": [
+      "pc-capa-fondo",
+      "pc-capa-figura",
+      "pc-capa-texto",
+      "pc-capa-cielo",
+      "pc-aviso",
+      "pc-error",
+      "pc-exito"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "En claro, los estados usan su versión honda (Error Hondo, Éxito Hondo): la del editor no llega a AA sobre blanco.",
+     "c": "small muted"
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "eyebrow",
+     "x": "Papel"
+    },
+    {
+     "t": "h2",
+     "x": "Las páginas claras"
+    },
+    {
+     "t": "comp",
+     "n": "paleta",
+     "ids": [
+      "pc-tinta",
+      "pc-pizarra",
+      "pc-bruma",
+      "pc-borde",
+      "pc-niebla",
+      "pc-humo",
+      "pc-error-hondo",
+      "pc-exito-hondo",
+      "pc-negro"
+     ]
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "eyebrow",
+     "x": "Contraste"
+    },
+    {
+     "t": "h2",
+     "x": "Calculado, no estimado {f:wcag}"
+    },
+    {
+     "t": "comp",
+     "n": "contraste",
+     "pares": [
+      [
+       "#FFFFFF",
+       "pc-azul",
+       "Botón principal"
+      ],
+      [
+       "pc-senal",
+       "pc-grafito",
+       "Enlaces y foco sobre el editor"
+      ],
+      [
+       "pc-texto",
+       "pc-panel",
+       "Texto del editor"
+      ],
+      [
+       "pc-tenue",
+       "pc-panel",
+       "Texto secundario del editor"
+      ],
+      [
+       "pc-tinta",
+       "#FFFFFF",
+       "Texto en claro"
+      ],
+      [
+       "pc-azul-hondo",
+       "#FFFFFF",
+       "Enlaces en claro"
+      ],
+      [
+       "pc-tinta",
+       "pc-capa-fondo",
+       "FONDO"
+      ],
+      [
+       "#FFFFFF",
+       "pc-capa-figura",
+       "FIGURA"
+      ],
+      [
+       "pc-tinta",
+       "pc-capa-texto",
+       "TEXTO"
+      ],
+      [
+       "pc-error",
+       "pc-grafito",
+       "Error sobre oscuro: solo texto grande o iconos"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "eyebrow",
+     "x": "Retirados"
+    },
+    {
+     "t": "h2",
+     "x": "Lo que sale de la paleta"
+    },
+    {
+     "t": "comp",
+     "n": "retirados"
+    },
+    {
+     "t": "nota",
+     "titulo": "El gris que no se leía",
+     "x": "El texto secundario del editor era #808080: 3,88 : 1 sobre los paneles. Pasa a Texto Tenue #9A9A9A en tailwind.config.ts, de modo que todo lo que ya usaba text-editor-text-muted sube a AA sin tocar cada vista {f:tailwind}.",
+     "tono": "verde"
+    }
+   ]
+  }
+ ]
+}

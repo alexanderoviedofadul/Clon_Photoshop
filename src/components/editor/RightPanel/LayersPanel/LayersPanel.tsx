@@ -81,8 +81,9 @@ export function LayersPanel() {
       {/* Blend Mode & Opacity */}
       <div className="p-3 border-b border-editor-border">
         <div className="flex items-center gap-2 mb-2">
-          <label className="text-xs text-editor-text-muted w-16">Fusión:</label>
+          <label htmlFor="capa-fusion" className="text-xs text-editor-text-muted w-16">Fusión:</label>
           <select
+            id="capa-fusion"
             className="flex-1 bg-editor-bg border border-editor-border rounded px-2 py-1 text-xs"
             value={activeLayer?.blendMode || 'normal'}
             onChange={(e) => activeLayerId && updateLayer(activeLayerId, { blendMode: e.target.value as any })}
@@ -106,8 +107,9 @@ export function LayersPanel() {
           </select>
         </div>
         <div className="flex items-center gap-2">
-          <label className="text-xs text-editor-text-muted w-16">Opacidad:</label>
+          <label htmlFor="capa-opacidad" className="text-xs text-editor-text-muted w-16">Opacidad:</label>
           <input
+            id="capa-opacidad"
             type="range"
             min="0"
             max="100"

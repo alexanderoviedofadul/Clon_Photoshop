@@ -1,0 +1,94 @@
+{
+ "id": "tono",
+ "num": "08",
+ "titulo": "Tono y voz",
+ "corto": "Tono",
+ "kicker": "Capítulo 08",
+ "lead": "Claro, concreto y sin promesas: lo que hace la herramienta, en el orden en que lo hace.",
+ "paginas": [
+  {
+   "plantilla": "portadilla",
+   "tono": "noche",
+   "fig": "lema"
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "cols",
+     "r": "1fr 1fr",
+     "cols": [
+      [
+       {
+        "t": "eyebrow",
+        "x": "Principios"
+       },
+       {
+        "t": "h2",
+        "x": "Cómo habla"
+       },
+       {
+        "t": "lista",
+        "items": [
+         "Verbos de acción: subir, separar, editar, exportar.",
+         "Lo que pasa con la imagen, dicho antes de que pase.",
+         "Cifras solo si salen del código: diez herramientas, seis modos de fusión, de 2 a 10 capas.",
+         "Usted en la interfaz y en los documentos.",
+         "La IA es una acción que se pide, no un personaje."
+        ]
+       },
+       {
+        "t": "nota",
+        "titulo": "Nunca",
+        "x": "Porcentajes de acierto, tiempos garantizados, «gratis» como promesa comercial ni nombres de productos de otras empresas.",
+        "tono": "urgente",
+        "corrige": true
+       }
+      ],
+      [
+       {
+        "t": "eyebrow",
+        "x": "Antes y ahora"
+       },
+       {
+        "t": "h2",
+        "x": "Las mismas ideas, sin inflar"
+       },
+       {
+        "t": "tabla",
+        "cab": [
+         "Antes",
+         "Ahora"
+        ],
+        "corrige": true,
+        "filas": [
+         [
+          "Probar gratis ahora",
+          "Abrir el editor, sin cuenta"
+         ],
+         [
+          "Herramientas tipo Photoshop",
+          "Editor de imágenes por capas"
+         ],
+         [
+          "100% en el navegador",
+          "La IA envía la imagen a un servicio externo; lo demás ocurre en su navegador"
+         ],
+         [
+          "16 modos de fusión",
+          "Seis modos de fusión"
+         ],
+         [
+          "Interfaz real del editor",
+          "Así se ve el editor (ilustración)"
+         ]
+        ]
+       }
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

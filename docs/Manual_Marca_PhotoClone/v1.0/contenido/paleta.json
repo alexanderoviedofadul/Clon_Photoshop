@@ -1,0 +1,40 @@
+{
+ "_nota": "Paleta cerrada de PhotoClone v1.0. origen: «css» = un color que ya usaba la aplicación: la paleta editor.* de tailwind.config.ts (grafito, panel, bordes, texto, azul, selección y estados) o una clase de Tailwind del mockup de la portada anterior (src/app/page.tsx: amber-400, sky-400, emerald-400, teal-600), convertida a su valor; «deriv» = incorporación de esta versión, derivada de un color del CSS para que el texto llegue a AA o para las páginas claras del manual, con su contraste calculado por build_v1.py. No hay color de «logo»: hasta esta versión no había logotipo, solo el icono «layers» de Material Symbols.",
+ "colores": {
+  "pc-azul": {"nombre": "Azul Lienzo", "hex": "#0078D4", "origen": "css", "uso": "Acción principal (botón «Abrir el editor», «Separar en capas») y la capa IA. Texto blanco encima: 4,53 : 1. Como texto sobre oscuro no llega (3,68 sobre Grafito): ahí va Azul Señal"},
+  "pc-azul-hondo": {"nombre": "Azul Hondo", "hex": "#005A9E", "origen": "deriv", "uso": "Enlaces y texto de marca sobre claro (7,10 : 1 sobre blanco) y estado pulsado del botón principal"},
+  "pc-senal": {"nombre": "Azul Señal", "hex": "#1A8CFF", "origen": "css", "uso": "Enlaces, foco y acentos de texto sobre oscuro (editor.accent-hover). Sobre Grafito: 4,95 : 1; sobre Panel: 4,55 : 1"},
+  "pc-seleccion": {"nombre": "Azul Selección", "hex": "#094771", "origen": "css", "uso": "Fondo de la herramienta y la capa activas (editor.active). Texto blanco: 9,76 : 1"},
+  "pc-cielo": {"nombre": "Cielo", "hex": "#E5F1FB", "origen": "deriv", "uso": "Fondo de avisos informativos y chips en las páginas claras (Azul Lienzo al 10 %). Azul Hondo encima: 6,19 : 1"},
+  "pc-noche": {"nombre": "Noche", "hex": "#121212", "origen": "deriv", "uso": "Fondo de la portada pública y del recorrido: un escalón por debajo del Grafito del editor, para que el lienzo resalte"},
+  "pc-grafito": {"nombre": "Grafito", "hex": "#1E1E1E", "origen": "css", "uso": "Fondo del editor y del lienzo (editor.bg). Es el fondo del símbolo"},
+  "pc-panel": {"nombre": "Panel", "hex": "#252526", "origen": "css", "uso": "Barras, paneles y tarjetas sobre Grafito (editor.surface)"},
+  "pc-panel-alto": {"nombre": "Panel Alto", "hex": "#2A2D2E", "origen": "css", "uso": "Hover de filas y botones secundarios (editor.surface-hover)"},
+  "pc-linea": {"nombre": "Línea", "hex": "#3C3C3C", "origen": "css", "uso": "Bordes y separadores sobre oscuro (editor.border)"},
+  "pc-linea-clara": {"nombre": "Línea Clara", "hex": "#454545", "origen": "css", "uso": "Bordes de campos y foco suave sobre oscuro (editor.border-light)"},
+  "pc-texto": {"nombre": "Texto", "hex": "#CCCCCC", "origen": "css", "uso": "Texto principal sobre oscuro (editor.text). Sobre Panel: 9,54 : 1"},
+  "pc-tenue": {"nombre": "Texto Tenue", "hex": "#9A9A9A", "origen": "deriv", "uso": "Texto secundario sobre oscuro. Sustituye a #808080 (editor.text-muted), que se quedaba en 3,88 : 1 sobre Panel. Ahora: 5,44 : 1"},
+  "pc-tinta": {"nombre": "Tinta", "hex": "#18181B", "origen": "deriv", "uso": "Texto sobre claro (manual, documentos, PDF) y sobre Ámbar Texto. Blanco encima: 17,72 : 1"},
+  "pc-pizarra": {"nombre": "Pizarra", "hex": "#52525B", "origen": "deriv", "uso": "Texto secundario sobre claro. Sobre blanco: 7,73 : 1"},
+  "pc-bruma": {"nombre": "Bruma", "hex": "#A1A1AA", "origen": "deriv", "uso": "Texto atenuado y separadores sobre Noche (7,31 : 1); nunca texto sobre claro"},
+  "pc-borde": {"nombre": "Borde", "hex": "#E4E4E7", "origen": "deriv", "uso": "Bordes y filetes en las páginas claras"},
+  "pc-niebla": {"nombre": "Niebla", "hex": "#F4F4F5", "origen": "deriv", "uso": "Fondo de secciones atenuadas en claro"},
+  "pc-humo": {"nombre": "Humo", "hex": "#FAFAFA", "origen": "deriv", "uso": "Fondo de hoja y el nombre del logotipo negativo"},
+  "pc-negro": {"nombre": "Negro 100 % K", "hex": "#000000", "origen": "deriv", "uso": "Solo la versión de una tinta para fotocopia y grabado"},
+  "pc-trazo": {"nombre": "Esmeralda Trazo", "hex": "#34D399", "origen": "css", "uso": "Solo gráfico (emerald-400 del mockup): la línea de selección y la guía que une una capa con su sitio. Nunca texto sobre claro (1,92 : 1 con blanco)"},
+  "pc-capa-fondo": {"nombre": "Teal Fondo", "hex": "#0D9488", "origen": "css", "uso": "La capa FONDO (teal-600 del mockup anterior). Texto Tinta encima: 4,73 : 1"},
+  "pc-capa-figura": {"nombre": "Índigo Figura", "hex": "#4F46E5", "origen": "deriv", "uso": "La capa FIGURA. Deriva del indigo-500 del mockup (#6366F1, 4,47 : 1 con blanco: no llegaba) un escalón más oscuro: blanco encima 6,29 : 1"},
+  "pc-capa-texto": {"nombre": "Ámbar Texto", "hex": "#FBBF24", "origen": "css", "uso": "La capa TEXTO (amber-400 del mockup). Texto Tinta encima: 10,61 : 1"},
+  "pc-capa-cielo": {"nombre": "Cielo Figura", "hex": "#38BDF8", "origen": "css", "uso": "Solo gráfico: el cielo y el brillo de la figura en las ilustraciones (sky-400 del mockup)"},
+  "pc-aviso": {"nombre": "Aviso", "hex": "#F59E0B", "origen": "css", "uso": "Avisos sobre oscuro (editor.warning). Sobre Grafito: 7,76 : 1"},
+  "pc-error": {"nombre": "Error", "hex": "#EF4444", "origen": "css", "uso": "Errores sobre oscuro (editor.error), en iconos, bordes y texto grande: sobre Grafito se queda en 4,43 : 1, por debajo de AA para texto normal"},
+  "pc-error-hondo": {"nombre": "Error Hondo", "hex": "#B91C1C", "origen": "deriv", "uso": "Errores y «no» sobre claro (6,47 : 1 sobre blanco)"},
+  "pc-exito": {"nombre": "Éxito", "hex": "#22C55E", "origen": "css", "uso": "Confirmaciones sobre oscuro (editor.success). Sobre Grafito: 7,32 : 1"},
+  "pc-exito-hondo": {"nombre": "Éxito Hondo", "hex": "#15803D", "origen": "deriv", "uso": "Confirmaciones y «sí» sobre claro (5,02 : 1 sobre blanco)"}
+ },
+ "retirados": [
+  {"hex": "#808080", "nombre": "editor.text-muted", "motivo": "Texto secundario del editor y de la portada: 3,88 : 1 sobre Panel y 4,22 sobre Grafito, por debajo de AA {f:tailwind}", "sustituto": "Texto Tenue #9A9A9A"},
+  {"hex": "#0078D4", "nombre": "editor.accent como texto", "motivo": "El azul de acción servía también de color de texto y enlaces sobre oscuro: 3,68 : 1 sobre Grafito {f:tailwind,portada-anterior}", "sustituto": "Azul Señal #1A8CFF (como fondo de botón, Azul Lienzo sigue)"},
+  {"hex": "#6366F1", "nombre": "indigo-500 del mockup", "motivo": "Con texto blanco encima se quedaba en 4,47 : 1 {f:portada-anterior}", "sustituto": "Índigo Figura #4F46E5"}
+ ]
+}

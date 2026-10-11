@@ -1,0 +1,104 @@
+{
+ "id": "tipografia",
+ "num": "05",
+ "titulo": "Tipografía",
+ "corto": "Tipografía",
+ "kicker": "Capítulo 05",
+ "lead": "Inter para todo lo que se lee, JetBrains Mono para lo que se copia. Y los iconos del editor, servidos desde casa.",
+ "paginas": [
+  {
+   "plantilla": "portadilla",
+   "tono": "noche",
+   "fig": "tipo-mini"
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "cols",
+     "r": "1fr 1fr",
+     "cols": [
+      [
+       {
+        "t": "comp",
+        "n": "especimen",
+        "familia": "Inter",
+        "rol": "Titulares, texto, botones y datos",
+        "muestra": "Una imagen, todas sus capas",
+        "pesos": "400 · 500 · 600 · 700 · 800 · variable"
+       },
+       {
+        "t": "p",
+        "x": "Inter ya era la fuente del editor {f:tailwind}. Se queda, ahora autoalojada en woff2 variable: ninguna visita pide fuentes a terceros {f:inter}."
+       }
+      ],
+      [
+       {
+        "t": "comp",
+        "n": "especimen",
+        "familia": "JetBrains Mono",
+        "rol": "Extensiones, medidas, atajos y código",
+        "muestra": "capa_02.png · 1024 × 768",
+        "pesos": "400 · 700"
+       },
+       {
+        "t": "p",
+        "x": "Para extensiones, dimensiones, atajos de teclado y ejemplos de la API: lo que alguien va a copiar {f:jetbrains}."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "cols",
+     "r": "1fr 1fr",
+     "cols": [
+      [
+       {
+        "t": "eyebrow",
+        "x": "Escala"
+       },
+       {
+        "t": "h2",
+        "x": "Seis niveles"
+       },
+       {
+        "t": "comp",
+        "n": "escala"
+       }
+      ],
+      [
+       {
+        "t": "eyebrow",
+        "x": "Iconos"
+       },
+       {
+        "t": "h2",
+        "x": "Material Symbols, un subconjunto"
+       },
+       {
+        "t": "p",
+        "x": "El editor usa los iconos de Material Symbols Outlined {f:material}. Antes se pedía la familia entera a Google en cada visita, unos 4 MB {f:globals}; ahora se sirve un subconjunto con los iconos que aparecen en el código, en un woff2 de 15 KB."
+       },
+       {
+        "t": "p",
+        "x": "Un icono nuevo se ve como su nombre en texto hasta regenerar el subconjunto (lista en documentacion/material-symbols-iconos.txt).",
+        "c": "small muted"
+       },
+       {
+        "t": "comp",
+        "n": "tokens"
+       }
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

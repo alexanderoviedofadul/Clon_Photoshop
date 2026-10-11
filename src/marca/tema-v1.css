@@ -1,0 +1,14 @@
+/* GENERADO por docs/Manual_Marca_PhotoClone/v1.0/scripts/build_v1.py — no editar a mano.
+   Fuentes de la aplicación: Inter, JetBrains Mono y el subconjunto de Material Symbols del editor.
+   Lo importa src/app/globals.css. Para cambiar un color o una fuente, cambie el manual. */
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url('/marca/fuentes/inter-var.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('/marca/fuentes/jetbrainsmono-400.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 700; font-display: swap;
+  src: url('/marca/fuentes/jetbrainsmono-700.woff2') format('woff2'); }
+/* Material Symbols Outlined (Apache 2.0), subconjunto con los iconos que usa src/ (lista en
+   docs/Manual_Marca_PhotoClone/v1.0/documentacion/material-symbols-iconos.txt). Un icono nuevo se ve
+   como su nombre en texto hasta regenerar el subconjunto. */
+@font-face { font-family: 'Material Symbols Outlined'; font-style: normal; font-weight: 400; font-display: block;
+  src: url('/marca/fuentes/material-symbols-pc.woff2') format('woff2'); }

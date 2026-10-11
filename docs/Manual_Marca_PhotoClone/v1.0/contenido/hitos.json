@@ -1,0 +1,61 @@
+{
+ "_nota": "Cronología de PhotoClone. Cada fecha sale de un commit (git log --date=short), del CHANGELOG o de este manual.",
+ "hitos": [
+  {
+   "fecha": "28-12-2025",
+   "acto": "Primer commit",
+   "resumen": "Un editor de imágenes por capas que corre en el navegador.",
+   "papel": "producto",
+   "fuente": "git-inicial"
+  },
+  {
+   "fecha": "28-12-2025",
+   "acto": "Capas con IA",
+   "resumen": "Separar una imagen en capas y editar una capa con una instrucción.",
+   "papel": "producto",
+   "fuente": "git-ia"
+  },
+  {
+   "fecha": "17-05-2026",
+   "acto": "Cuentas y Cédula 360",
+   "resumen": "Cuenta local y «Continuar con Cédula 360»; el editor sigue siendo público.",
+   "papel": "producto",
+   "fuente": "git-c360"
+  },
+  {
+   "fecha": "17-05-2026",
+   "acto": "IA en producción",
+   "resumen": "La separación en capas funciona en el servidor público.",
+   "papel": "producto",
+   "fuente": "git-replicate"
+  },
+  {
+   "fecha": "17-05-2026",
+   "acto": "Editor completo",
+   "resumen": "Todos los menús, herramientas y paneles hacen lo que dicen.",
+   "papel": "producto",
+   "fuente": "git-editor"
+  },
+  {
+   "fecha": "18-05-2026",
+   "acto": "API pública v1",
+   "resumen": "Separar, editar y transformar desde otros sistemas, con clave.",
+   "papel": "producto",
+   "fuente": "git-api"
+  },
+  {
+   "fecha": "12-06-2026",
+   "acto": "N capas de verdad",
+   "resumen": "La separación devolvía una sola capa; desde entonces, las que se piden.",
+   "papel": "producto",
+   "fuente": "git-capas"
+  },
+  {
+   "fecha": "11-10-2026",
+   "acto": "Manual de Marca v1.0",
+   "resumen": "Primer símbolo propio, paleta cerrada y una portada que no promete de más.",
+   "papel": "marca",
+   "fuente": "manual"
+  }
+ ]
+}

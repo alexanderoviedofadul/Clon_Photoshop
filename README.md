@@ -91,7 +91,7 @@ Detalle: [`docs/DESPLIEGUE-VPS-2026-05-16.md`](docs/DESPLIEGUE-VPS-2026-05-16.md
 
 ```bash
 # Clonar repositorio
-git clone https://github.com/bladealex9848/Clon_Photoshop.git
+git clone https://github.com/alexanderoviedofadul/Clon_Photoshop.git
 cd Clon_Photoshop
 
 # Instalar dependencias

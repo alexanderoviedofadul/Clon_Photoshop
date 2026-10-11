@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+/* Fuentes autoalojadas (Inter, JetBrains Mono y el subconjunto de Material Symbols) y tokens de la marca:
+   los escribe docs/Manual_Marca_PhotoClone/v1.0/scripts/build_v1.py. Antes se pedían a Google Fonts en cada visita. */
+@import '../marca/tema-v1.css';
+@import '../marca/tokens-v1.css';
 
 @tailwind base;
 @tailwind components;
@@ -99,7 +101,7 @@ body:has(.editor-shell) {
 
 /* Focus styles */
 *:focus-visible {
-  @apply outline-none ring-2 ring-editor-accent ring-offset-1 ring-offset-editor-bg;
+  @apply outline-none ring-2 ring-pc-senal ring-offset-1 ring-offset-editor-bg;
 }
 
 /* Button base styles */
@@ -108,7 +110,8 @@ body:has(.editor-shell) {
 }
 
 .btn-primary {
-  @apply bg-editor-accent text-white hover:bg-editor-accent-hover;
+  /* Azul Lienzo con texto blanco (4,53 : 1); al pasar, Azul Hondo (7,10 : 1). El accent-hover anterior bajaba a 3,37. */
+  @apply bg-pc-azul text-white hover:bg-pc-azul-hondo;
 }
 
 .btn-secondary {

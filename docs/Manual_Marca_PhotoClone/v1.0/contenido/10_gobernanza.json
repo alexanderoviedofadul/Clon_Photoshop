@@ -1,0 +1,115 @@
+{
+ "id": "gobernanza",
+ "num": "10",
+ "titulo": "Gobernanza y fuentes",
+ "corto": "Fuentes",
+ "kicker": "Capítulo 10",
+ "lead": "Cómo se cambia esta marca sin romperla, y de dónde sale cada cosa que dice.",
+ "paginas": [
+  {
+   "plantilla": "portadilla",
+   "tono": "noche",
+   "fig": "isotipo-oscuro"
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "cols",
+     "r": "1fr 1fr",
+     "cols": [
+      [
+       {
+        "t": "eyebrow",
+        "x": "Reglas"
+       },
+       {
+        "t": "h2",
+        "x": "Cómo se cambia"
+       },
+       {
+        "t": "lista",
+        "items": [
+         "Este manual es inmutable: un cambio de fondo abre la v2.0 en su carpeta.",
+         "Se edita contenido/*.json, plantillas/ o assets/; después build, PDF y audit, y todo en el mismo commit.",
+         "El audit debe terminar en 0 fallos.",
+         "Lo que la web usa de la marca (src/marca, public/marca, favicons, capas y pósters) lo escribe el build.",
+         "Una afirmación nueva necesita su fuente."
+        ],
+        "c": "num"
+       }
+      ],
+      [
+       {
+        "t": "eyebrow",
+        "x": "Pendiente"
+       },
+       {
+        "t": "h2",
+        "x": "Decisiones del dueño"
+       },
+       {
+        "t": "lista",
+        "items": [
+         "Dominio propio: photoshop.cedula360.tech usa una marca registrada de otra empresa {f:marca-ajena}. Un subdominio como photoclone.cedula360.tech, con 301 desde el actual, lo resolvería.",
+         "Pósters del recorrido generados con IA cuando haya cuota; hoy son ilustraciones del build.",
+         "Límite de uso en la IA pública: hoy cualquiera puede pedir separaciones sin cuenta {f:ruta-ia}."
+        ]
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "eyebrow",
+     "x": "Bibliografía"
+    },
+    {
+     "t": "h2",
+     "x": "Fuentes (1 de 2)"
+    },
+    {
+     "t": "comp",
+     "n": "bibliografia",
+     "desde": 0,
+     "hasta": 16
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "eyebrow",
+     "x": "Bibliografía"
+    },
+    {
+     "t": "h2",
+     "x": "Fuentes (2 de 2)"
+    },
+    {
+     "t": "comp",
+     "n": "bibliografia",
+     "desde": 16
+    }
+   ]
+  },
+  {
+   "plantilla": "portada",
+   "tono": "noche",
+   "bloques": [
+    {
+     "t": "comp",
+     "n": "contraportada"
+    }
+   ]
+  }
+ ]
+}

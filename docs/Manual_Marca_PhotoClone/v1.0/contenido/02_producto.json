@@ -1,0 +1,150 @@
+{
+ "id": "producto",
+ "num": "02",
+ "titulo": "Producto",
+ "corto": "Producto",
+ "kicker": "Capítulo 02",
+ "lead": "Cinco pasos, tres formas de exportar, tres capas y una acción. Y la lista de lo que el producto decía de sí mismo sin respaldo.",
+ "paginas": [
+  {
+   "plantilla": "portadilla",
+   "tono": "noche",
+   "fig": "isotipo-oscuro"
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "eyebrow",
+     "x": "El flujo"
+    },
+    {
+     "t": "h2",
+     "x": "Cinco pasos, una imagen editable"
+    },
+    {
+     "t": "comp",
+     "n": "pilares"
+    },
+    {
+     "t": "eyebrow",
+     "x": "Lo que se lleva"
+    },
+    {
+     "t": "comp",
+     "n": "formatos"
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "cols",
+     "r": "1fr 1fr",
+     "cols": [
+      [
+       {
+        "t": "eyebrow",
+        "x": "Las capas"
+       },
+       {
+        "t": "h2",
+        "x": "Color + palabra"
+       },
+       {
+        "t": "comp",
+        "n": "elementos"
+       },
+       {
+        "t": "p",
+        "x": "Filtros y transformaciones sobre la capa activa o la selección {f:ops}:",
+        "c": "small muted"
+       },
+       {
+        "t": "comp",
+        "n": "campos"
+       }
+      ],
+      [
+       {
+        "t": "eyebrow",
+        "x": "Por dónde se usa"
+       },
+       {
+        "t": "h2",
+        "x": "Tres puertas"
+       },
+       {
+        "t": "comp",
+        "n": "entregables"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "eyebrow",
+     "x": "Afirmaciones corregidas"
+    },
+    {
+     "t": "h2",
+     "x": "Lo que no se puede sostener, sale"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Decía",
+      "Por qué sale",
+      "Ahora"
+     ],
+     "corrige": true,
+     "filas": [
+      [
+       "«16 modos de fusión»",
+       "El editor tiene seis {f:blend}",
+       "Seis, con su nombre"
+      ],
+      [
+       "«100% en el navegador»",
+       "Separar y editar con IA envía la imagen a Replicate, un servicio externo {f:ruta-ia,replicate}",
+       "Se dice qué sale y adónde; el resto sí ocurre en el navegador"
+      ],
+      [
+       "«Interfaz real del editor»",
+       "Era un dibujo del editor, no una captura {f:portada-anterior}",
+       "Ilustraciones rotuladas como tales"
+      ],
+      [
+       "«Herramientas tipo Photoshop» y el título «Photoshop Clone»",
+       "Photoshop es una marca registrada de otra empresa {f:marca-ajena,layout}",
+       "«Editor de imágenes por capas»"
+      ],
+      [
+       "«En segundos obtienes capas editables»",
+       "Hay una medición suelta (3 capas en 7,4 s) y depende de la imagen y del servicio externo {f:readme}",
+       "Sin tiempos"
+      ],
+      [
+       "Enlace a github.com/bladealex9848",
+       "Es el nombre de usuario anterior: quedó libre y cualquiera puede registrarlo {f:portada-anterior}",
+       "Fuera"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "x": "La portada nueva solo afirma lo que hace el código, no muestra tiempos ni porcentajes y avisa de que la imagen sale a un servicio externo cuando se usa la IA.",
+     "c": "small muted"
+    }
+   ]
+  }
+ ]
+}

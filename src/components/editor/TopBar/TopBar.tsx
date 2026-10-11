@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import { Simbolo } from '@/components/marca/Logo'
 import { MenuBar } from './MenuBar'
 import { useAuth } from '@/hooks/useAuth'
 import { useViewStore } from '@/stores/useViewStore'
@@ -62,11 +63,12 @@ export function TopBar() {
     <div className="h-12 bg-editor-surface border-b border-editor-border flex items-center px-2">
       <Link
         href="/"
+        prefetch={false}
         className="flex items-center gap-2 px-3 mr-4 rounded hover:bg-editor-surface-hover transition-colors py-1"
         title="Volver a la página de inicio"
       >
-        <span className="material-symbols-outlined text-editor-accent text-xl">layers</span>
-        <span className="text-sm font-semibold text-editor-text-bright">PhotoClone</span>
+        <Simbolo className="w-6 h-6" />
+        <span className="text-sm font-bold text-editor-text-bright">Photo<span className="text-pc-senal">Clone</span></span>
       </Link>
 
       <MenuBar />
@@ -125,7 +127,7 @@ export function TopBar() {
 
         <div ref={ref} className="relative">
           <button
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-editor-accent text-white text-sm rounded hover:bg-editor-accent-hover transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-pc-azul text-white text-sm rounded hover:bg-pc-azul-hondo transition-colors"
             onClick={() => setOpen((o) => !o)}
           >
             <span className="material-symbols-outlined text-base">download</span>

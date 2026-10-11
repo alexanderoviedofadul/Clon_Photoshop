@@ -1,0 +1,84 @@
+{
+ "id": "web",
+ "num": "09",
+ "titulo": "Web",
+ "corto": "Web",
+ "kicker": "Capítulo 09",
+ "lead": "La portada pública es un recorrido: la imagen se separa mientras se baja, y cada parada es un paso del producto.",
+ "paginas": [
+  {
+   "plantilla": "portadilla",
+   "tono": "noche",
+   "fig": "escaneo"
+  },
+  {
+   "plantilla": "libre",
+   "tono": "claro",
+   "bloques": [
+    {
+     "t": "cols",
+     "r": "1fr 1fr",
+     "cols": [
+      [
+       {
+        "t": "eyebrow",
+        "x": "La portada"
+       },
+       {
+        "t": "h2",
+        "x": "Un recorrido de cinco paradas"
+       },
+       {
+        "t": "lista",
+        "items": [
+         "Hero en capas: la imagen plana y sus tres capas, cada una en su plano de profundidad.",
+         "Cinco paradas: subir, separar, editar con texto, retocar y exportar, con sus pósters.",
+         "Qué hay en el editor, con las cifras del código.",
+         "Privacidad: qué sale de su navegador y adónde.",
+         "La API para quien integra, y preguntas frecuentes.",
+         "Se lee entera sin JavaScript; con movimiento reducido no hay animación."
+        ]
+       },
+       {
+        "t": "nota",
+        "titulo": "Sin terceros al cargar",
+        "x": "Fuentes e iconos autoalojados; nada se pide a otros dominios al abrir la portada. reCAPTCHA solo aparece en el acceso, donde ya estaba {f:auth}.",
+        "tono": "azul"
+       }
+      ],
+      [
+       {
+        "t": "eyebrow",
+        "x": "El editor y el acceso"
+       },
+       {
+        "t": "h2",
+        "x": "La misma marca"
+       },
+       {
+        "t": "lista",
+        "items": [
+         "El editor conserva su distribución; cambian el logotipo, las fuentes y los grises que no llegaban a AA.",
+         "El acceso y la administración usan el logotipo y la paleta.",
+         "Favicon y apple-touch-icon desde el símbolo."
+        ]
+       },
+       {
+        "t": "eyebrow",
+        "x": "Lo que no cambia"
+       },
+       {
+        "t": "h2",
+        "x": "Contratos"
+       },
+       {
+        "t": "p",
+        "x": "Rutas, formularios, sesión, API y exportaciones quedan como estaban: el rediseño no toca el comportamiento {f:auth,api-v1}."
+       }
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

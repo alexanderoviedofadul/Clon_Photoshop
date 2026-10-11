@@ -40,6 +40,7 @@ export function Toolbar() {
         <input
           ref={bgRef}
           type="color"
+          aria-label="Color secundario"
           className="sr-only"
           value={secondaryColor}
           onChange={(e) => setSecondaryColor(e.target.value)}
@@ -47,6 +48,7 @@ export function Toolbar() {
         <input
           ref={fgRef}
           type="color"
+          aria-label="Color principal"
           className="sr-only"
           value={primaryColor}
           onChange={(e) => setPrimaryColor(e.target.value)}

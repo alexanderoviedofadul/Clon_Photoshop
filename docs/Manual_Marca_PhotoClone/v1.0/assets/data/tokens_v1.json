@@ -1,0 +1,210 @@
+{
+ "colores": {
+  "pc-aviso": {
+   "hex": "#F59E0B",
+   "nombre": "Aviso",
+   "origen": "css",
+   "uso": "Avisos sobre oscuro (editor.warning). Sobre Grafito: 7,76 : 1"
+  },
+  "pc-azul": {
+   "hex": "#0078D4",
+   "nombre": "Azul Lienzo",
+   "origen": "css",
+   "uso": "Acción principal (botón «Abrir el editor», «Separar en capas») y la capa IA. Texto blanco encima: 4,53 : 1. Como texto sobre oscuro no llega (3,68 sobre Grafito): ahí va Azul Señal"
+  },
+  "pc-azul-hondo": {
+   "hex": "#005A9E",
+   "nombre": "Azul Hondo",
+   "origen": "deriv",
+   "uso": "Enlaces y texto de marca sobre claro (7,10 : 1 sobre blanco) y estado pulsado del botón principal"
+  },
+  "pc-borde": {
+   "hex": "#E4E4E7",
+   "nombre": "Borde",
+   "origen": "deriv",
+   "uso": "Bordes y filetes en las páginas claras"
+  },
+  "pc-bruma": {
+   "hex": "#A1A1AA",
+   "nombre": "Bruma",
+   "origen": "deriv",
+   "uso": "Texto atenuado y separadores sobre Noche (7,31 : 1); nunca texto sobre claro"
+  },
+  "pc-capa-cielo": {
+   "hex": "#38BDF8",
+   "nombre": "Cielo Figura",
+   "origen": "css",
+   "uso": "Solo gráfico: el cielo y el brillo de la figura en las ilustraciones (sky-400 del mockup)"
+  },
+  "pc-capa-figura": {
+   "hex": "#4F46E5",
+   "nombre": "Índigo Figura",
+   "origen": "deriv",
+   "uso": "La capa FIGURA. Deriva del indigo-500 del mockup (#6366F1, 4,47 : 1 con blanco: no llegaba) un escalón más oscuro: blanco encima 6,29 : 1"
+  },
+  "pc-capa-fondo": {
+   "hex": "#0D9488",
+   "nombre": "Teal Fondo",
+   "origen": "css",
+   "uso": "La capa FONDO (teal-600 del mockup anterior). Texto Tinta encima: 4,73 : 1"
+  },
+  "pc-capa-texto": {
+   "hex": "#FBBF24",
+   "nombre": "Ámbar Texto",
+   "origen": "css",
+   "uso": "La capa TEXTO (amber-400 del mockup). Texto Tinta encima: 10,61 : 1"
+  },
+  "pc-cielo": {
+   "hex": "#E5F1FB",
+   "nombre": "Cielo",
+   "origen": "deriv",
+   "uso": "Fondo de avisos informativos y chips en las páginas claras (Azul Lienzo al 10 %). Azul Hondo encima: 6,19 : 1"
+  },
+  "pc-error": {
+   "hex": "#EF4444",
+   "nombre": "Error",
+   "origen": "css",
+   "uso": "Errores sobre oscuro (editor.error), en iconos, bordes y texto grande: sobre Grafito se queda en 4,43 : 1, por debajo de AA para texto normal"
+  },
+  "pc-error-hondo": {
+   "hex": "#B91C1C",
+   "nombre": "Error Hondo",
+   "origen": "deriv",
+   "uso": "Errores y «no» sobre claro (6,47 : 1 sobre blanco)"
+  },
+  "pc-exito": {
+   "hex": "#22C55E",
+   "nombre": "Éxito",
+   "origen": "css",
+   "uso": "Confirmaciones sobre oscuro (editor.success). Sobre Grafito: 7,32 : 1"
+  },
+  "pc-exito-hondo": {
+   "hex": "#15803D",
+   "nombre": "Éxito Hondo",
+   "origen": "deriv",
+   "uso": "Confirmaciones y «sí» sobre claro (5,02 : 1 sobre blanco)"
+  },
+  "pc-grafito": {
+   "hex": "#1E1E1E",
+   "nombre": "Grafito",
+   "origen": "css",
+   "uso": "Fondo del editor y del lienzo (editor.bg). Es el fondo del símbolo"
+  },
+  "pc-humo": {
+   "hex": "#FAFAFA",
+   "nombre": "Humo",
+   "origen": "deriv",
+   "uso": "Fondo de hoja y el nombre del logotipo negativo"
+  },
+  "pc-linea": {
+   "hex": "#3C3C3C",
+   "nombre": "Línea",
+   "origen": "css",
+   "uso": "Bordes y separadores sobre oscuro (editor.border)"
+  },
+  "pc-linea-clara": {
+   "hex": "#454545",
+   "nombre": "Línea Clara",
+   "origen": "css",
+   "uso": "Bordes de campos y foco suave sobre oscuro (editor.border-light)"
+  },
+  "pc-negro": {
+   "hex": "#000000",
+   "nombre": "Negro 100 % K",
+   "origen": "deriv",
+   "uso": "Solo la versión de una tinta para fotocopia y grabado"
+  },
+  "pc-niebla": {
+   "hex": "#F4F4F5",
+   "nombre": "Niebla",
+   "origen": "deriv",
+   "uso": "Fondo de secciones atenuadas en claro"
+  },
+  "pc-noche": {
+   "hex": "#121212",
+   "nombre": "Noche",
+   "origen": "deriv",
+   "uso": "Fondo de la portada pública y del recorrido: un escalón por debajo del Grafito del editor, para que el lienzo resalte"
+  },
+  "pc-panel": {
+   "hex": "#252526",
+   "nombre": "Panel",
+   "origen": "css",
+   "uso": "Barras, paneles y tarjetas sobre Grafito (editor.surface)"
+  },
+  "pc-panel-alto": {
+   "hex": "#2A2D2E",
+   "nombre": "Panel Alto",
+   "origen": "css",
+   "uso": "Hover de filas y botones secundarios (editor.surface-hover)"
+  },
+  "pc-pizarra": {
+   "hex": "#52525B",
+   "nombre": "Pizarra",
+   "origen": "deriv",
+   "uso": "Texto secundario sobre claro. Sobre blanco: 7,73 : 1"
+  },
+  "pc-seleccion": {
+   "hex": "#094771",
+   "nombre": "Azul Selección",
+   "origen": "css",
+   "uso": "Fondo de la herramienta y la capa activas (editor.active). Texto blanco: 9,76 : 1"
+  },
+  "pc-senal": {
+   "hex": "#1A8CFF",
+   "nombre": "Azul Señal",
+   "origen": "css",
+   "uso": "Enlaces, foco y acentos de texto sobre oscuro (editor.accent-hover). Sobre Grafito: 4,95 : 1; sobre Panel: 4,55 : 1"
+  },
+  "pc-tenue": {
+   "hex": "#9A9A9A",
+   "nombre": "Texto Tenue",
+   "origen": "deriv",
+   "uso": "Texto secundario sobre oscuro. Sustituye a #808080 (editor.text-muted), que se quedaba en 3,88 : 1 sobre Panel. Ahora: 5,44 : 1"
+  },
+  "pc-texto": {
+   "hex": "#CCCCCC",
+   "nombre": "Texto",
+   "origen": "css",
+   "uso": "Texto principal sobre oscuro (editor.text). Sobre Panel: 9,54 : 1"
+  },
+  "pc-tinta": {
+   "hex": "#18181B",
+   "nombre": "Tinta",
+   "origen": "deriv",
+   "uso": "Texto sobre claro (manual, documentos, PDF) y sobre Ámbar Texto. Blanco encima: 17,72 : 1"
+  },
+  "pc-trazo": {
+   "hex": "#34D399",
+   "nombre": "Esmeralda Trazo",
+   "origen": "css",
+   "uso": "Solo gráfico (emerald-400 del mockup): la línea de selección y la guía que une una capa con su sitio. Nunca texto sobre claro (1,92 : 1 con blanco)"
+  }
+ },
+ "elementos": {
+  "FIGURA": {
+   "fondo": "#4F46E5",
+   "texto": "#FFFFFF"
+  },
+  "FONDO": {
+   "fondo": "#0D9488",
+   "texto": "#18181B"
+  },
+  "IA": {
+   "fondo": "#0078D4",
+   "texto": "#FFFFFF"
+  },
+  "TEXTO": {
+   "fondo": "#FBBF24",
+   "texto": "#18181B"
+  }
+ },
+ "marca": "PhotoClone",
+ "tipografia": {
+  "codigo": "JetBrains Mono",
+  "display": "Inter",
+  "iconos": "Material Symbols Outlined (subconjunto)",
+  "texto": "Inter"
+ },
+ "version": "1.0.0"
+}

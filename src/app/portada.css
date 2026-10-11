@@ -1,0 +1,150 @@
+/* Portada pública de PhotoClone (rediseño de octubre de 2026). Colores y fuentes: los tokens --pc-* del
+   Manual de Marca v1.0 (src/marca/tokens-v1.css, generado). Nada de terceros: fuentes e imágenes del dominio. */
+
+.pc-portada {
+  --pc-ancho: 1180px;
+  background: var(--pc-noche);
+  color: var(--pc-texto);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: clip;
+}
+.pc-portada a { color: inherit; }
+.pc-portada h1, .pc-portada h2, .pc-portada h3 { color: #FFFFFF; line-height: 1.15; margin: 0; }
+.pc-portada h2 { font-size: clamp(1.75rem, 1.2rem + 2vw, 2.6rem); font-weight: 800; letter-spacing: -.02em; }
+.pc-portada h3 { font-size: 1.1rem; font-weight: 700; }
+.pc-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .92em; }
+.pc-ico { width: 1.15em; height: 1.15em; display: inline-block; vertical-align: -.18em; flex: none; }
+
+.pc-saltar { position: absolute; left: -9999px; top: 0; z-index: 100; background: #FFFFFF; color: var(--pc-tinta) !important; padding: .6rem 1rem; }
+.pc-saltar:focus { left: 1rem; top: 1rem; }
+
+/* Botones */
+.pc-btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .6rem 1.1rem; border-radius: .6rem;
+  font-weight: 600; font-size: .95rem; text-decoration: none; transition: background-color .15s, border-color .15s; white-space: nowrap; }
+.pc-btn-primario { background: var(--pc-azul); color: #FFFFFF !important; }
+.pc-btn-primario:hover { background: var(--pc-azul-hondo); }
+.pc-btn-secundario { border: 1px solid var(--pc-linea-clara); color: #FFFFFF !important; background: rgba(255, 255, 255, .03); }
+.pc-btn-secundario:hover { border-color: var(--pc-tenue); }
+.pc-btn-grande { padding: .85rem 1.5rem; font-size: 1.02rem; }
+.pc-enlace, .pc-hero-nota a, .pc-pie a { color: var(--pc-senal) !important; text-decoration: underline; text-underline-offset: .2em; }
+
+/* Cabecera */
+.pc-cab { position: sticky; top: 0; z-index: 40; background: rgba(18, 18, 18, .86); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--pc-linea); }
+.pc-cab-nav { max-width: var(--pc-ancho); margin: 0 auto; padding: 0 16px; height: 64px; display: flex; align-items: center; gap: 1.5rem; }
+.pc-cab-marca { display: inline-flex; flex: none; }
+.pc-cab-enlaces { display: none; gap: 1.4rem; font-size: .92rem; margin-left: auto; }
+.pc-cab-enlaces a { text-decoration: none; color: var(--pc-texto); }
+.pc-cab-enlaces a:hover { color: #FFFFFF; }
+.pc-cab-acciones { display: flex; align-items: center; gap: .9rem; margin-left: auto; }
+.pc-enlace-acceso { display: none; font-size: .92rem; text-decoration: none; color: var(--pc-texto); }
+@media (min-width: 900px) {
+  .pc-cab-enlaces { display: flex; }
+  .pc-cab-acciones { margin-left: 1rem; }
+  .pc-enlace-acceso { display: inline; }
+}
+
+/* Hero: la imagen y sus capas, cada una en su plano de profundidad */
+.pc-hero { position: relative; min-height: min(92vh, 860px); display: grid; align-items: center; isolation: isolate; overflow: hidden; }
+.pc-hero-arte { position: absolute; inset: 0; z-index: -1; }
+.pc-hero-capa { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 100%; will-change: transform; }
+.pc-hero-texto { max-width: var(--pc-ancho); margin: 0 auto; width: 100%; padding: 4.5rem 16px 6rem; }
+.pc-hero-texto > * { max-width: 34rem; }
+.pc-antetitulo { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--pc-senal); margin: 0 0 .9rem; }
+.pc-hero h1 { font-size: clamp(2.5rem, 1.6rem + 4.2vw, 4.4rem); font-weight: 800; letter-spacing: -.03em; }
+.pc-hero h1 span { color: var(--pc-capa-texto); }
+.pc-hero-lead { font-size: 1.12rem; color: var(--pc-texto); margin: 1.3rem 0 1.8rem; }
+.pc-hero-cta { display: flex; flex-wrap: wrap; gap: .8rem; }
+.pc-hero-nota { font-size: .86rem; color: var(--pc-tenue); margin-top: 1.4rem; }
+@media (max-width: 899px) {
+  /* En estrecho la ilustración va debajo del texto, entera, en vez de cortarse detrás */
+  .pc-hero { display: flex; flex-direction: column-reverse; min-height: 0; }
+  .pc-hero-arte { position: relative; inset: auto; width: 100%; aspect-ratio: 16 / 10; }
+  .pc-hero-capa { object-position: 78% 100%; }
+  .pc-hero-texto { padding: 2.5rem 16px 1rem; }
+}
+@media (min-width: 900px) {
+  /* El tercio inferior izquierdo de la ilustración lo ocupa la imagen plana: el texto se queda arriba */
+  .pc-hero { align-items: start; }
+  .pc-hero-texto { text-shadow: 0 2px 18px rgba(18, 18, 18, .8); padding: 5.5rem 16px 13rem; }
+  .pc-hero-nota { max-width: 27rem; }
+}
+
+/* Secciones */
+.pc-seccion { max-width: var(--pc-ancho); margin: 0 auto; padding: 5.5rem 16px; }
+.pc-seccion > h2 { margin-bottom: 2.2rem; max-width: 40rem; }
+.pc-seccion-panel { max-width: none; background: var(--pc-grafito); border-block: 1px solid var(--pc-linea); }
+.pc-seccion-panel > * { max-width: var(--pc-ancho); margin-left: auto; margin-right: auto; }
+.pc-rejilla { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.pc-dos { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.pc-dos-api { align-items: center; gap: 2.5rem; }
+.pc-tarjeta { background: var(--pc-panel); border: 1px solid var(--pc-linea); border-radius: .9rem; padding: 1.4rem 1.4rem 1.2rem; }
+.pc-tarjeta h3 { display: flex; align-items: center; gap: .55rem; margin-bottom: .6rem; }
+.pc-tarjeta h3 .pc-ico { color: var(--pc-senal); }
+.pc-tarjeta p { margin: 0; color: var(--pc-texto); font-size: .96rem; }
+.pc-salidas { list-style: none; margin: 0; padding: 0; display: grid; gap: .35rem; font-size: .96rem; }
+.pc-salidas .pc-mono { color: #FFFFFF; }
+.pc-capas-leyenda { list-style: none; display: flex; flex-wrap: wrap; gap: .6rem 1.6rem; padding: 0; margin: 2rem 0 0; font-size: .92rem; color: var(--pc-tenue); }
+.pc-capas-leyenda li { display: flex; align-items: center; gap: .55rem; }
+.pc-chip { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .74rem; font-weight: 700; letter-spacing: .06em; padding: .18rem .55rem; border-radius: .35rem; }
+.pc-chip-fondo { background: var(--pc-capa-fondo); color: var(--pc-tinta); }
+.pc-chip-figura { background: var(--pc-capa-figura); color: #FFFFFF; }
+.pc-chip-texto { background: var(--pc-capa-texto); color: var(--pc-tinta); }
+.pc-codigo { margin: 0; background: var(--pc-grafito); border: 1px solid var(--pc-linea); border-radius: .9rem; padding: 1.3rem 1.4rem;
+  font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .84rem; line-height: 1.6; color: var(--pc-texto); overflow-x: auto; }
+#api p { color: var(--pc-texto); }
+
+/* Recorrido (ScrollWorld): sin JS, una lista de paradas; con JS en ancho, un escenario fijo */
+.pc-mundo { max-width: var(--pc-ancho); margin: 0 auto; padding: 5rem 16px 2rem; }
+.pc-mundo-cab { margin-bottom: 2rem; }
+.pc-paradas { list-style: none; margin: 0; padding: 0; display: grid; gap: 3rem; }
+.pc-parada { display: grid; gap: 1.2rem; align-items: center; }
+.pc-parada-poster { margin: 0; border-radius: 1rem; overflow: hidden; border: 1px solid var(--pc-linea); background: var(--pc-noche); aspect-ratio: 16 / 9; }
+.pc-parada-poster img { width: 100%; height: 100%; object-fit: cover; object-position: 82% 50%; display: block; }
+.pc-parada-num { display: inline-flex; align-items: center; gap: .45rem; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .82rem;
+  color: var(--pc-senal); letter-spacing: .1em; margin-bottom: .6rem; }
+.pc-parada h3 { font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: .7rem; }
+.pc-parada p { margin: 0; font-size: 1.05rem; color: var(--pc-texto); max-width: 30rem; }
+@media (min-width: 960px) {
+  .pc-parada { grid-template-columns: 1fr 1.35fr; gap: 3rem; }
+  .pc-parada-texto { order: -1; }
+}
+/* Modo vivo: la sección mide un tramo de pantalla por parada y el escenario queda fijo */
+.pc-mundo.pc-mundo-vivo { max-width: none; padding: 0; height: calc(var(--paradas, 5) * 100vh); position: relative; }
+.pc-mundo-vivo .pc-mundo-cab { position: sticky; top: 64px; z-index: 2; max-width: var(--pc-ancho); margin: 0 auto; padding: 2.5rem 16px 0; height: 0; overflow: visible; }
+.pc-mundo-vivo .pc-paradas { position: sticky; top: 0; height: 100vh; display: block; }
+/* El póster ocupa todo el escenario (su sujeto está a la derecha) y el texto va encima, a la izquierda */
+.pc-mundo-vivo .pc-parada { position: absolute; inset: 0; display: flex; align-items: center;
+  opacity: 0; visibility: hidden; transition: opacity .5s ease, visibility .5s; }
+.pc-mundo-vivo .pc-parada.activa { opacity: 1; visibility: visible; }
+.pc-mundo-vivo .pc-parada-poster { position: absolute; inset: 0; border: 0; border-radius: 0; aspect-ratio: auto; }
+.pc-mundo-vivo .pc-parada-poster img { object-position: 70% 50%; transform: scale(calc(1.06 - var(--avance, 0) * .06)); transition: transform .1s linear; }
+.pc-mundo-vivo .pc-parada-texto { position: relative; z-index: 1; width: 100%; max-width: var(--pc-ancho); margin: 0 auto; padding: 6rem 16px 0;
+  transform: translateY(calc((0.5 - var(--avance, .5)) * 24px)); }
+.pc-mundo-vivo .pc-parada-texto > * { max-width: 26rem; }
+.pc-mundo-vivo .pc-parada-texto p { text-shadow: 0 2px 14px rgba(18, 18, 18, .9); }
+/* Indicador de avance: una barra por parada */
+.pc-mundo-vivo .pc-paradas::after { content: ""; position: absolute; left: 50%; bottom: 2.2rem; width: min(var(--pc-ancho), 100% - 32px); height: 3px;
+  transform: translateX(-50%); background: linear-gradient(90deg, var(--pc-senal) calc(var(--avance-total, 0) * 100%), var(--pc-linea) 0); border-radius: 3px; }
+
+/* Preguntas */
+.pc-preguntas { display: grid; gap: .7rem; max-width: 52rem; }
+.pc-pregunta { background: var(--pc-panel); border: 1px solid var(--pc-linea); border-radius: .8rem; padding: 0 1.2rem; }
+.pc-pregunta summary { cursor: pointer; padding: 1rem 0; font-weight: 600; color: #FFFFFF; list-style-position: inside; }
+.pc-pregunta p { margin: 0 0 1.1rem; color: var(--pc-texto); }
+
+/* Cierre y pie */
+.pc-cierre { text-align: center; padding: 5rem 16px 6rem; display: grid; justify-items: center; gap: 1rem; }
+.pc-cierre p { margin: 0 0 .6rem; color: var(--pc-tenue); }
+.pc-cierre-simbolo { width: 64px; height: 64px; }
+.pc-pie { border-top: 1px solid var(--pc-linea); background: var(--pc-grafito); }
+.pc-pie-dentro { max-width: var(--pc-ancho); margin: 0 auto; padding: 2.4rem 16px; display: grid; gap: .6rem; font-size: .9rem; color: var(--pc-tenue); }
+.pc-pie p { margin: 0; }
+.pc-pie-enlaces { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+.pc-pie-legal { font-size: .8rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-hero-capa, .pc-parada, .pc-parada-poster img, .pc-parada-texto { transition: none !important; transform: none !important; }
+}
