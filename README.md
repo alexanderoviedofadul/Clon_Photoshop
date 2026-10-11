@@ -1,6 +1,12 @@
-# PhotoClone - Editor de Imágenes Web
+# PhotoClone — Editor de imágenes por capas con IA
 
-Editor de imágenes estilo Photoshop construido con Next.js 15, React 19 y Canvas API. Incluye integración con IA para separación automática de capas.
+Editor de imágenes por capas en el navegador, construido con Next.js 15, React 19 y Canvas API. La IA separa una
+imagen en capas y edita una capa a partir de una instrucción de texto (Replicate).
+
+> **Marca (desde el 11-oct-2026):** [Manual de Marca v1.0 «Una imagen, todas sus capas»](docs/Manual_Marca_PhotoClone/v1.0/README.md)
+> — símbolo propio, paleta cerrada, fuentes autoalojadas. Rediseño de la portada y de las vistas:
+> [`docs/rediseno-2026-10/README.md`](docs/rediseno-2026-10/README.md). PhotoClone es un editor independiente,
+> sin relación con Adobe: no se usan el nombre «Photoshop» ni su identidad en la marca.
 
 ![Editor Interface](docs/stitch_main_editor_interface/main_editor_interface_1/screen.png)
 
@@ -12,8 +18,8 @@ Editor de imágenes estilo Photoshop construido con Next.js 15, React 19 y Canva
   [`docs/EDITOR-FUNCIONAL-COMPLETO-2026-05-17.md`](docs/EDITOR-FUNCIONAL-COMPLETO-2026-05-17.md)
 - **Filtros y transformaciones**: invertir, escala de grises, desenfocar,
   enfocar, rotar 90°, voltear, escalar (sobre la capa activa / selección)
-- **Sistema de Capas**: Visibilidad, opacidad, modos de mezcla, grupos,
-  reordenar drag & drop, fusionar/aplanar
+- **Sistema de Capas**: visibilidad, opacidad, 6 modos de fusión, reordenar
+  con arrastrar y soltar, duplicar, fusionar y aplanar
 - **10 Herramientas**: Pincel, Borrador, Mover, Cuentagotas, Texto, Selección, Zoom, Mano, Recortar, Lazo
 - **IA Integrada**: Separación automática de imágenes en capas (Replicate API)
 - **Edición de Capas con IA**: Modifica capas existentes usando prompts de texto

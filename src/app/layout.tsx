@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { preload } from 'react-dom'
 import './globals.css'
 
 // Identidad del Manual de Marca PhotoClone v1.0 (docs/Manual_Marca_PhotoClone/v1.0). El título anterior,
@@ -38,6 +39,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Inter se precarga: sin esto llegaba después del primer pintado y el cambio de fuente movía la portada (CLS 0,2).
+  preload('/marca/fuentes/inter-var.woff2', { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' })
   return (
     <html lang="es" className="dark">
       <body className="min-h-screen">

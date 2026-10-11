@@ -176,18 +176,18 @@ export default function AdminPage() {
 
   if (loading)
     return (
-      <div className="min-h-screen bg-editor-bg flex items-center justify-center text-editor-text-muted">
+      <main className="min-h-screen bg-editor-bg flex items-center justify-center text-editor-text-muted" role="status">
         Cargando…
-      </div>
+      </main>
     )
 
   if (!me)
     return (
-      <div className="min-h-screen bg-editor-bg flex items-center justify-center p-4">
+      <main className="min-h-screen bg-editor-bg flex items-center justify-center p-4">
         <div className="bg-editor-surface rounded-xl border border-editor-border p-8 text-center max-w-md">
-          <h2 className="text-xl font-bold text-editor-text-bright mb-2">
+          <h1 className="text-xl font-bold text-editor-text-bright mb-2">
             Sesión requerida
-          </h2>
+          </h1>
           <p className="text-editor-text-muted mb-6">
             Inicia sesión para acceder al panel de cuenta.
           </p>
@@ -195,7 +195,7 @@ export default function AdminPage() {
             Iniciar Sesión
           </Link>
         </div>
-      </div>
+      </main>
     )
 
   return (
@@ -234,6 +234,7 @@ export default function AdminPage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-8">
+        <h1 className="sr-only">Cuenta de PhotoClone</h1>
         <div className="flex gap-2 mb-6 border-b border-editor-border">
           {me.role === 'admin' && (
             <button

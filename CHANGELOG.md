@@ -5,6 +5,28 @@ Todos los cambios notables de este proyecto se documentan en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
+## [0.5.0] - 2026-10-11
+
+### Cambiado — Manual de Marca v1.0 y portada inmersiva
+
+**Doc**: [`docs/rediseno-2026-10/README.md`](docs/rediseno-2026-10/README.md) ·
+**Manual**: [`docs/Manual_Marca_PhotoClone/v1.0/`](docs/Manual_Marca_PhotoClone/v1.0/README.md).
+
+- **Manual de Marca v1.0 «Una imagen, todas sus capas»**: primer manual. Símbolo propio (tres capas sobre el
+  Grafito del editor), paleta cerrada de 30 colores, Inter y JetBrains Mono autoalojadas, subconjunto de Material
+  Symbols (16 KB en vez de ~4 MB), PDF de 40 páginas, portable y `audit_v1.py` en 0 fallos. El build escribe la marca
+  en `src/marca/`, `public/marca/`, favicons, `src/app/icon.svg`, `public/identidad/` y `public/portada/`.
+- **Portada nueva**: hero en seis capas de paralaje, recorrido de cinco paradas, el editor contado con cifras del
+  código, privacidad, API y preguntas. Lighthouse móvil 92–93 → 99–100 (accesibilidad 90 → 100), de 4,1 MB a 313 KiB.
+- **Acceso, registro, panel y editor** con la marca; `main`, `h1`, etiquetas y nombres accesibles (axe 0 en las
+  cinco vistas); texto tenue `#9A9A9A`, enlaces en Azul Señal subrayados, hover del botón principal a AA; Inter precargada.
+- **Retirado**: «16 modos de fusión» (son 6), «100% en el navegador», «interfaz real», «tipo Photoshop» y el título
+  «Photoshop Clone», «en segundos», «gratis» y los enlaces a `github.com/bladealex9848` (usuario anterior, libre).
+
+### Seguridad — pendiente (ver el doc)
+
+- IA pública sin límite de uso, `disable_safety_checker` en la edición, webhook sin firma obligatoria y sin CSP en Caddy.
+
 ## [0.4.2] - 2026-06-12
 
 ### Validado — Integración Cédula 360 (modo proxy)
