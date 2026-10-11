@@ -2,6 +2,8 @@
 
 import { useState, useCallback } from 'react'
 import { useLayerStore } from '@/stores/useLayerStore'
+import { useAuth } from '@/hooks/useAuth'
+import { AvisoCuentaIA } from '@/components/editor/AvisoCuentaIA'
 
 export function AIPanel() {
   const [layerCount, setLayerCount] = useState(4)
@@ -9,12 +11,18 @@ export function AIPanel() {
   const [infiniteDecomposition, setInfiniteDecomposition] = useState(false)
   const [isProcessing, setIsProcessing] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [pideCuenta, setPideCuenta] = useState(false)
+  const { isAuthenticated, loading: cargandoSesion } = useAuth()
 
   const activeLayer = useLayerStore(state => state.getActiveLayer())
   const addLayer = useLayerStore(state => state.addLayer)
 
   const handleDecompose = useCallback(async () => {
     setError(null)
+    if (!cargandoSesion && !isAuthenticated) {
+      setPideCuenta(true)
+      return
+    }
 
     // Verificar que haya una capa activa con imagen
     if (!activeLayer?.imageUrl) {
@@ -62,6 +70,12 @@ export function AIPanel() {
         body: JSON.stringify(requestBody),
       })
 
+      if (apiResponse.status === 401) {
+        setPideCuenta(true)
+        setIsProcessing(false)
+        return
+      }
+
       const data = await apiResponse.json()
 
       if (!data.success) {
@@ -93,7 +107,7 @@ export function AIPanel() {
       setError(err instanceof Error ? err.message : 'Error de conexión')
       setIsProcessing(false)
     }
-  }, [activeLayer, layerCount, instructions, addLayer])
+  }, [activeLayer, layerCount, instructions, addLayer, cargandoSesion, isAuthenticated])
 
   return (
     <div className="flex flex-col h-full p-4">
@@ -102,6 +116,8 @@ export function AIPanel() {
         <span className="material-symbols-outlined text-editor-accent">auto_awesome</span>
         <h3 className="font-semibold text-editor-text-bright">Separar en Capas</h3>
       </div>
+
+      {pideCuenta && <AvisoCuentaIA className="mb-4" />}
 
       {/* Error Message */}
       {error && (

@@ -14,7 +14,10 @@ export async function updateSession(request: NextRequest) {
   const hasSession = !!request.cookies.get(COOKIE_NAME)?.value
   const path = request.nextUrl.pathname
   if (hasSession && (path === '/login' || path === '/register')) {
-    return NextResponse.redirect(new URL('/admin', request.url))
+    // Con sesión, /login?next=/editor vuelve a donde estaba (solo rutas internas).
+    const next = request.nextUrl.searchParams.get('next')
+    const destino = next && next.startsWith('/') && !next.startsWith('//') && !next.startsWith('/\\') ? next : '/admin'
+    return NextResponse.redirect(new URL(destino, request.url))
   }
   return NextResponse.next({ request: { headers: request.headers } })
 }

@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
+import { currentUser } from '@/lib/auth/session'
 import Replicate from 'replicate'
 import type { AIDecomposeRequest, AIDecomposeResponse, AILayer } from '@/types'
 
@@ -6,8 +7,18 @@ const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN,
 })
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
+    // 2026-10-11 (decisión del dueño): la IA exige sesión. Sin cuenta, 401 y no se llama a Replicate.
+    let usuario
+    try {
+      usuario = await currentUser(request)
+    } catch {
+      return NextResponse.json({ success: false, error: 'Sesión no disponible' }, { status: 503 })
+    }
+    if (!usuario) {
+      return NextResponse.json({ success: false, error: 'Inicie sesión para usar la IA', login: '/login?next=/editor' }, { status: 401 })
+    }
     // Validate API token
     if (!process.env.REPLICATE_API_TOKEN) {
       return NextResponse.json(
@@ -56,11 +67,10 @@ export async function POST(request: Request) {
           go_fast: true,
           output_format: body.outputFormat || 'webp',
           output_quality: body.outputQuality || 95,
-          // El safety checker del modelo falla técnicamente
-          // ("Unable to infer channel dimension format") y descarta
-          // capas legítimas. Las imágenes son entradas del propio
-          // usuario en el editor; lo deshabilitamos para tener N/N.
-          disable_safety_checker: true,
+          // 2026-10-11: filtro de contenido reactivado (decisión del dueño). En jun-2026 este filtro
+          // descartaba capas legítimas («Unable to infer channel dimension format» → 1 de N capas):
+          // ver docs/FIX-DECOMPOSE-SAFETY-CHECKER-2026-06-12.md. Si vuelve a pasar, se ve aquí.
+          disable_safety_checker: false,
         },
       }
     )

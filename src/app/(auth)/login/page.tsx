@@ -5,6 +5,12 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Logo } from '@/components/marca/Logo'
 
+/** A dónde volver tras entrar: `?next=` si es una ruta interna (p. ej. el editor, desde el aviso de la IA). */
+function destinoTrasEntrar(): string {
+  const n = new URLSearchParams(window.location.search).get('next')
+  return n && n.startsWith('/') && !n.startsWith('//') && !n.startsWith('/\\') ? n : '/admin'
+}
+
 declare global {
   interface Window {
     grecaptcha?: any
@@ -78,7 +84,7 @@ export default function LoginPage() {
         setLoading(false)
         return
       }
-      router.push('/admin')
+      router.push(destinoTrasEntrar())
       router.refresh()
     } catch {
       setError('Error de red')
@@ -130,7 +136,7 @@ export default function LoginPage() {
         }
         return
       }
-      router.push('/admin')
+      router.push(destinoTrasEntrar())
       router.refresh()
     } catch {
       setError('Error de red')
@@ -155,7 +161,7 @@ export default function LoginPage() {
         setLoading(false)
         return
       }
-      router.push('/admin')
+      router.push(destinoTrasEntrar())
       router.refresh()
     } catch {
       setError('Error de red')

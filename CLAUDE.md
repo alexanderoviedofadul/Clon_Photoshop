@@ -50,7 +50,10 @@ ensayar, copie el repo fuera (sin enlazar `node_modules`) y arranque `next start
 
 ## Seguridad conocida (ver `docs/rediseno-2026-10/README.md`)
 
-- `/api/layers/decompose` y `/edit` son públicas, sin límite de uso: cualquiera gasta crédito de Replicate.
-- El modelo se llama con `disable_safety_checker: true`.
+- 🔴 **La IA exige sesión** desde el 11-oct-2026: `/api/layers/*` devuelven 401 sin sesión y el editor muestra
+  `AvisoCuentaIA`. `/api/auth/me` sin sesión responde 200 `{user: null}` (no 401): no volver a cambiarlo o la consola
+  del editor vuelve a tener un error.
+- Filtro de contenido de Replicate **activo** (`disable_safety_checker: false`). En jun-2026 rompía la separación
+  (1 de N capas): si una separación devuelve una sola capa, es eso.
 - El webhook acepta peticiones sin firma (`if (!signature) return true`) y tiene el secreto escrito en el script.
 - No hay cabecera CSP en Caddy para este host.

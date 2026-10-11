@@ -102,12 +102,32 @@ inyectándola con Playwright en `/`, `/login` (con reCAPTCHA), `/register`, `/ed
 el middleware. `replicate.delivery` es de donde el editor carga y descarga las capas que devuelve la IA. Las capas
 reales de la IA no se probaron con esta CSP: hacerlo gasta crédito.)
 
-## 6. Seguridad (no corregido aquí; decisiones del dueño)
+## 6. Seguridad
 
-- 🔴 **La IA pública no tiene límite**: `POST /api/layers/decompose` y `/api/layers/edit` responden sin cuenta ni
-  límite por IP y reenvían a Replicate. Cualquiera puede gastar el crédito de Replicate. (La API v1 sí exige clave.)
-- 🔴 **`disable_safety_checker: true`** en las dos llamadas a Replicate (`lib/ai/replicate.ts`): se puso para el fallo
-  de 0.4.1 (devolvía 1 capa), pero también desactiva el filtro de contenido del modelo de **edición** en una ruta pública.
+### Corregido el 11-oct-2026 (decisión del dueño: «Exigir cuenta»)
+
+- **La IA del editor exige sesión.** `POST /api/layers/decompose` y `/api/layers/edit` comprueban la sesión con
+  `currentUser()` (el mismo mecanismo que `/api/auth/me`) **antes** de tocar Replicate: sin sesión, o con una cookie
+  inventada, responden **401** `{"error":"Inicie sesión para usar la IA","login":"/login?next=/editor"}`. Comprobado
+  en producción con las dos rutas y los dos casos, y en el log del servicio no aparece ninguna llamada a Replicate.
+- **Filtro de contenido de Replicate reactivado** (`disable_safety_checker: false`) en los dos modelos y en los tres
+  puntos que los llaman (`api/layers/decompose`, `api/layers/edit` y `lib/ai/replicate.ts`, que usa la API v1).
+  ⚠️ **Riesgo conocido**: en junio ese filtro fallaba con «Unable to infer channel dimension format» y la separación
+  devolvía **1 de N capas** ([`FIX-DECOMPOSE-SAFETY-CHECKER-2026-06-12.md`](../FIX-DECOMPOSE-SAFETY-CHECKER-2026-06-12.md)).
+  No se ha podido comprobar si sigue pasando sin gastar crédito: la primera separación real dirá si vuelven N capas.
+  Si vuelve 1, la decisión es entre el filtro y la separación completa.
+- **El editor sin cuenta sigue funcionando sin IA**: al pulsar «Separar capas con IA» o «Generar edición» aparece
+  un aviso (`components/editor/AvisoCuentaIA.tsx`) con el enlace a `/login?next=/editor`; no se hace ninguna llamada.
+  Tras entrar, el acceso vuelve a `?next=` (solo rutas internas; también el middleware si ya había sesión). Lo que hay
+  en el lienzo no se conserva al navegar: el aviso sugiere exportar el proyecto antes.
+- **`/api/auth/me` sin sesión responde 200 `{"user": null}`** en vez de 401: el editor y el panel lo consultan al
+  cargar y el 401 dejaba un error en la consola. Consola 0 en `/`, `/login` y `/editor` a 1440 y 390 px.
+- **No verificado con una sesión real**: hacerlo exige iniciar sesión (escribe una fila en `sessions` de producción) y,
+  para llegar al modelo, gastar crédito o interceptar la llamada saliente, que el SDK de Replicate no permite redirigir
+  sin cambiar código. La ruta con sesión usa la misma función que `/api/auth/me`, que sí reconoce sesiones reales.
+  Copia del build anterior: `/var/backups/clon-photoshop-next-pre-cuenta-ia-20261011`.
+
+### Pendiente
 - ~~**Webhook sin firma obligatoria**~~ — **corregido el 11-oct-2026**: `verifySignature` ya no acepta peticiones sin
   cabecera (401 sin firma y con firma falsa, probado desde fuera; copia `webhook-clon-photoshop.js.pre-firma-20261011`).
   Sigue **sin registrar en GitHub** (el despliegue es manual) y el secreto está escrito en el script: al registrarlo,

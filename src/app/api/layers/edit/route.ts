@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Replicate from 'replicate'
+import { currentUser } from '@/lib/auth/session'
 
 const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN,
@@ -7,6 +8,16 @@ const replicate = new Replicate({
 
 export async function POST(request: NextRequest) {
   try {
+    // 2026-10-11 (decisión del dueño): la IA exige sesión. Sin cuenta, 401 y no se llama a Replicate.
+    let usuario
+    try {
+      usuario = await currentUser(request)
+    } catch {
+      return NextResponse.json({ success: false, error: 'Sesión no disponible' }, { status: 503 })
+    }
+    if (!usuario) {
+      return NextResponse.json({ success: false, error: 'Inicie sesión para usar la IA', login: '/login?next=/editor' }, { status: 401 })
+    }
     const body = await request.json()
     const {
       imageUrl,
@@ -56,7 +67,7 @@ export async function POST(request: NextRequest) {
         output_quality: 90,
         negative_prompt: ' ',
         num_inference_steps: numInferenceSteps,
-        disable_safety_checker: true,
+        disable_safety_checker: false, // 2026-10-11: filtro de contenido reactivado (decisión del dueño)
       },
     })
 

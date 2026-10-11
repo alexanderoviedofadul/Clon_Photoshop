@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useCallback } from 'react'
+import { useAuth } from '@/hooks/useAuth'
+import { AvisoCuentaIA } from '@/components/editor/AvisoCuentaIA'
 
 interface EditLayerModalProps {
   isOpen: boolean
@@ -24,9 +26,15 @@ export function EditLayerModal({
   const [showAdvanced, setShowAdvanced] = useState(false)
   const [guidance, setGuidance] = useState(4)
   const [strength, setStrength] = useState(0.9)
+  const [pideCuenta, setPideCuenta] = useState(false)
+  const { isAuthenticated, loading: cargandoSesion } = useAuth()
 
   const handleGenerate = useCallback(async () => {
     if (!prompt.trim() || !layerImageUrl) return
+    if (!cargandoSesion && !isAuthenticated) {
+      setPideCuenta(true)
+      return
+    }
 
     setIsLoading(true)
     setError(null)
@@ -66,6 +74,11 @@ export function EditLayerModal({
         body: JSON.stringify(requestBody),
       })
 
+      if (response.status === 401) {
+        setPideCuenta(true)
+        return
+      }
+
       const data = await response.json()
 
       if (!response.ok) {
@@ -78,7 +91,7 @@ export function EditLayerModal({
     } finally {
       setIsLoading(false)
     }
-  }, [prompt, layerImageUrl, guidance, strength])
+  }, [prompt, layerImageUrl, guidance, strength, cargandoSesion, isAuthenticated])
 
   const handleApply = useCallback(() => {
     if (previewUrl) {
@@ -220,6 +233,7 @@ export function EditLayerModal({
                   </div>
                 )}
 
+                {pideCuenta && <AvisoCuentaIA className="mb-4" />}
                 {error && (
                   <div className="p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-sm">
                     {error}

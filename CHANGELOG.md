@@ -5,6 +5,17 @@ Todos los cambios notables de este proyecto se documentan en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
+## [0.5.1] - 2026-10-11
+
+### Seguridad — La IA del editor exige cuenta
+
+- `/api/layers/decompose` y `/api/layers/edit` responden **401** sin sesión (o con una cookie inventada) sin llamar a
+  Replicate. En el editor, quien no ha entrado ve un aviso con el enlace a `/login?next=/editor`; el resto del editor
+  sigue sin cuenta. El acceso vuelve a `?next=` tras entrar.
+- Filtro de contenido de Replicate reactivado (`disable_safety_checker: false`) en los dos modelos. ⚠️ En junio este
+  filtro hacía que la separación devolviera 1 de N capas: vigilar la primera separación real.
+- `/api/auth/me` sin sesión devuelve 200 `{user: null}` (antes 401, que dejaba un error en la consola).
+
 ## [0.5.0] - 2026-10-11
 
 - **Caddy** (aplicado el 11-oct): primera CSP del host, más `nosniff`, `Referrer-Policy` y HSTS explícito.

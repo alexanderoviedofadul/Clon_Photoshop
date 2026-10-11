@@ -24,10 +24,9 @@ export async function decomposeImage(opts: DecomposeOpts) {
   if (!replicate) throw new Error('REPLICATE_API_TOKEN no configurado')
   const layerCount = Math.max(2, Math.min(10, opts.layerCount || 4))
   const started = Date.now()
-  // disable_safety_checker: el safety checker integrado del modelo falla
-  // con `Unable to infer channel dimension format` y marca como NSFW
-  // capas legítimas, devolviendo 1 de N capas. Las imágenes del editor
-  // son entradas del propio usuario; deshabilitarlo restituye N de N.
+  // 2026-10-11: filtro de contenido reactivado (decisión del dueño). En jun-2026 fallaba con
+  // `Unable to infer channel dimension format` y devolvía 1 de N capas
+  // (docs/FIX-DECOMPOSE-SAFETY-CHECKER-2026-06-12.md); si reaparece, se ve en el número de capas.
   const output = await replicate.run('qwen/qwen-image-layered', {
     input: {
       image: toImageInput(opts.image),
@@ -36,7 +35,7 @@ export async function decomposeImage(opts: DecomposeOpts) {
       go_fast: true,
       output_format: opts.outputFormat || 'webp',
       output_quality: opts.outputQuality ?? 95,
-      disable_safety_checker: true,
+      disable_safety_checker: false,
     },
   })
   if (!output || !Array.isArray(output)) throw new Error('Respuesta inválida de la IA')
@@ -79,7 +78,7 @@ export async function editImage(opts: EditOpts) {
       output_quality: 90,
       negative_prompt: ' ',
       num_inference_steps: opts.numInferenceSteps ?? 50,
-      disable_safety_checker: true,
+      disable_safety_checker: false,
     },
   })
   const editedImageUrl = Array.isArray(output) ? output[0] : output
