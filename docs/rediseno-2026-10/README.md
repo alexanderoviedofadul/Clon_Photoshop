@@ -77,7 +77,15 @@ puerto 3025) haría `git reset --hard` + `npm install` + build + reinicio, pero 
 log no ha recibido una sola entrega desde julio. Este rediseño se desplegó a mano: `npm run build` +
 `systemctl restart clon-photoshop`. Copia del `.next` anterior: `/var/backups/clon-photoshop-next-pre-rediseno-20261011`.
 
-## 5. Caddy (para el operador; nada de lo desplegado depende de esto)
+## 5. Caddy — aplicado el 11-oct-2026
+
+**Aplicado por el operador** (copia `/etc/caddy/Caddyfile.bak.pre-photoclone-rediseno-20261011_145208`, `caddy
+validate`, `systemctl reload caddy`), con `Strict-Transport-Security` explícito dentro del bloque `header` (uno propio
+puede tapar el del snippet `bloquear-sensibles`). Comprobado: la CSP sale en `/`; HSTS, `nosniff` y `Referrer-Policy`
+también; Playwright en `/`, `/login` (con reCAPTCHA al escribir) y `/editor` a 1440 y 390 px con consola 0 (salvo el
+401 esperado de `/api/auth/me`).
+
+Lo que se pidió:
 
 El bloque `photoshop.cedula360.tech` ya comprime (`encode gzip zstd`). **No envía ninguna CSP**. Propuesta, probada
 inyectándola con Playwright en `/`, `/login` (con reCAPTCHA), `/register`, `/editor` y `/admin`, 0 violaciones:
@@ -100,9 +108,10 @@ reales de la IA no se probaron con esta CSP: hacerlo gasta crédito.)
   límite por IP y reenvían a Replicate. Cualquiera puede gastar el crédito de Replicate. (La API v1 sí exige clave.)
 - 🔴 **`disable_safety_checker: true`** en las dos llamadas a Replicate (`lib/ai/replicate.ts`): se puso para el fallo
   de 0.4.1 (devolvía 1 capa), pero también desactiva el filtro de contenido del modelo de **edición** en una ruta pública.
-- 🔴 **Webhook sin firma obligatoria**: `verifySignature` devuelve `true` si no llega la cabecera, y el secreto está
-  escrito en el script. Hoy no es alcanzable desde GitHub (no registrado), pero `https://photoshop.cedula360.tech/webhook`
-  sí lo es desde Internet: un POST sin firma lanzaría `git reset --hard` + build + reinicio. No lo toqué (fuera del repo).
+- ~~**Webhook sin firma obligatoria**~~ — **corregido el 11-oct-2026**: `verifySignature` ya no acepta peticiones sin
+  cabecera (401 sin firma y con firma falsa, probado desde fuera; copia `webhook-clon-photoshop.js.pre-firma-20261011`).
+  Sigue **sin registrar en GitHub** (el despliegue es manual) y el secreto está escrito en el script: al registrarlo,
+  generar uno nuevo y ponerlo en los dos sitios.
 - **Dominio**: `photoshop.cedula360.tech` contiene la marca de Adobe. Recomendación: un subdominio propio
   (p. ej. `photoclone.cedula360.tech`) con 301 desde el actual. La portada lleva el aviso de no afiliación.
 - `POST /api/v1/transform` descarga en el servidor la URL que se le pase (con clave): conviene limitar destinos

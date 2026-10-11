@@ -7,6 +7,9 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
 ## [0.5.0] - 2026-10-11
 
+- **Caddy** (aplicado el 11-oct): primera CSP del host, más `nosniff`, `Referrer-Policy` y HSTS explícito.
+- **Webhook**: firma obligatoria (antes aceptaba peticiones sin firma).
+
 ### Cambiado — Manual de Marca v1.0 y portada inmersiva
 
 **Doc**: [`docs/rediseno-2026-10/README.md`](docs/rediseno-2026-10/README.md) ·
