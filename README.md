@@ -84,6 +84,11 @@ aditiva).
 Detalle: [`docs/DESPLIEGUE-VPS-2026-05-16.md`](docs/DESPLIEGUE-VPS-2026-05-16.md)
 · [`CHANGELOG.md`](CHANGELOG.md).
 
+### «Seguridad comprobada» y recorrido (oct-2026)
+
+Recorrido del producto en `/conozca/` y verificaciones públicas e independientes en la portada:
+[`docs/seguridad-comprobada-y-recorrido-2026-10-25.md`](docs/seguridad-comprobada-y-recorrido-2026-10-25.md).
+
 ## Requisitos
 
 - Node.js 18+

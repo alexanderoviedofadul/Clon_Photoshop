@@ -1,0 +1,8 @@
+/* tema.css — PhotoClone: colores y fuentes del manual de marca para el recorrido. Lo escribe generar-conozca.mjs
+   (kit 1.0.4) desde el «tema» de conozca.json: no editar a mano. */
+.rc-pagina, html.rc-raiz {
+  --rc-fondo: #121212; --rc-panel: #252526; --rc-acento: #1A8CFF; --rc-acento-rgb: 26, 140, 255;
+  --rc-sobre-acento: #121212; --rc-texto: #F4F4F5;
+  --rc-fuente: 'Inter', system-ui, sans-serif;
+  --rc-fuente-titulos: 'Inter', system-ui, sans-serif;
+}

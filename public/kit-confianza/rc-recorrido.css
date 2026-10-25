@@ -1,0 +1,282 @@
+/*
+ * rc-recorrido.css — el recorrido INMERSIVO común (kit «confianza y recorrido», 24-oct-2026). Portado de
+ * `lhm-inmersivo.css` (LHM Litigios) sin Bootstrap.
+ *
+ * Los colores y las fuentes son de cada proyecto: los pone su `tema.css` (lo escribe `generar-conozca.mjs` desde el
+ * `tema` de su `conozca.json`, tomado del manual de marca). 🔴 Ningún color de marca va aquí; solo los respaldos.
+ *   --rc-fondo      el fondo de las escenas (oscuro)          --rc-panel     el del panel de la portada y el cierre
+ *   --rc-acento     el color de acento (legible sobre fondo)  --rc-acento-rgb sus tres canales, para las transparencias
+ *   --rc-sobre-acento el texto sobre el acento (contraste AA)  --rc-texto     el texto principal (claro)
+ *   --rc-fuente     el texto                                   --rc-fuente-titulos los títulos
+ *
+ * Lo que cambia según el ancho y la preferencia de movimiento lo decide `rc-recorrido.js` con `gsap.matchMedia()`:
+ *   - `.rc-anim` (≥ 992 px, sin «reducir movimiento»): el momento «Cómo» es alto y su contenido queda FIJO (sticky).
+ *   - sin esa clase (celular, «reducir movimiento» o sin JavaScript): todo en el flujo, una cosa debajo de otra.
+ *   - `[data-modo="diapositivas"]`: un momento por pantalla. `[data-modo="mapa"]`: solo el mapa.
+ */
+
+.rc-pagina {
+  --rc-fondo: #111823; --rc-panel: #1b2433; --rc-acento: #c4a25c; --rc-acento-rgb: 196, 162, 92; --rc-sobre-acento: #1b1406;
+  --rc-texto: #f3efe6; --rc-fuente: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; --rc-fuente-titulos: var(--rc-fuente);
+  --rc-tenue: color-mix(in srgb, var(--rc-texto) 74%, transparent);
+  --rc-linea: color-mix(in srgb, var(--rc-texto) 14%, transparent);
+  --rc-cab: 56px; --rc-radio: 12px;
+  margin: 0; background: var(--rc-fondo); color: var(--rc-texto); font-family: var(--rc-fuente); line-height: 1.5;
+  overflow-x: hidden; -webkit-font-smoothing: antialiased;
+}
+/* 🔴 El desplazamiento lo anima GSAP: un `scroll-behavior: smooth` en la raíz cancelaba ScrollToPlugin (autoKill). */
+html.rc-raiz { scroll-behavior: auto; background: var(--rc-fondo, #111823); }
+.rc-pagina *, .rc-pagina *::before, .rc-pagina *::after { box-sizing: border-box; }
+.rc-pagina ::selection { background: var(--rc-acento); color: var(--rc-sobre-acento); }
+.rc-pagina img { max-width: 100%; }
+.rc-pagina h1, .rc-pagina h2, .rc-pagina h3 { font-family: var(--rc-fuente-titulos); margin: 0; }
+.rc-pagina p { margin: 0 0 1rem; }
+/* 🔴 `:not(…)`: un enlace con forma de botón toma el color de su botón. Con `inherit` a secas, «Entrar» y «Comenzar»
+   salían en texto claro sobre el acento (axe, color-contrast; la misma trampa que corrigió LHM el 23-oct-2026). */
+.rc-pagina a:not(.rc-btn):not(.rc-btn-acento):not(.rc-btn-claro) { color: inherit; }
+.rc-pagina :focus-visible { outline: 3px solid var(--rc-acento); outline-offset: 3px; }
+.rc-sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.rc-saltar { position: fixed; top: .5rem; left: .5rem; z-index: 1100; background: var(--rc-acento); color: var(--rc-sobre-acento); padding: .4rem .8rem; border-radius: .4rem; transform: translateY(-200%); }
+.rc-saltar:focus { transform: none; }
+.rc { position: relative; }
+.rc-ico { width: 1.15em; height: 1.15em; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── Botones ─────────────────────────────────────────────────────────────────────────────────────────────────── */
+.rc-btn, .rc-btn-acento, .rc-btn-claro {
+  display: inline-flex; align-items: center; justify-content: center; gap: .4rem; min-width: 40px; min-height: 40px;
+  padding: .45rem .8rem; border-radius: .5rem; font: inherit; font-size: .9rem; line-height: 1.2; text-decoration: none; cursor: pointer;
+  border: 1px solid var(--rc-linea); background: color-mix(in srgb, var(--rc-texto) 6%, transparent); color: var(--rc-texto);
+  transition: background .2s, color .2s, border-color .2s;
+}
+.rc-btn:hover { background: color-mix(in srgb, var(--rc-texto) 14%, transparent); border-color: color-mix(in srgb, var(--rc-texto) 30%, transparent); }
+.rc-btn[aria-pressed="true"] { background: var(--rc-acento); color: var(--rc-sobre-acento); border-color: var(--rc-acento); }
+.rc-btn-acento { background: var(--rc-acento); color: var(--rc-sobre-acento); border-color: var(--rc-acento); font-weight: 600; }
+.rc-btn-acento:hover { filter: brightness(1.08); }
+.rc-btn-claro { background: transparent; border-color: color-mix(in srgb, var(--rc-texto) 35%, transparent); }
+.rc-btn-claro:hover { background: var(--rc-texto); color: var(--rc-fondo); border-color: var(--rc-texto); }
+.rc-btn-lg { min-height: 48px; padding: .7rem 1.15rem; font-size: 1rem; }
+
+/* ── Cabecera ────────────────────────────────────────────────────────────────────────────────────────────────── */
+.rc-cab {
+  position: fixed; inset: 0 0 auto 0; height: var(--rc-cab); z-index: 1030; display: flex; align-items: center; gap: .75rem; padding: 0 1rem;
+  background: color-mix(in srgb, var(--rc-fondo) 78%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rc-linea);
+}
+.rc-logo { display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; min-width: 0; }
+.rc-logo img { height: 28px; width: auto; }
+.rc-logo-txt { font-weight: 600; white-space: nowrap; }
+.rc-actual { flex: 1 1 auto; min-width: 0; color: var(--rc-tenue); font-size: .85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rc-acciones { display: flex; align-items: center; gap: .4rem; flex: 0 0 auto; }
+.rc-modo { display: inline-flex; }
+.rc-modo .rc-btn { border-radius: 0; margin-left: -1px; }
+.rc-modo .rc-btn:first-child { border-radius: .5rem 0 0 .5rem; margin-left: 0; }
+.rc-modo .rc-btn:last-child { border-radius: 0 .5rem .5rem 0; }
+.rc-rotulo, .rc-solo-md { display: none; }
+.rc-progreso { position: absolute; inset: auto 0 -1px 0; height: 2px; }
+.rc-progreso span { display: block; height: 100%; width: 100%; background: var(--rc-acento); transform: scaleX(0); transform-origin: 0 50%; transition: transform .2s linear; }
+
+/* ── Riel lateral (≥ 992 px) y barra inferior (celular, y siempre en diapositivas) ─────────────────────────────── */
+.rc-riel { display: none; }
+.rc-riel ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .15rem; }
+.rc-riel a { display: flex; align-items: center; gap: .55rem; text-decoration: none; min-height: 24px; padding: 2px 4px; border-radius: 999px; }
+.rc-punto { width: 10px; height: 10px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--rc-texto) 45%, transparent); flex: 0 0 auto; transition: transform .2s, background .2s; }
+.rc-punto-extra { border-radius: 3px; }
+.rc-riel-num { font-size: .7rem; color: var(--rc-tenue); font-variant-numeric: tabular-nums; }
+.rc-riel-titulo { display: none; font-size: .78rem; background: color-mix(in srgb, var(--rc-fondo) 92%, transparent); padding: .15rem .55rem; border-radius: .35rem; white-space: nowrap; }
+.rc-riel a:hover .rc-riel-titulo, .rc-riel a:focus-visible .rc-riel-titulo { display: inline-block; }
+.rc-riel a[aria-current="step"] .rc-punto { background: var(--rc-acento); border-color: var(--rc-acento); transform: scale(1.35); }
+.rc-riel a[aria-current="step"] .rc-riel-num { color: var(--rc-acento); }
+.rc-barra {
+  position: fixed; left: 50%; bottom: max(.75rem, env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 1030;
+  display: flex; align-items: center; gap: .35rem; padding: .3rem; border-radius: 999px;
+  background: color-mix(in srgb, var(--rc-fondo) 88%, transparent); border: 1px solid var(--rc-linea); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.rc-barra .rc-btn { border-radius: 999px; min-width: 44px; min-height: 44px; }
+.rc-barra-pos { font-size: .85rem; min-width: 7.5rem; }
+
+/* ── Los momentos ────────────────────────────────────────────────────────────────────────────────────────────── */
+.rc-momento { position: relative; min-height: 100vh; min-height: 100svh; padding: calc(var(--rc-cab) + 2rem) 1rem 6rem; display: flex; flex-direction: column; justify-content: center; }
+.rc-cap, .rc-extra { position: relative; outline: none; }
+.rc-cap:nth-child(even) .rc-necesidad { background: radial-gradient(120% 90% at 85% 15%, rgba(var(--rc-acento-rgb), .10), transparent 60%); }
+
+/* Portada */
+.rc-portada { overflow: hidden; background: radial-gradient(90% 80% at 75% 30%, var(--rc-panel), var(--rc-fondo) 70%); }
+.rc-capas { position: absolute; inset: 0; perspective: 1400px; pointer-events: none;
+            -webkit-mask-image: linear-gradient(90deg, transparent 0, transparent 38%, #000 62%); mask-image: linear-gradient(90deg, transparent 0, transparent 38%, #000 62%); }
+.rc-halo { position: absolute; width: 70vmax; height: 70vmax; right: -20vmax; top: -25vmax; border-radius: 50%; background: radial-gradient(circle, rgba(var(--rc-acento-rgb), .22), transparent 65%); }
+.rc-pilar { position: absolute; bottom: -10%; width: 7vw; max-width: 90px; border-radius: 6px 6px 0 0; opacity: .2;
+            background: linear-gradient(180deg, color-mix(in srgb, var(--rc-acento) 60%, #fff), var(--rc-acento) 40%, color-mix(in srgb, var(--rc-acento) 60%, #000));
+            -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent); mask-image: linear-gradient(180deg, #000 55%, transparent); }
+.rc-pilar-a { right: 22%; height: 70%; }
+.rc-pilar-b { right: calc(22% - 9vw); height: 85%; }
+.rc-flotante { position: absolute; width: 24vw; max-width: 420px; height: auto; border-radius: 10px; opacity: 0; display: none;
+               box-shadow: 0 30px 60px rgba(0, 0, 0, .45); border: 1px solid rgba(255, 255, 255, .12); }
+.rc-flotante-1 { right: 4%; top: 18%; transform: rotateY(-22deg) rotateX(8deg); }
+.rc-flotante-2 { right: 27%; top: 52%; transform: rotateY(-18deg) rotateX(-6deg) scale(.85); }
+.rc-flotante-3 { right: 10%; top: 62%; transform: rotateY(-26deg) rotateX(6deg) scale(.7); }
+.rc-flotante-4 { right: 36%; top: 12%; transform: rotateY(-14deg) rotateX(10deg) scale(.6); }
+/* Sin JS (o con «reducir movimiento») las capturas flotantes se ven quietas; con JS las hace entrar GSAP. */
+.rc-sin-js .rc-flotante, .rc-quieto .rc-flotante { opacity: .9; }
+.rc-portada-texto { position: relative; z-index: 1; max-width: 46rem; }
+.rc-antetitulo { color: var(--rc-acento); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; font-size: .78rem; margin-bottom: .9rem; }
+.rc-titulo { font-size: clamp(1.9rem, 6.2vw, 4.2rem); line-height: 1.05; font-weight: 700; color: #fff; margin-bottom: 1.2rem !important; }
+.rc-sub { font-size: clamp(1rem, 2.2vw, 1.2rem); color: var(--rc-tenue); max-width: 40rem; }
+.rc-cta { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem; }
+.rc-teclas { margin-top: 1.4rem; font-size: .8rem; color: var(--rc-tenue); }
+/* Los atajos son de teclado: en una pantalla táctil sin teclado no se muestran. */
+@media (pointer: coarse) and (hover: none) { .rc-teclas { display: none; } }
+.rc-desplace { position: absolute; left: 50%; bottom: 1.4rem; transform: translateX(-50%); color: var(--rc-acento); animation: rc-latido 2.2s ease-in-out infinite; }
+.rc-desplace .rc-ico { width: 2rem; height: 2rem; }
+@keyframes rc-latido { 0%, 100% { transform: translate(-50%, 0); opacity: .5; } 50% { transform: translate(-50%, 8px); opacity: 1; } }
+
+/* La necesidad */
+.rc-necesidad { overflow: hidden; }
+.rc-numero { position: absolute; right: 2vw; top: 50%; transform: translateY(-50%); font-size: clamp(7rem, 30vw, 22rem); font-weight: 800; line-height: 1;
+             letter-spacing: -.04em; color: transparent; -webkit-text-stroke: 2px rgba(var(--rc-acento-rgb), .28); pointer-events: none; user-select: none; }
+/* El número va en ::before (data-num): como texto transparente, WAVE lo contaba como error de contraste (lo encontró Visores). */
+.rc-numero::before { content: attr(data-num); }
+.rc-necesidad-texto { position: relative; max-width: 52rem; }
+.rc-etiqueta { color: var(--rc-acento); font-size: .85rem; font-weight: 600; display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin-bottom: .8rem; }
+.rc-cap-titulo { font-size: clamp(1.6rem, 4.6vw, 3.2rem); line-height: 1.1; color: #fff; font-weight: 700; margin-bottom: 1.2rem !important; }
+.rc-grande { font-size: clamp(1.1rem, 2.5vw, 1.65rem); line-height: 1.45; }
+
+/* Cómo se resuelve. 🔴 `clip`, no `hidden`: con `hidden` el momento sería un contenedor de desplazamiento y el sticky de
+   escritorio dejaría de quedarse fijo; los marcos de atrás del mazo asoman a la derecha. */
+.rc-como { justify-content: flex-start; padding-top: calc(var(--rc-cab) + 1.5rem); overflow-x: clip; }
+.rc-como-fijo { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.rc-subtitulo { color: var(--rc-acento); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; margin-bottom: .7rem !important; }
+.rc-como-p { color: var(--rc-tenue); font-size: .98rem; line-height: 1.55; }
+.rc-pasos { list-style: none; margin: 1rem 0 0; padding: 0; display: flex; flex-direction: column; gap: .35rem; }
+.rc-paso { display: flex; gap: .7rem; align-items: flex-start; width: 100%; text-align: left; color: var(--rc-tenue); font: inherit; font-size: .9rem; line-height: 1.4;
+           background: transparent; border: 1px solid transparent; border-radius: .6rem; padding: .55rem .6rem; cursor: pointer; transition: background .25s, border-color .25s, color .25s; }
+.rc-paso:hover { background: color-mix(in srgb, var(--rc-texto) 5%, transparent); }
+.rc-paso[aria-pressed="true"] { background: rgba(var(--rc-acento-rgb), .12); border-color: rgba(var(--rc-acento-rgb), .5); color: var(--rc-texto); }
+.rc-paso-num { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+               font-size: .78rem; font-weight: 700; border: 1px solid rgba(var(--rc-acento-rgb), .7); color: var(--rc-acento); }
+.rc-paso[aria-pressed="true"] .rc-paso-num { background: var(--rc-acento); color: var(--rc-sobre-acento); }
+.rc-paso-texto strong { color: #fff; font-weight: 600; }
+.rc-escenario { position: relative; perspective: 1600px; min-width: 0; }
+.rc-mazo { display: grid; transform-style: preserve-3d; }
+.rc-marco { grid-area: 1 / 1; margin: 0; background: #fff; border-radius: var(--rc-radio); overflow: hidden; box-shadow: 0 40px 80px rgba(0, 0, 0, .5), 0 0 0 1px rgba(255, 255, 255, .08);
+            transition: transform .6s cubic-bezier(.2, .7, .2, 1), opacity .6s, filter .6s; transform: translate3d(5%, -5%, -80px) scale(.94); opacity: .45; filter: saturate(.6); }
+.rc-marco[data-orden="2"] { transform: translate3d(9%, -9%, -160px) scale(.88); opacity: .25; }
+.rc-marco-frente { transform: none; opacity: 1; filter: none; z-index: 2; }
+.rc-marco-barra { height: 30px; display: flex; align-items: center; gap: .6rem; padding: 0 .75rem; background: #eceae4; color: #3d424e; }
+.rc-puntos { display: inline-flex; gap: 5px; }
+.rc-puntos i { width: 9px; height: 9px; border-radius: 50%; background: #c9c5bb; }
+.rc-puntos i:first-child { background: #e0897b; }
+.rc-puntos i:nth-child(2) { background: #e6c46e; }
+.rc-puntos i:last-child { background: #8cc68f; }
+.rc-url { font-size: .72rem; background: #fff; border-radius: 999px; padding: .1rem .7rem; flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rc-vista { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--rc-panel); }
+.rc-lienzo { position: relative; width: 100%; }
+.rc-lienzo img, .rc-lienzo svg { display: block; width: 100%; height: auto; }
+/* La posición de cada marca la escribe el generador en `marcas.css` (un selector por marca): nada de style= en línea. */
+.rc-marca { position: absolute; pointer-events: none; border: 2px solid rgba(var(--rc-acento-rgb), .55); border-radius: 6px; transition: box-shadow .3s, border-color .3s; }
+.rc-marca-num { pointer-events: auto; position: absolute; top: -14px; left: -14px; width: 28px; height: 28px; border-radius: 50%; border: 2px solid #fff; padding: 0; cursor: pointer;
+                background: var(--rc-acento); color: var(--rc-sobre-acento); font: 700 .78rem/1 var(--rc-fuente); display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 0, 0, .35); }
+.rc-marca.rc-marca-activa { border-color: var(--rc-acento); box-shadow: 0 0 0 4px rgba(var(--rc-acento-rgb), .35), 0 0 30px rgba(var(--rc-acento-rgb), .55); }
+.rc-marca.rc-marca-activa .rc-marca-num { transform: scale(1.15); }
+.rc-pie { position: absolute; inset: auto 0 0 0; padding: .5rem .8rem; font-size: .75rem; color: #fff; background: linear-gradient(transparent, rgba(0, 0, 0, .7)); }
+.rc-bocadillo { margin: 1rem 0 0; padding: .7rem .9rem; border-radius: .6rem; font-size: .88rem; line-height: 1.4;
+                background: color-mix(in srgb, var(--rc-fondo) 92%, transparent); border: 1px solid rgba(var(--rc-acento-rgb), .45); }
+
+/* Lo que se gana */
+.rc-gana { display: grid; grid-template-columns: 1fr; gap: 2rem; align-content: center; }
+.rc-gana-texto { min-width: 0; max-width: 44rem; }
+.rc-beneficio { font-size: clamp(1.15rem, 2.6vw, 1.7rem); line-height: 1.4; color: #fff; font-weight: 500; }
+.rc-cifra { display: flex; gap: .5rem; align-items: flex-start; border-left: 3px solid var(--rc-acento); padding: .4rem 0 .4rem 1rem; margin: 1.2rem 0; }
+.rc-cifra .rc-ico { color: var(--rc-acento); margin-top: .2rem; }
+.rc-acciones-cap { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+
+/* Cierre */
+.rc-cierre { align-items: center; text-align: center; background: radial-gradient(80% 70% at 50% 40%, var(--rc-panel), var(--rc-fondo) 75%); }
+.rc-cierre-texto { max-width: 46rem; }
+.rc-cierre .rc-cta { justify-content: center; }
+
+/* Escenas que no son capítulos (Seguridad comprobada) */
+.rc-extra .rc-momento { background: radial-gradient(110% 80% at 85% 10%, rgba(var(--rc-acento-rgb), .08), transparent 60%); justify-content: flex-start; }
+
+/* ── El índice (<dialog>) ────────────────────────────────────────────────────────────────────────────────────── */
+.rc-indice { width: min(1200px, 100vw - 2rem); max-height: calc(100vh - 2rem); padding: 0; border: 1px solid var(--rc-linea); border-radius: 1rem;
+             background: color-mix(in srgb, var(--rc-fondo) 97%, #000); color: var(--rc-texto); font-family: var(--rc-fuente); }
+.rc-indice::backdrop { background: rgba(0, 0, 0, .65); backdrop-filter: blur(3px); }
+.rc-indice-cab { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--rc-linea);
+                 background: inherit; }
+.rc-indice-cab h2 { font-size: 1.15rem; flex: 1 1 auto; }
+.rc-indice-cuerpo { padding: 1.25rem; }
+.rc-indice-lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); gap: 1rem; perspective: 1400px; }
+.rc-tarjeta { position: relative; display: flex; flex-direction: column; height: 100%; text-decoration: none; border-radius: .8rem; overflow: hidden;
+              border: 1px solid var(--rc-linea); background: color-mix(in srgb, var(--rc-texto) 3%, transparent); transition: transform .3s, border-color .3s; }
+.rc-tarjeta:hover, .rc-tarjeta:focus-visible { transform: translateY(-4px) rotateX(4deg); border-color: var(--rc-acento); }
+.rc-tarjeta-img { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--rc-panel); }
+.rc-tarjeta-img img { width: 100%; height: 100%; object-fit: cover; object-position: top left; opacity: .85; }
+.rc-tarjeta-ico { display: grid; place-items: center; color: var(--rc-acento); background: radial-gradient(80% 90% at 50% 40%, rgba(var(--rc-acento-rgb), .18), var(--rc-panel) 70%); }
+.rc-tarjeta-ico .rc-ico { width: 3rem; height: 3rem; }
+.rc-tarjeta-num { position: absolute; top: .5rem; left: .6rem; font-weight: 800; font-size: 1.5rem; color: #fff; text-shadow: 0 2px 10px rgba(0, 0, 0, .6); }
+.rc-tarjeta-titulo { display: block; padding: .7rem .8rem .9rem; font-weight: 600; line-height: 1.3; }
+.rc-tarjeta[aria-current="step"] { border-color: var(--rc-acento); box-shadow: 0 0 0 2px var(--rc-acento); }
+
+/* ── El mapa ─────────────────────────────────────────────────────────────────────────────────────────────────── */
+.rc-mapa { padding: calc(var(--rc-cab) + 2rem) 1rem 7rem; outline: none; }
+.rc-mapa[hidden] { display: none; }
+.rc[data-modo="mapa"] .rc-escenas, .rc[data-modo="mapa"] .rc-riel { display: none; }
+.rc-mapa-cab { max-width: 70rem; margin: 0 auto 2rem; }
+.rc-mapa-lista { list-style: none; margin: 0 auto; padding: 0; max-width: 70rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: 1rem; perspective: 1400px; }
+.rc-mapa-tarjeta { display: flex; flex-direction: column; gap: .6rem; height: 100%; padding: 1.1rem; border-radius: .9rem; border: 1px solid var(--rc-linea);
+                   background: color-mix(in srgb, var(--rc-texto) 3%, transparent); }
+.rc-mapa-num { color: var(--rc-acento); font-weight: 800; font-size: 1.3rem; font-variant-numeric: tabular-nums; }
+.rc-mapa-tarjeta h3 { font-size: 1.1rem; line-height: 1.25; color: #fff; }
+.rc-mapa-tarjeta p { color: var(--rc-tenue); font-size: .9rem; margin: 0; }
+.rc-mapa-pasos { margin: 0; padding-left: 1.1rem; color: var(--rc-tenue); font-size: .85rem; }
+.rc-mapa-tarjeta .rc-btn { align-self: flex-start; margin-top: auto; }
+
+/* ── Anchos ──────────────────────────────────────────────────────────────────────────────────────────────────── */
+@media (min-width: 576px) { .rc-rotulo { display: inline; } }
+@media (min-width: 768px) {
+  .rc-solo-md { display: inline-flex; }
+  .rc-momento, .rc-mapa { padding-left: 2.5rem; padding-right: 2.5rem; }
+  .rc-flotante { display: block; }
+}
+@media (min-width: 992px) {
+  .rc-riel { display: block; position: fixed; left: .8rem; top: 50%; transform: translateY(-50%); z-index: 1020; }
+  .rc[data-modo="escenas"] .rc-barra, .rc[data-modo="mapa"] .rc-barra { display: none; }
+  .rc-momento { padding-left: 6rem; padding-right: 4rem; }
+  .rc-como-fijo { grid-template-columns: minmax(18rem, .85fr) 1.6fr; align-items: center; }
+}
+@media (max-width: 767.98px) {
+  .rc-numero { top: calc(var(--rc-cab) + .5rem); transform: none; font-size: 5.5rem; -webkit-text-stroke-width: 1.5px; }
+}
+@media (max-width: 575.98px) {
+  .rc-logo-txt { display: none; }
+  .rc-cab { padding: 0 .6rem; gap: .5rem; }
+  .rc-momento { padding-bottom: 6.5rem; }
+}
+
+/* ── Escenas con movimiento (`.rc-anim`, ≥ 992 px y sin «reducir movimiento») ────────────────────────────────── */
+.rc-anim .rc-como { min-height: 260vh; padding-top: 0; padding-bottom: 0; }
+.rc-anim .rc-como-fijo { position: sticky; top: var(--rc-cab); height: calc(100vh - var(--rc-cab)); padding: 1.5rem 0; align-content: center; }
+.rc-anim .rc-como-texto { max-height: calc(100vh - var(--rc-cab) - 3rem); overflow-y: auto; padding-right: .4rem; scrollbar-width: thin; }
+.rc-anim .rc-mazo { will-change: transform; }
+/* Un capítulo sin figuras: «Cómo» es solo texto; ni alto de 260 vh ni nada fijo (lo encontró Enki). */
+.rc-anim .rc-como--solo-texto { min-height: 100vh; padding-top: calc(var(--rc-cab) + 1.5rem); padding-bottom: 6rem; justify-content: center; }
+.rc-anim .rc-como--solo-texto .rc-como-fijo { position: static; height: auto; }
+.rc-anim .rc-bocadillo { display: none; }
+
+/* ── Diapositivas: un momento por pantalla ───────────────────────────────────────────────────────────────────── */
+html.rc-sin-scroll, html.rc-sin-scroll body { overflow: hidden; height: 100%; }
+.rc[data-modo="diapositivas"] .rc-escenas { position: fixed; inset: var(--rc-cab) 0 0 0; perspective: 1800px; overflow: hidden; }
+.rc[data-modo="diapositivas"] .rc-cap, .rc[data-modo="diapositivas"] .rc-extra { position: absolute; inset: 0; transform-style: preserve-3d; }
+.rc[data-modo="diapositivas"] .rc-momento { position: absolute; inset: 0; min-height: 0; height: 100%; overflow-y: auto; visibility: hidden;
+                                             padding-top: 2rem; background-color: var(--rc-fondo); backface-visibility: hidden; }
+.rc[data-modo="diapositivas"] .rc-momento.rc-activa { visibility: visible; z-index: 2; }
+.rc[data-modo="diapositivas"] .rc-desplace { display: none; }
+.rc[data-modo="diapositivas"] .rc-como-fijo { position: static; height: auto; }
+
+/* ── Movimiento: lo que se anima con CSS respeta la preferencia (el JS no anima nada con ella) ──────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .rc-desplace { animation: none; }
+  .rc-marco, .rc-paso, .rc-tarjeta, .rc-punto, .rc-progreso span, .rc-marca, .rc-btn, .rc-btn-claro { transition: none; }
+  .rc-tarjeta:hover { transform: none; }
+  .rc-flotante { opacity: .9; }
+}

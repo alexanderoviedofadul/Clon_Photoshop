@@ -1,0 +1,71 @@
+/*
+ * sc-seguridad.css — «Seguridad comprobada» (kit «confianza y recorrido», 24-oct-2026).
+ *
+ * Va en dos sitios: la landing o el acceso de cada proyecto (con sus colores) y una escena del recorrido (oscura, con los
+ * del recorrido). Los colores salen de variables que pone cada proyecto; si no las pone, toma las del recorrido y, si
+ * tampoco, unos neutros legibles en claro:
+ *   --sc-texto, --sc-tenue, --sc-acento, --sc-sobre-acento, --sc-tarjeta (fondo de cada tarjeta), --sc-borde.
+ * 🔴 Comprobar el contraste (WCAG AA) con los colores de cada marca: lo mide axe en las pruebas de cada proyecto.
+ */
+/* `:where()` = especificidad 0: los valores por defecto nunca pisan los `--sc-*` que pone el proyecto, cargue antes o
+   después esta hoja (lo encontró Enki: `.sc { … }` del kit ganaba a `.sc { … }` del proyecto). */
+:where(.sc) {
+  --sc-texto: var(--rc-texto, #1d2330); --sc-tenue: var(--rc-tenue, #4a5160); --sc-acento: var(--rc-acento, #0b5cad);
+  --sc-sobre-acento: var(--rc-sobre-acento, #fff); --sc-tarjeta: color-mix(in srgb, var(--sc-texto) 4%, transparent);
+  --sc-borde: color-mix(in srgb, var(--sc-texto) 16%, transparent);
+  color: var(--sc-texto);
+}
+.sc-sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.sc-ico { width: 1.15em; height: 1.15em; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: -.15em; }
+.sc-ancho { max-width: 72rem; margin: 0 auto; }
+.sc-eyebrow { color: var(--sc-acento); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: .78rem; margin: 0 0 .6rem; }
+.sc-h2 { font-size: clamp(1.5rem, 3.6vw, 2.4rem); line-height: 1.15; margin: 0 0 .8rem; }
+.sc-lead { color: var(--sc-tenue); max-width: 52rem; margin: 0 0 1.2rem; }
+.sc-resumen { margin: 0 0 1.4rem; }
+.sc-resumen p { margin: 0 0 .25rem; }
+.sc-resumen-n strong { font-size: 1.6rem; color: var(--sc-acento); margin-right: .2rem; }
+.sc-resumen-f { color: var(--sc-tenue); font-size: .9rem; }
+.sc-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); gap: 1rem; }
+.sc-card { display: flex; flex-direction: column; gap: .7rem; padding: 1.1rem; border-radius: .9rem; background: var(--sc-tarjeta); border: 1px solid var(--sc-borde); min-width: 0; }
+.sc-cab { display: grid; grid-template-columns: auto 1fr auto; gap: .7rem; align-items: start; }
+.sc-icono { display: inline-grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: .6rem; background: color-mix(in srgb, var(--sc-acento) 16%, transparent); color: var(--sc-acento); }
+.sc-icono .sc-ico { width: 1.35rem; height: 1.35rem; }
+.sc-fuente { font-size: 1rem; line-height: 1.25; margin: 0; }
+.sc-mide { margin: .15rem 0 0; color: var(--sc-tenue); font-size: .82rem; }
+.sc-nota { margin: 0; font-size: 1.5rem; font-weight: 800; color: var(--sc-acento); line-height: 1; white-space: nowrap; }
+.sc-nota--larga { font-size: 1rem; white-space: normal; text-align: right; max-width: 8rem; }
+.sc-explica, .sc-detalle { margin: 0; font-size: .9rem; color: var(--sc-tenue); }
+.sc-psi { margin: 0; display: grid; gap: .45rem; }
+.sc-psi div { display: grid; grid-template-columns: 5.5rem 1fr; align-items: center; gap: .5rem; }
+.sc-psi dt { font-size: .8rem; color: var(--sc-tenue); }
+.sc-psi dd { margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: .3rem; }
+.sc-psi-v { display: flex; flex-direction: column; align-items: center; padding: .3rem .2rem; border-radius: .45rem; border: 1px solid var(--sc-borde); }
+.sc-psi-v b { font-size: 1rem; color: var(--sc-acento); }
+.sc-psi-v small { font-size: .62rem; color: var(--sc-tenue); text-align: center; line-height: 1.15; }
+.sc-cap { position: relative; display: block; width: 100%; padding: 0; border: 1px solid var(--sc-borde); border-radius: .6rem; overflow: hidden; background: #fff; cursor: zoom-in; }
+.sc-cap img { display: block; width: 100%; height: auto; max-height: 12rem; object-fit: cover; object-position: top left; }
+.sc-cap-ver { position: absolute; inset: auto 0 0 0; display: flex; align-items: center; gap: .35rem; padding: .45rem .7rem; font-size: .8rem; color: #fff; background: linear-gradient(transparent, rgba(0, 0, 0, .78)); }
+.sc-pie { margin: auto 0 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem .8rem; font-size: .82rem; color: var(--sc-tenue); }
+.sc-pie a { color: var(--sc-acento); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.sc-nota-pie { margin: 1.4rem 0 0; font-size: .85rem; color: var(--sc-tenue); max-width: 60rem; }
+.sc-nota-pie a { color: var(--sc-acento); }
+/* Sin JS, o mientras llega la medición: el texto y el enlace a security.txt; la lista vacía no ocupa sitio. */
+[data-sc-lista]:empty { display: none; }
+[data-sc-resumen][hidden] { display: none; }
+
+/* La captura ampliada */
+.sc-dlg { width: min(1100px, 100vw - 2rem); max-height: calc(100vh - 2rem); padding: 0; border: 0; border-radius: 1rem; background: #fff; color: #1d2330; }
+.sc-dlg::backdrop { background: rgba(0, 0, 0, .7); }
+.sc-dlg-cab { position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .8rem 1rem; background: #fff; border-bottom: 1px solid #e3e5ea; }
+.sc-dlg-cab h2 { font-size: 1.05rem; margin: 0; }
+.sc-dlg-cerrar { min-height: 40px; padding: .4rem .9rem; border-radius: .5rem; border: 1px solid #c8ccd4; background: #fff; color: #1d2330; font: inherit; cursor: pointer; }
+.sc-dlg-cuerpo { padding: 1rem; }
+.sc-dlg-fig { margin: 0; }
+.sc-dlg-fig img { display: block; width: 100%; height: auto; border: 1px solid #e3e5ea; border-radius: .5rem; }
+.sc-dlg-fig figcaption { margin-top: .7rem; font-size: .88rem; color: #4a5160; }
+.sc-dlg-fig a { color: #0b5cad; font-weight: 600; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .sc-card { transition: border-color .2s; }
+  .sc-card:hover { border-color: color-mix(in srgb, var(--sc-acento) 55%, transparent); }
+}

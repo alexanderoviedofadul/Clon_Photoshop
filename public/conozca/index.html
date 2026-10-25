@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es" class="rc-raiz rc-sin-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conozca PhotoClone · Recorrido</title>
+  <meta name="description" content="Recorrido por PhotoClone, el editor de imágenes por capas en el navegador: separe una imagen en capas con IA, edítelas y expórtelas.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#121212">
+  <meta name="generator" content="kit confianza y recorrido 1.0.4">
+  <link rel="stylesheet" href="/fnt/photoclone.css">
+  <link rel="stylesheet" href="/kit-confianza/rc-recorrido.css?v=1.0.4">
+  <link rel="stylesheet" href="/kit-confianza/sc-seguridad.css?v=1.0.4">
+  <link rel="stylesheet" href="/conozca/tema.css?v=1.0.4">
+  <link rel="stylesheet" href="/conozca/marcas.css?v=1.0.4">
+  <link rel="icon" href="/marca/pc-simbolo.svg">
+  <script src="/kit-confianza/gsap/3.15.0/gsap.min.js" defer></script>
+  <script src="/kit-confianza/gsap/3.15.0/ScrollTrigger.min.js" defer></script>
+  <script src="/kit-confianza/gsap/3.15.0/ScrollToPlugin.min.js" defer></script>
+  <script src="/kit-confianza/gsap/3.15.0/Observer.min.js" defer></script>
+  <script src="/kit-confianza/gsap/3.15.0/SplitText.min.js" defer></script>
+  <script src="/kit-confianza/rc-recorrido.js?v=1.0.4" defer></script>
+  <script src="/kit-confianza/sc-seguridad.js?v=1.0.4" defer></script>
+</head>
+<body class="rc-pagina">
+<a class="rc-saltar" href="#contenido">Saltar al contenido</a>
+<div class="rc" data-rc data-rc-clave="photoclone" data-total="7">
+  <header class="rc-cab">
+    <a class="rc-logo" href="/">
+      <img src="/marca/pc-simbolo.svg" alt="PhotoClone" width="28" height="28">
+      <span class="rc-logo-txt">PhotoClone</span>
+    </a>
+    <span class="rc-actual" data-rc-actual aria-live="polite">Portada</span>
+    <div class="rc-acciones">
+      <div class="rc-modo" role="group" aria-label="Cómo recorrerlo">
+        <button type="button" class="rc-btn" data-rc-modo-btn="escenas" aria-pressed="true" title="Escenas: se recorre desplazando la página"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 3h8a3 3 0 013 3v12a3 3 0 01-3 3H8a3 3 0 01-3-3V6a3 3 0 013-3z"/><path d="M12 7v4"/></svg><span class="rc-rotulo">Escenas</span></button>
+        <button type="button" class="rc-btn" data-rc-modo-btn="diapositivas" aria-pressed="false" title="Diapositivas: un paso por pantalla, para proyectar (D)"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18v11H3z"/><path d="M8 20h8"/><path d="M12 16v4"/></svg><span class="rc-rotulo">Diapositivas</span></button>
+        <button type="button" class="rc-btn" data-rc-modo-btn="mapa" aria-pressed="false" title="Mapa: todos los capítulos de un vistazo (M)"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v5"/><path d="M12 9H6v4"/><path d="M12 9h6v4"/><path d="M4 13h4v5H4z"/><path d="M16 13h4v5h-4z"/><path d="M10 2h4v3h-4z"/></svg><span class="rc-rotulo">Mapa</span></button>
+      </div>
+      <button type="button" class="rc-btn" data-rc-indice-abrir aria-haspopup="dialog" title="Todos los capítulos (I)"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h7v7H4z"/><path d="M13 4h7v7h-7z"/><path d="M4 13h7v7H4z"/><path d="M13 13h7v7h-7z"/></svg><span class="rc-rotulo">Índice</span></button>
+      <button type="button" class="rc-btn rc-solo-md" data-rc-pantalla aria-pressed="false" title="Pantalla completa (F)"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9V4h5"/><path d="M20 9V4h-5"/><path d="M4 15v5h5"/><path d="M20 15v5h-5"/></svg><span class="rc-sr">Pantalla completa</span></button>
+      <a class="rc-btn-acento rc-solo-md" href="/editor"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/><path d="M14 4h5a1 1 0 011 1v14a1 1 0 01-1 1h-5"/></svg><span class="rc-rotulo">Abrir el editor</span></a>
+    </div>
+    <div class="rc-progreso" aria-hidden="true"><span data-rc-progreso></span></div>
+  </header>
+  <nav class="rc-riel" aria-label="Capítulos" data-rc-riel>
+    <ol>
+      <li><a href="#inicio" data-rc-ir="inicio" aria-label="Portada"><span class="rc-punto"></span></a></li>
+      <li><a href="#cap-sube" data-rc-ir="cap-sube" aria-label="01 · Suba la imagen"><span class="rc-punto"></span><span class="rc-riel-num">01</span><span class="rc-riel-titulo">Suba la imagen</span></a></li>
+      <li><a href="#cap-separa" data-rc-ir="cap-separa" aria-label="02 · La IA la separa en capas"><span class="rc-punto"></span><span class="rc-riel-num">02</span><span class="rc-riel-titulo">La IA la separa en capas</span></a></li>
+      <li><a href="#cap-edita" data-rc-ir="cap-edita" aria-label="03 · Edite una capa con texto"><span class="rc-punto"></span><span class="rc-riel-num">03</span><span class="rc-riel-titulo">Edite una capa con texto</span></a></li>
+      <li><a href="#cap-retoca" data-rc-ir="cap-retoca" aria-label="04 · Retoque a mano"><span class="rc-punto"></span><span class="rc-riel-num">04</span><span class="rc-riel-titulo">Retoque a mano</span></a></li>
+      <li><a href="#cap-exporta" data-rc-ir="cap-exporta" aria-label="05 · Exporte"><span class="rc-punto"></span><span class="rc-riel-num">05</span><span class="rc-riel-titulo">Exporte</span></a></li>
+      <li><a href="#cap-privacidad" data-rc-ir="cap-privacidad" aria-label="06 · Qué sale de su navegador, y adónde"><span class="rc-punto"></span><span class="rc-riel-num">06</span><span class="rc-riel-titulo">Qué sale de su navegador, y adónde</span></a></li>
+      <li><a href="#cap-api" data-rc-ir="cap-api" aria-label="07 · La misma separación, por API"><span class="rc-punto"></span><span class="rc-riel-num">07</span><span class="rc-riel-titulo">La misma separación, por API</span></a></li>
+      <li><a href="#seguridad-comprobada" data-rc-ir="seguridad-comprobada" aria-label="Seguridad comprobada"><span class="rc-punto rc-punto-extra"></span><span class="rc-riel-titulo">Seguridad comprobada</span></a></li>
+    </ol>
+  </nav>
+  <main id="contenido" class="rc-escenas" data-rc-escenas>
+    <section class="rc-portada rc-momento" id="inicio" data-rc-escena="inicio" data-momento="portada" aria-labelledby="rc-titulo">
+      <div class="rc-capas" aria-hidden="true">
+        <div class="rc-halo" data-rc-prof="0.15"></div>
+        <div class="rc-pilar rc-pilar-a" data-rc-prof="0.35"></div>
+        <div class="rc-pilar rc-pilar-b" data-rc-prof="0.5"></div>
+        <img class="rc-flotante rc-flotante-1" src="/portada/pc-parada-1.svg" alt="" width="1600" height="900" decoding="async" data-rc-prof="0.55">
+        <img class="rc-flotante rc-flotante-2" src="/portada/pc-parada-2.svg" alt="" width="1600" height="900" decoding="async" data-rc-prof="0.65">
+        <img class="rc-flotante rc-flotante-3" src="/portada/pc-parada-5.svg" alt="" width="1600" height="900" decoding="async" data-rc-prof="0.75">
+      </div>
+      <div class="rc-portada-texto">
+        <p class="rc-antetitulo">PhotoClone · Editor de imágenes por capas, con IA</p>
+        <h1 class="rc-titulo" id="rc-titulo" data-rc-partir>Una imagen, todas sus capas</h1>
+        <p class="rc-sub">Siete capítulos, de lo general a lo específico: cómo se sube una imagen, cómo la IA la separa en capas, cómo se edita una capa con texto o a mano, cómo se exporta, qué sale de su navegador y cómo se usa desde otro sistema.</p>
+        <div class="rc-cta">
+          <a class="rc-btn-acento rc-btn-lg" href="#cap-sube" data-rc-ir="cap-sube"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg> Comenzar</a>
+          <button type="button" class="rc-btn-claro rc-btn-lg" data-rc-indice-abrir aria-haspopup="dialog"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h7v7H4z"/><path d="M13 4h7v7h-7z"/><path d="M4 13h7v7H4z"/><path d="M13 13h7v7h-7z"/></svg> Índice</button>
+          <button type="button" class="rc-btn-claro rc-btn-lg" data-rc-modo-btn="mapa"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v5"/><path d="M12 9H6v4"/><path d="M12 9h6v4"/><path d="M4 13h4v5H4z"/><path d="M16 13h4v5h-4z"/><path d="M10 2h4v3h-4z"/></svg> Ver el mapa</button>
+          <a class="rc-btn-claro rc-btn-lg" href="#inicio" data-rc-continuar hidden><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 103-6.7"/><path d="M3 4v5h5"/><path d="M12 7v5l3 2"/></svg> Continuar donde iba</a>
+        </div>
+        <p class="rc-teclas">Desplácese, o use ← → · I abre el índice · D cambia a diapositivas · M abre el mapa · F pantalla completa</p>
+      </div>
+      <span class="rc-desplace" aria-hidden="true"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></span>
+    </section>
+    <section class="rc-cap" id="cap-sube" data-capitulo="sube" data-rc-escena="cap-sube" data-numero="1" data-titulo="Suba la imagen" aria-labelledby="cap-sube-t" tabindex="-1">
+      <div class="rc-momento rc-necesidad" data-momento="necesidad">
+        <span class="rc-numero" aria-hidden="true" data-rc-prof="0.45" data-num="01"></span>
+        <div class="rc-necesidad-texto">
+          <p class="rc-etiqueta">Capítulo 1 · Quien edita</p>
+          <h2 class="rc-cap-titulo" id="cap-sube-t">Suba la imagen</h2>
+          <p class="rc-grande" data-rc-iluminar>Editar una imagen suele exigir instalar un programa pesado y aprender a usarlo antes de cambiar lo primero.</p>
+        </div>
+      </div>
+      <div class="rc-momento rc-como" data-momento="como">
+        <div class="rc-como-fijo">
+          <div class="rc-como-texto">
+            <h3 class="rc-subtitulo">Cómo se resuelve</h3>
+            <p class="rc-como-p">PhotoClone es un editor por capas que se usa en el navegador, sin instalar nada. Se abre cualquier imagen que su navegador pueda mostrar, o un proyecto .photoclone para seguir donde lo dejó. El editor se usa sin cuenta.</p>
+            <ol class="rc-pasos">
+              <li><button type="button" class="rc-paso" data-rc-paso="0-0" aria-pressed="false"><span class="rc-paso-num">1</span><span class="rc-paso-texto"><strong>Abra el editor.</strong> En el navegador, sin instalar nada y sin cuenta.</span></button></li>
+              <li><button type="button" class="rc-paso" data-rc-paso="0-1" aria-pressed="false"><span class="rc-paso-num">2</span><span class="rc-paso-texto"><strong>Arrastre la imagen.</strong> Al lienzo, o ábrala desde el menú Archivo.</span></button></li>
+              <li><button type="button" class="rc-paso" data-rc-paso="0-2" aria-pressed="false"><span class="rc-paso-num">3</span><span class="rc-paso-texto"><strong>O siga un proyecto.</strong> Un archivo .photoclone guarda las capas y su orden.</span></button></li>
+            </ol>
+          </div>
+          <div class="rc-escenario">
+            <div class="rc-mazo" data-rc-mazo>
+            <figure class="rc-marco rc-marco-frente" data-rc-marco="0">
+              <div class="rc-marco-barra" aria-hidden="true"><span class="rc-puntos"><i></i><i></i><i></i></span><span class="rc-url">photoshop.cedula360.tech/editor</span></div>
+              <div class="rc-vista" data-rc-vista>
+                <div class="rc-lienzo" data-rc-lienzo>
+                  <img src="/portada/pc-parada-1.svg" alt="Ilustración: una imagen con cielo, colinas, una esfera y un rótulo entra en una zona de arrastre punteada" width="1600" height="900" loading="lazy" decoding="async">
+                </div>
+              </div>
+              <figcaption class="rc-pie">Sube la imagen</figcaption>
+            </figure>
+            </div>
+            <p class="rc-bocadillo" data-rc-bocadillo aria-live="polite" hidden></p>
+          </div>
+        </div>
+      </div>
+      <div class="rc-momento rc-gana" data-momento="gana">
+        <div class="rc-gana-texto">
+          <h3 class="rc-subtitulo">Lo que se gana</h3>
+          <p class="rc-beneficio">Empieza a editar en segundos, desde cualquier equipo con navegador.</p>
+          <div class="rc-acciones-cap">
+            <a class="rc-btn-acento" href="/editor"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg> Abrir el editor</a>
+            <button type="button" class="rc-btn-claro" data-rc-modo-btn="mapa"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v5"/><path d="M12 9H6v4"/><path d="M12 9h6v4"/><path d="M4 13h4v5H4z"/><path d="M16 13h4v5h-4z"/><path d="M10 2h4v3h-4z"/></svg> Ver en el mapa</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="rc-cap" id="cap-separa" data-capitulo="separa" data-rc-escena="cap-separa" data-numero="2" data-titulo="La IA la separa en capas" aria-labelledby="cap-separa-t" tabindex="-1">
+      <div class="rc-momento rc-necesidad" data-momento="necesidad">
+        <span class="rc-numero" aria-hidden="true" data-rc-prof="0.45" data-num="02"></span>
+        <div class="rc-necesidad-texto">
+          <p class="rc-etiqueta">Capítulo 2 · Quien edita</p>
+          <h2 class="rc-cap-titulo" id="cap-separa-t">La IA la separa en capas</h2>
+          <p class="rc-grande" data-rc-iluminar>Una foto plana no se puede editar por partes: mover la figura o cambiar el fondo exige recortarlos a mano.</p>
+        </div>
+      </div>
+      <div class="rc-momento rc-como" data-momento="como">
+        <div class="rc-como-fijo">
+          <div class="rc-como-texto">
+            <h3 class="rc-subtitulo">Cómo se resuelve</h3>
+            <p class="rc-como-p">La IA separa la imagen en capas, entre 2 y 10 (4 si no indica otra cosa), cada una sobre transparente y lista para moverse sola. La separación la ejecuta Replicate, un servicio externo, y para usar la IA hace falta iniciar sesión, con una cuenta local o con Cédula 360.</p>
+            <ol class="rc-pasos">
+              <li><button type="button" class="rc-paso" data-rc-paso="0-0" aria-pressed="false"><span class="rc-paso-num">1</span><span class="rc-paso-texto"><strong>Elija cuántas capas.</strong> Entre 2 y 10; si no elige, 4.</span></button></li>
+              <li><button type="button" class="rc-paso" data-rc-paso="0-1" aria-pressed="false"><span class="rc-paso-num">2</span><span class="rc-paso-texto"><strong>Revise el resultado.</strong> Depende de la imagen: mire las capas antes de seguir.</span></button></li>
+              <li><button type="button" class="rc-paso" data-rc-paso="0-2" aria-pressed="false"><span class="rc-paso-num">3</span><span class="rc-paso-texto"><strong>Con su sesión.</strong> La IA pide iniciar sesión; el resto del editor, no.</span></button></li>
+            </ol>
+          </div>
+          <div class="rc-escenario">
+            <div class="rc-mazo" data-rc-mazo>
+            <figure class="rc-marco rc-marco-frente" data-rc-marco="0">
+              <div class="rc-marco-barra" aria-hidden="true"><span class="rc-puntos"><i></i><i></i><i></i></span><span class="rc-url">photoshop.cedula360.tech/editor</span></div>
+              <div class="rc-vista" data-rc-vista>
+                <div class="rc-lienzo" data-rc-lienzo>
+                  <img src="/portada/pc-parada-2.svg" alt="Ilustración: la misma imagen y, a su lado, sus tres capas levantadas en pila: el fondo, la esfera y el rótulo" width="1600" height="900" loading="lazy" decoding="async">
+                </div>
+              </div>
+              <figcaption class="rc-pie">La IA la separa en capas</figcaption>
+            </figure>
+            </div>
+            <p class="rc-bocadillo" data-rc-bocadillo aria-live="polite" hidden></p>
+          </div>
+        </div>
+      </div>
+      <div class="rc-momento rc-gana" data-momento="gana">
+        <div class="rc-gana-texto">
+          <h3 class="rc-subtitulo">Lo que se gana</h3>
+          <p class="rc-beneficio">Cada parte de la imagen se edita por su cuenta, sin recortar a mano.</p>
+          <p class="rc-cifra"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/><path d="M8 12l3 3 5-6"/></svg><span>Entre 2 y 10 capas; 4 por defecto.</span></p>
+          <div class="rc-acciones-cap">
+            <button type="button" class="rc-btn-claro" data-rc-modo-btn="mapa"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v5"/><path d="M12 9H6v4"/><path d="M12 9h6v4"/><path d="M4 13h4v5H4z"/><path d="M16 13h4v5h-4z"/><path d="M10 2h4v3h-4z"/></svg> Ver en el mapa</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="rc-cap" id="cap-edita" data-capitulo="edita" data-rc-escena="cap-edita" data-numero="3" data-titulo="Edite una capa con texto" aria-labelledby="cap-edita-t" tabindex="-1">
+      <div class="rc-momento rc-necesidad" data-momento="necesidad">
+        <span class="rc-numero" aria-hidden="true" data-rc-prof="0.45" data-num="03"></span>
+        <div class="rc-necesidad-texto">
+          <p class="rc-etiqueta">Capítulo 3 · Quien edita</p>
+          <h2 class="rc-cap-titulo" id="cap-edita-t">Edite una capa con texto</h2>
+          <p class="rc-grande" data-rc-iluminar>Algunos cambios son difíciles de hacer a mano y fáciles de decir: «que la esfera sea roja».</p>
+        </div>
+      </div>
+      <div class="rc-momento rc-como" data-momento="como">
+        <div class="rc-como-fijo">
+          <div class="rc-como-texto">
+            <h3 class="rc-subtitulo">Cómo se resuelve</h3>
+            <p class="rc-como-p">Escriba el cambio. La capa y la instrucción van al modelo de edición y vuelve una capa nueva, que usted acepta o descarta.</p>
+            <ol class="rc-pasos">
+              <li><button type="button" class="rc-paso" data-rc-paso="0-0" aria-pressed="false"><span class="rc-paso-num">1</span><span class="rc-paso-texto"><strong>Elija la capa.</strong> Solo esa capa va al modelo.</span></button></li>
+              <li><button type="button" class="rc-paso" data-rc-paso="0-1" aria-pressed="false"><span class="rc-paso-num">2</span><span class="rc-paso-texto"><strong>Escriba el cambio.</strong> Con sus palabras.</span></button></li>
+              <li><button type="button" class="rc-paso" data-rc-paso="0-2" aria-pressed="false"><span class="rc-paso-num">3</span><span class="rc-paso-texto"><strong>Acepte o descarte.</strong> La capa nueva solo se queda si usted la acepta.</span></button></li>
+            </ol>
+          </div>
+          <div class="rc-escenario">
+            <div class="rc-mazo" data-rc-mazo>
+            <figure class="rc-marco rc-marco-frente" data-rc-marco="0">
+              <div class="rc-marco-barra" aria-hidden="true"><span class="rc-puntos"><i></i><i></i><i></i></span><span class="rc-url">photoshop.cedula360.tech/editor</span></div>
+              <div class="rc-vista" data-rc-vista>
+                <div class="rc-lienzo" data-rc-lienzo>
+                  <img src="/portada/pc-parada-3.svg" alt="Ilustración: una capa con una esfera que cambia de color a la mitad, bajo una barra de instrucción" width="1600" height="900" loading="lazy" decoding="async">
+                </div>
+              </div>
+              <figcaption class="rc-pie">Edita una capa con texto</figcaption>
+            </figure>
+            </div>
+            <p class="rc-bocadillo" data-rc-bocadillo aria-live="polite" hidden></p>
+          </div>
+        </div>
+      </div>
+      <div class="rc-momento rc-gana" data-momento="gana">
+        <div class="rc-gana-texto">
+          <h3 class="rc-subtitulo">Lo que se gana</h3>
+          <p class="rc-beneficio">Los cambios difíciles se piden; usted decide si se quedan.</p>
+          <div class="rc-acciones-cap">
+            <button type="button" class="rc-btn-claro" data-rc-modo-btn="mapa"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v5"/><path d="M12 9H6v4"/><path d="M12 9h6v4"/><path d="M4 13h4v5H4z"/><path d="M16 13h4v5h-4z"/><path d="M10 2h4v3h-4z"/></svg> Ver en el mapa</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="rc-cap" id="cap-retoca" data-capitulo="retoca" data-rc-escena="cap-retoca" data-numero="4" data-titulo="Retoque a mano" aria-labelledby="cap-retoca-t" tabindex="-1">
+      <div class="rc-momento rc-necesidad" data-momento="necesidad">
+        <span class="rc-numero" aria-hidden="true" data-rc-prof="0.45" data-num="04"></span>
+        <div class="rc-necesidad-texto">
+          <p class="rc-etiqueta">Capítulo 4 · Quien edita</p>
+          <h2 class="rc-cap-titulo" id="cap-retoca-t">Retoque a mano</h2>
+          <p class="rc-grande" data-rc-iluminar>La IA no reemplaza el ajuste fino: un trazo, una selección, una opacidad exacta.</p>
+        </div>
+      </div>
+      <div class="rc-momento rc-como" data-momento="como">
+        <div class="rc-como-fijo">
+          <div class="rc-como-texto">
+            <h3 class="rc-subtitulo">Cómo se resuelve</h3>
+            <p class="rc-como-p">El editor trae herramientas de mover, pincel, borrador, texto, selección, lazo, cuentagotas, recorte, zoom y mano, cada una con su atajo de teclado; capas con visibilidad, opacidad, orden, modos de fusión, duplicar, fusionar y aplanar; y filtros sobre la capa activa o la selección, con deshacer y rehacer.</p>
+            <ol class="rc-pasos">
+              <li><button type="button" class="rc-paso" data-rc-paso="0-0" aria-pressed="false"><span class="rc-paso-num">1</span><span class="rc-paso-texto"><strong>Herramientas con atajo.</strong> V mover, B pincel, M selección, C recorte…</span></button></li>
+              <li><button type="button" class="rc-paso" data-rc-paso="0-1" aria-pressed="false"><span class="rc-paso-num">2</span><span class="rc-paso-texto"><strong>Capas.</strong> Opacidad, orden y modos de fusión.</span></button></li>
+              <li><button type="button" class="rc-paso" data-rc-paso="0-2" aria-pressed="false"><span class="rc-paso-num">3</span><span class="rc-paso-texto"><strong>Filtros.</strong> Sobre la capa activa o la selección.</span></button></li>
+            </ol>
+          </div>
+          <div class="rc-escenario">
+            <div class="rc-mazo" data-rc-mazo>
+            <figure class="rc-marco rc-marco-frente" data-rc-marco="0">
+              <div class="rc-marco-barra" aria-hidden="true"><span class="rc-puntos"><i></i><i></i><i></i></span><span class="rc-url">photoshop.cedula360.tech/editor</span></div>
+              <div class="rc-vista" data-rc-vista>
+                <div class="rc-lienzo" data-rc-lienzo>
+                  <img src="/portada/pc-parada-4.svg" alt="Ilustración: la imagen con una selección punteada, un trazo de pincel, las esquinas del recorte y el cuentagotas" width="1600" height="900" loading="lazy" decoding="async">
+                </div>
+              </div>
+              <figcaption class="rc-pie">Retoca a mano</figcaption>
+            </figure>
+            </div>
+            <p class="rc-bocadillo" data-rc-bocadillo aria-live="polite" hidden></p>
+          </div>
+        </div>
+      </div>
+      <div class="rc-momento rc-gana" data-momento="gana">
+        <div class="rc-gana-texto">
+          <h3 class="rc-subtitulo">Lo que se gana</h3>
+          <p class="rc-beneficio">Termina el trabajo en el mismo editor, sin pasar a otro programa.</p>
+          <div class="rc-acciones-cap">
+            <a class="rc-btn-acento" href="/#editor"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg> Ver el editor por dentro</a>
+            <button type="button" class="rc-btn-claro" data-rc-modo-btn="mapa"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v5"/><path d="M12 9H6v4"/><path d="M12 9h6v4"/><path d="M4 13h4v5H4z"/><path d="M16 13h4v5h-4z"/><path d="M10 2h4v3h-4z"/></svg> Ver en el mapa</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="rc-cap" id="cap-exporta" data-capitulo="exporta" data-rc-escena="cap-exporta" data-numero="5" data-titulo="Exporte" aria-labelledby="cap-exporta-t" tabindex="-1">
+      <div class="rc-momento rc-necesidad" data-momento="necesidad">
+        <span class="rc-numero" aria-hidden="true" data-rc-prof="0.45" data-num="05"></span>
+        <div class="rc-necesidad-texto">
+          <p class="rc-etiqueta">Capítulo 5 · Quien edita</p>
+          <h2 class="rc-cap-titulo" id="cap-exporta-t">Exporte</h2>
+          <p class="rc-grande" data-rc-iluminar>El resultado tiene que salir en el formato que se necesita: una imagen para publicar, las capas para otro programa o el proyecto para seguir otro día.</p>
+        </div>
+      </div>
+      <div class="rc-momento rc-como" data-momento="como">
+        <div class="rc-como-fijo">
+          <div class="rc-como-texto">
+            <h3 class="rc-subtitulo">Cómo se resuelve</h3>
+            <p class="rc-como-p">La imagen plana sale en PNG; todas las capas, en un ZIP con un PNG por capa y sus datos; y el proyecto entero, en un archivo .photoclone para reabrirlo en el editor. La exportación ocurre en su navegador.</p>
+            <ol class="rc-pasos">
+              <li><button type="button" class="rc-paso" data-rc-paso="0-0" aria-pressed="false"><span class="rc-paso-num">1</span><span class="rc-paso-texto"><strong>.png</strong> La imagen plana.</span></button></li>
+              <li><button type="button" class="rc-paso" data-rc-paso="0-1" aria-pressed="false"><span class="rc-paso-num">2</span><span class="rc-paso-texto"><strong>.zip</strong> Un PNG por capa y sus datos.</span></button></li>
+              <li><button type="button" class="rc-paso" data-rc-paso="0-2" aria-pressed="false"><span class="rc-paso-num">3</span><span class="rc-paso-texto"><strong>.photoclone</strong> El proyecto, para reabrirlo.</span></button></li>
+            </ol>
+          </div>
+          <div class="rc-escenario">
+            <div class="rc-mazo" data-rc-mazo>
+            <figure class="rc-marco rc-marco-frente" data-rc-marco="0">
+              <div class="rc-marco-barra" aria-hidden="true"><span class="rc-puntos"><i></i><i></i><i></i></span><span class="rc-url">photoshop.cedula360.tech/editor</span></div>
+              <div class="rc-vista" data-rc-vista>
+                <div class="rc-lienzo" data-rc-lienzo>
+                  <img src="/portada/pc-parada-5.svg" alt="Ilustración: de una pila de capas salen una imagen, un paquete con todas las capas y un archivo de proyecto" width="1600" height="900" loading="lazy" decoding="async">
+                </div>
+              </div>
+              <figcaption class="rc-pie">Exporta</figcaption>
+            </figure>
+            </div>
+            <p class="rc-bocadillo" data-rc-bocadillo aria-live="polite" hidden></p>
+          </div>
+        </div>
+      </div>
+      <div class="rc-momento rc-gana" data-momento="gana">
+        <div class="rc-gana-texto">
+          <h3 class="rc-subtitulo">Lo que se gana</h3>
+          <p class="rc-beneficio">Se lleva el resultado como lo necesita, y puede seguir otro día.</p>
+          <div class="rc-acciones-cap">
+            <button type="button" class="rc-btn-claro" data-rc-modo-btn="mapa"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v5"/><path d="M12 9H6v4"/><path d="M12 9h6v4"/><path d="M4 13h4v5H4z"/><path d="M16 13h4v5h-4z"/><path d="M10 2h4v3h-4z"/></svg> Ver en el mapa</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="rc-cap" id="cap-privacidad" data-capitulo="privacidad" data-rc-escena="cap-privacidad" data-numero="6" data-titulo="Qué sale de su navegador, y adónde" aria-labelledby="cap-privacidad-t" tabindex="-1">
+      <div class="rc-momento rc-necesidad" data-momento="necesidad">
+        <span class="rc-numero" aria-hidden="true" data-rc-prof="0.45" data-num="06"></span>
+        <div class="rc-necesidad-texto">
+          <p class="rc-etiqueta">Capítulo 6 · Todos</p>
+          <h2 class="rc-cap-titulo" id="cap-privacidad-t">Qué sale de su navegador, y adónde</h2>
+          <p class="rc-grande" data-rc-iluminar>Antes de subir una imagen a un servicio en línea hay que saber quién la ve y si se guarda.</p>
+        </div>
+      </div>
+      <div class="rc-momento rc-como rc-como--solo-texto" data-momento="como">
+        <div class="rc-como-fijo">
+          <div class="rc-como-texto">
+            <h3 class="rc-subtitulo">Cómo se resuelve</h3>
+            <p class="rc-como-p">Abrir la imagen, dibujar, seleccionar, aplicar filtros, ordenar capas y exportar ocurre en su navegador: nada de eso se envía a ningún servidor. Solo si usted pide separar o editar con IA, la imagen pasa por el servidor de PhotoClone hacia Replicate, el servicio externo que ejecuta los modelos, y vuelve como capas; PhotoClone no la guarda en su servidor.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rc-momento rc-gana" data-momento="gana">
+        <div class="rc-gana-texto">
+          <h3 class="rc-subtitulo">Lo que se gana</h3>
+          <p class="rc-beneficio">Sabe exactamente cuándo sale su imagen. Si es confidencial, no use la IA.</p>
+          <div class="rc-acciones-cap">
+            <a class="rc-btn-acento" href="/#privacidad"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg> Leer la sección de privacidad</a>
+            <button type="button" class="rc-btn-claro" data-rc-modo-btn="mapa"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v5"/><path d="M12 9H6v4"/><path d="M12 9h6v4"/><path d="M4 13h4v5H4z"/><path d="M16 13h4v5h-4z"/><path d="M10 2h4v3h-4z"/></svg> Ver en el mapa</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="rc-cap" id="cap-api" data-capitulo="api" data-rc-escena="cap-api" data-numero="7" data-titulo="La misma separación, por API" aria-labelledby="cap-api-t" tabindex="-1">
+      <div class="rc-momento rc-necesidad" data-momento="necesidad">
+        <span class="rc-numero" aria-hidden="true" data-rc-prof="0.45" data-num="07"></span>
+        <div class="rc-necesidad-texto">
+          <p class="rc-etiqueta">Capítulo 7 · Quien integra</p>
+          <h2 class="rc-cap-titulo" id="cap-api-t">La misma separación, por API</h2>
+          <p class="rc-grande" data-rc-iluminar>Otro sistema que necesita separar o editar imágenes no debería tener que abrir el editor.</p>
+        </div>
+      </div>
+      <div class="rc-momento rc-como rc-como--solo-texto" data-momento="como">
+        <div class="rc-como-fijo">
+          <div class="rc-como-texto">
+            <h3 class="rc-subtitulo">Cómo se resuelve</h3>
+            <p class="rc-como-p">La API v1 separa, edita y transforma imágenes desde otro sistema. Cada clave tiene sus alcances (decompose, edit y transform) y la emite un administrador. Los clientes de Cédula 360 llegan por su propia API.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rc-momento rc-gana" data-momento="gana">
+        <div class="rc-gana-texto">
+          <h3 class="rc-subtitulo">Lo que se gana</h3>
+          <p class="rc-beneficio">La separación en capas trabaja dentro de sus propios procesos.</p>
+          <div class="rc-acciones-cap">
+            <a class="rc-btn-acento" href="/api/v1/capabilities"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg> Ver los métodos (JSON)</a>
+            <button type="button" class="rc-btn-claro" data-rc-modo-btn="mapa"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v5"/><path d="M12 9H6v4"/><path d="M12 9h6v4"/><path d="M4 13h4v5H4z"/><path d="M16 13h4v5h-4z"/><path d="M10 2h4v3h-4z"/></svg> Ver en el mapa</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="rc-extra sc" id="seguridad-comprobada" data-rc-escena="seguridad-comprobada" data-titulo="Seguridad comprobada" data-sc data-sc-quitar aria-labelledby="sc-t" tabindex="-1">
+      <div class="rc-momento" data-momento="extra">
+        <div class="sc-ancho">
+          <p class="rc-antetitulo">Seguridad comprobada</p>
+          <h2 class="rc-cap-titulo" id="sc-t">No le pedimos que nos crea: compruébelo usted</h2>
+          <p class="sc-lead">Herramientas públicas e independientes revisan este sitio: el cifrado de la conexión, las protecciones del navegador, la reputación ante los motores antimalware, el código y la accesibilidad. Aquí está lo que dicen, con la fecha de la medición, una captura real del informe y el enlace para que lo verifique en la fuente.</p>
+          <div class="sc-resumen" data-sc-resumen hidden></div>
+          <div data-sc-lista></div>
+          <p class="sc-nota-pie">Publicamos aquí las verificaciones en las que hoy tenemos la calificación más alta. Cada semana se vuelven a medir de forma automática; si un resultado deja de cumplir, sale de esta página hasta que lo corregimos. En las capturas se omite la dirección del servidor. Para reportar una vulnerabilidad: <a href="/.well-known/security.txt">security.txt</a>.</p>
+        </div>
+      </div>
+    </section>
+    <section class="rc-cierre rc-momento" id="fin" data-rc-escena="fin" data-momento="cierre" aria-labelledby="rc-fin-t">
+      <div class="rc-cierre-texto">
+        <h2 class="rc-cap-titulo" id="rc-fin-t">Eso es PhotoClone</h2>
+        <p class="rc-grande">Una imagen, todas sus capas: súbala, sepárela, edítela y expórtela. El editor es público: no pide cuenta ni instalación.</p>
+        <div class="rc-cta">
+          <a class="rc-btn-claro rc-btn-lg" href="#inicio" data-rc-ir="inicio"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12a8 8 0 0114-5.3"/><path d="M18 3v4h-4"/><path d="M20 12a8 8 0 01-14 5.3"/><path d="M6 21v-4h4"/></svg> Volver a empezar</a>
+          <a class="rc-btn-acento rc-btn-lg" href="/editor">Abrir el editor</a>
+          <a class="rc-btn-claro rc-btn-lg" href="/login">Acceso</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <section class="rc-mapa" data-rc-mapa hidden aria-labelledby="rc-mapa-t" tabindex="-1">
+    <div class="rc-mapa-cab">
+      <p class="rc-antetitulo">Mapa</p>
+      <h2 class="rc-cap-titulo" id="rc-mapa-t">PhotoClone, de un vistazo</h2>
+      <p class="rc-sub">7 capítulos: lo que resuelve cada uno y cómo. Elija uno para verlo en el recorrido.</p>
+    </div>
+    <ol class="rc-mapa-lista">
+      <li class="rc-mapa-tarjeta"><span class="rc-mapa-num">01</span><h3>Suba la imagen</h3><p>Un editor por capas en el navegador, sin instalar nada.</p><ul class="rc-mapa-pasos"><li>Abra el editor.</li><li>Arrastre la imagen.</li><li>O siga un proyecto.</li></ul><a class="rc-btn" href="#cap-sube" data-rc-ir="cap-sube">Verlo en el recorrido <svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li class="rc-mapa-tarjeta"><span class="rc-mapa-num">02</span><h3>La IA la separa en capas</h3><p>De una imagen plana a capas independientes.</p><ul class="rc-mapa-pasos"><li>Elija cuántas capas.</li><li>Revise el resultado.</li><li>Con su sesión.</li></ul><a class="rc-btn" href="#cap-separa" data-rc-ir="cap-separa">Verlo en el recorrido <svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li class="rc-mapa-tarjeta"><span class="rc-mapa-num">03</span><h3>Edite una capa con texto</h3><p>Una instrucción escrita y una capa nueva para aceptar o descartar.</p><ul class="rc-mapa-pasos"><li>Elija la capa.</li><li>Escriba el cambio.</li><li>Acepte o descarte.</li></ul><a class="rc-btn" href="#cap-edita" data-rc-ir="cap-edita">Verlo en el recorrido <svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li class="rc-mapa-tarjeta"><span class="rc-mapa-num">04</span><h3>Retoque a mano</h3><p>Herramientas, capas y filtros, con atajos y deshacer.</p><ul class="rc-mapa-pasos"><li>Herramientas con atajo.</li><li>Capas.</li><li>Filtros.</li></ul><a class="rc-btn" href="#cap-retoca" data-rc-ir="cap-retoca">Verlo en el recorrido <svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li class="rc-mapa-tarjeta"><span class="rc-mapa-num">05</span><h3>Exporte</h3><p>PNG, ZIP de capas o proyecto .photoclone.</p><ul class="rc-mapa-pasos"><li>.png</li><li>.zip</li><li>.photoclone</li></ul><a class="rc-btn" href="#cap-exporta" data-rc-ir="cap-exporta">Verlo en el recorrido <svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li class="rc-mapa-tarjeta"><span class="rc-mapa-num">06</span><h3>Qué sale de su navegador, y adónde</h3><p>Todo en el navegador, salvo la IA, que pasa por Replicate y no se guarda.</p><a class="rc-btn" href="#cap-privacidad" data-rc-ir="cap-privacidad">Verlo en el recorrido <svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li class="rc-mapa-tarjeta"><span class="rc-mapa-num">07</span><h3>La misma separación, por API</h3><p>API v1 con claves por alcance.</p><a class="rc-btn" href="#cap-api" data-rc-ir="cap-api">Verlo en el recorrido <svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a></li>
+    </ol>
+  </section>
+  <nav class="rc-barra" aria-label="Pasar de escena">
+    <button type="button" class="rc-btn" data-rc-anterior aria-label="Anterior"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <button type="button" class="rc-btn rc-barra-pos" data-rc-indice-abrir data-rc-posicion aria-haspopup="dialog">Portada</button>
+    <button type="button" class="rc-btn" data-rc-siguiente aria-label="Siguiente"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button>
+  </nav>
+  <dialog class="rc-indice" id="rc-indice" aria-labelledby="rc-indice-t">
+    <div class="rc-indice-cab"><h2 id="rc-indice-t">Capítulos</h2><button type="button" class="rc-btn" data-rc-cerrar>Cerrar</button></div>
+    <div class="rc-indice-cuerpo">
+      <ol class="rc-indice-lista">
+        <li><a class="rc-tarjeta" href="#cap-sube" data-rc-ir="cap-sube" data-rc-indice-item><span class="rc-tarjeta-img"><img src="/portada/pc-parada-1.svg" alt="" loading="lazy" decoding="async"></span><span class="rc-tarjeta-num">01</span><span class="rc-tarjeta-titulo">Suba la imagen</span></a></li>
+        <li><a class="rc-tarjeta" href="#cap-separa" data-rc-ir="cap-separa" data-rc-indice-item><span class="rc-tarjeta-img"><img src="/portada/pc-parada-2.svg" alt="" loading="lazy" decoding="async"></span><span class="rc-tarjeta-num">02</span><span class="rc-tarjeta-titulo">La IA la separa en capas</span></a></li>
+        <li><a class="rc-tarjeta" href="#cap-edita" data-rc-ir="cap-edita" data-rc-indice-item><span class="rc-tarjeta-img"><img src="/portada/pc-parada-3.svg" alt="" loading="lazy" decoding="async"></span><span class="rc-tarjeta-num">03</span><span class="rc-tarjeta-titulo">Edite una capa con texto</span></a></li>
+        <li><a class="rc-tarjeta" href="#cap-retoca" data-rc-ir="cap-retoca" data-rc-indice-item><span class="rc-tarjeta-img"><img src="/portada/pc-parada-4.svg" alt="" loading="lazy" decoding="async"></span><span class="rc-tarjeta-num">04</span><span class="rc-tarjeta-titulo">Retoque a mano</span></a></li>
+        <li><a class="rc-tarjeta" href="#cap-exporta" data-rc-ir="cap-exporta" data-rc-indice-item><span class="rc-tarjeta-img"><img src="/portada/pc-parada-5.svg" alt="" loading="lazy" decoding="async"></span><span class="rc-tarjeta-num">05</span><span class="rc-tarjeta-titulo">Exporte</span></a></li>
+        <li><a class="rc-tarjeta" href="#cap-privacidad" data-rc-ir="cap-privacidad" data-rc-indice-item><span class="rc-tarjeta-img"></span><span class="rc-tarjeta-num">06</span><span class="rc-tarjeta-titulo">Qué sale de su navegador, y adónde</span></a></li>
+        <li><a class="rc-tarjeta" href="#cap-api" data-rc-ir="cap-api" data-rc-indice-item><span class="rc-tarjeta-img"></span><span class="rc-tarjeta-num">07</span><span class="rc-tarjeta-titulo">La misma separación, por API</span></a></li>
+        <li><a class="rc-tarjeta" href="#seguridad-comprobada" data-rc-ir="seguridad-comprobada" data-rc-indice-item><span class="rc-tarjeta-img rc-tarjeta-ico"><svg class="rc-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><span class="rc-tarjeta-titulo">Seguridad comprobada</span></a></li>
+      </ol>
+    </div>
+  </dialog>
+</div>
+</body>
+</html>

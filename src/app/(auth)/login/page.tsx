@@ -333,6 +333,12 @@ export default function LoginPage() {
               Usar el editor sin cuenta
             </Link>
           </p>
+          <p className="mt-2 text-center text-sm text-editor-text-muted">
+            ¿Primera vez aquí?{' '}
+            <a href="/conozca/" className="text-pc-senal underline underline-offset-2">
+              Conozca PhotoClone en un recorrido
+            </a>
+          </p>
         </div>
         <p className="mt-6 text-center text-xs text-editor-text-muted">
           En alianza con{' '}

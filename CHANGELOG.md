@@ -5,6 +5,23 @@ Todos los cambios notables de este proyecto se documentan en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
+## [0.5.2] - 2026-10-25
+
+### Añadido — «Seguridad comprobada» y recorrido inmersivo
+
+- Recorrido de 7 capítulos en **/conozca/** (kit «confianza y recorrido» 1.0.4: escenas, diapositivas y mapa), servido
+  por Caddy con CSP estricta; «Seguridad comprobada» en la portada (lee `/salud-publica/publico.json`, sin cifras a
+  mano); entradas desde la portada, el pie, `/login` y la ayuda del editor. «Cómo funciona» se conserva.
+
+### Corregido
+
+- W3C 1 → 0 (`aria-label` en el `<pre>` de la API). La pregunta «¿Necesito una cuenta?» ya dice que la IA la exige.
+
+### Seguridad
+
+- Caddy: COOP `same-origin-allow-popups`, CORP `cross-origin` y `security.txt` con `info@cedula360.tech`.
+  Detalle: [`docs/seguridad-comprobada-y-recorrido-2026-10-25.md`](docs/seguridad-comprobada-y-recorrido-2026-10-25.md).
+
 ## [0.5.1] - 2026-10-11
 
 ### Seguridad — La IA del editor exige cuenta

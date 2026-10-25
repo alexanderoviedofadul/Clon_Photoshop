@@ -1,0 +1,181 @@
+{
+  "clave": "photoclone",
+  "producto": "PhotoClone",
+  "sitio": "photoshop.cedula360.tech",
+  "idioma": "es",
+  "tratamiento": "usted",
+  "salida": "public/conozca",
+  "ruta_publica": "/conozca/",
+  "base_kit": "/kit-confianza/",
+  "titulo_pagina": "Conozca PhotoClone · Recorrido",
+  "descripcion": "Recorrido por PhotoClone, el editor de imágenes por capas en el navegador: separe una imagen en capas con IA, edítelas y expórtelas.",
+  "favicon": "/marca/pc-simbolo.svg",
+  "inicio_url": "/",
+  "logo": { "src": "/marca/pc-simbolo.svg", "ancho": 28, "alto": 28 },
+  "estilos_extra": ["/fnt/photoclone.css"],
+  "tema": {
+    "fondo": "#121212",
+    "panel": "#252526",
+    "acento": "#1A8CFF",
+    "sobre_acento": "#121212",
+    "texto": "#F4F4F5",
+    "fuente": "'Inter', system-ui, sans-serif",
+    "fuente_titulos": "'Inter', system-ui, sans-serif"
+  },
+  "entrar": { "texto": "Abrir el editor", "url": "/editor" },
+  "portada": {
+    "antetitulo": "PhotoClone · Editor de imágenes por capas, con IA",
+    "titulo": "Una imagen, todas sus capas",
+    "sub": "Siete capítulos, de lo general a lo específico: cómo se sube una imagen, cómo la IA la separa en capas, cómo se edita una capa con texto o a mano, cómo se exporta, qué sale de su navegador y cómo se usa desde otro sistema.",
+    "flotantes": [
+      { "img": "/portada/pc-parada-1.svg", "ancho": 1600, "alto": 900 },
+      { "img": "/portada/pc-parada-2.svg", "ancho": 1600, "alto": 900 },
+      { "img": "/portada/pc-parada-5.svg", "ancho": 1600, "alto": 900 }
+    ]
+  },
+  "capitulos": [
+    {
+      "clave": "sube",
+      "titulo": "Suba la imagen",
+      "rol": "Quien edita",
+      "necesidad": "Editar una imagen suele exigir instalar un programa pesado y aprender a usarlo antes de cambiar lo primero.",
+      "como": "PhotoClone es un editor por capas que se usa en el navegador, sin instalar nada. Se abre cualquier imagen que su navegador pueda mostrar, o un proyecto .photoclone para seguir donde lo dejó. El editor se usa sin cuenta.",
+      "resumen": "Un editor por capas en el navegador, sin instalar nada.",
+      "figuras": [
+        {
+          "titulo": "Sube la imagen",
+          "camino": "photoshop.cedula360.tech/editor",
+          "img": "/portada/pc-parada-1.svg", "ancho": 1600, "alto": 900,
+          "alt": "Ilustración: una imagen con cielo, colinas, una esfera y un rótulo entra en una zona de arrastre punteada",
+          "pasos": [
+            { "titulo": "Abra el editor.", "texto": "En el navegador, sin instalar nada y sin cuenta.", "marca": null },
+            { "titulo": "Arrastre la imagen.", "texto": "Al lienzo, o ábrala desde el menú Archivo.", "marca": null },
+            { "titulo": "O siga un proyecto.", "texto": "Un archivo .photoclone guarda las capas y su orden.", "marca": null }
+          ]
+        }
+      ],
+      "beneficio": "Empieza a editar en segundos, desde cualquier equipo con navegador.",
+      "enlace": { "texto": "Abrir el editor", "url": "/editor" }
+    },
+    {
+      "clave": "separa",
+      "titulo": "La IA la separa en capas",
+      "rol": "Quien edita",
+      "necesidad": "Una foto plana no se puede editar por partes: mover la figura o cambiar el fondo exige recortarlos a mano.",
+      "como": "La IA separa la imagen en capas, entre 2 y 10 (4 si no indica otra cosa), cada una sobre transparente y lista para moverse sola. La separación la ejecuta Replicate, un servicio externo, y para usar la IA hace falta iniciar sesión, con una cuenta local o con Cédula 360.",
+      "resumen": "De una imagen plana a capas independientes.",
+      "figuras": [
+        {
+          "titulo": "La IA la separa en capas",
+          "camino": "photoshop.cedula360.tech/editor",
+          "img": "/portada/pc-parada-2.svg", "ancho": 1600, "alto": 900,
+          "alt": "Ilustración: la misma imagen y, a su lado, sus tres capas levantadas en pila: el fondo, la esfera y el rótulo",
+          "pasos": [
+            { "titulo": "Elija cuántas capas.", "texto": "Entre 2 y 10; si no elige, 4.", "marca": null },
+            { "titulo": "Revise el resultado.", "texto": "Depende de la imagen: mire las capas antes de seguir.", "marca": null },
+            { "titulo": "Con su sesión.", "texto": "La IA pide iniciar sesión; el resto del editor, no.", "marca": null }
+          ]
+        }
+      ],
+      "beneficio": "Cada parte de la imagen se edita por su cuenta, sin recortar a mano.",
+      "cifra": "Entre 2 y 10 capas; 4 por defecto."
+    },
+    {
+      "clave": "edita",
+      "titulo": "Edite una capa con texto",
+      "rol": "Quien edita",
+      "necesidad": "Algunos cambios son difíciles de hacer a mano y fáciles de decir: «que la esfera sea roja».",
+      "como": "Escriba el cambio. La capa y la instrucción van al modelo de edición y vuelve una capa nueva, que usted acepta o descarta.",
+      "resumen": "Una instrucción escrita y una capa nueva para aceptar o descartar.",
+      "figuras": [
+        {
+          "titulo": "Edita una capa con texto",
+          "camino": "photoshop.cedula360.tech/editor",
+          "img": "/portada/pc-parada-3.svg", "ancho": 1600, "alto": 900,
+          "alt": "Ilustración: una capa con una esfera que cambia de color a la mitad, bajo una barra de instrucción",
+          "pasos": [
+            { "titulo": "Elija la capa.", "texto": "Solo esa capa va al modelo.", "marca": null },
+            { "titulo": "Escriba el cambio.", "texto": "Con sus palabras.", "marca": null },
+            { "titulo": "Acepte o descarte.", "texto": "La capa nueva solo se queda si usted la acepta.", "marca": null }
+          ]
+        }
+      ],
+      "beneficio": "Los cambios difíciles se piden; usted decide si se quedan."
+    },
+    {
+      "clave": "retoca",
+      "titulo": "Retoque a mano",
+      "rol": "Quien edita",
+      "necesidad": "La IA no reemplaza el ajuste fino: un trazo, una selección, una opacidad exacta.",
+      "como": "El editor trae herramientas de mover, pincel, borrador, texto, selección, lazo, cuentagotas, recorte, zoom y mano, cada una con su atajo de teclado; capas con visibilidad, opacidad, orden, modos de fusión, duplicar, fusionar y aplanar; y filtros sobre la capa activa o la selección, con deshacer y rehacer.",
+      "resumen": "Herramientas, capas y filtros, con atajos y deshacer.",
+      "figuras": [
+        {
+          "titulo": "Retoca a mano",
+          "camino": "photoshop.cedula360.tech/editor",
+          "img": "/portada/pc-parada-4.svg", "ancho": 1600, "alto": 900,
+          "alt": "Ilustración: la imagen con una selección punteada, un trazo de pincel, las esquinas del recorte y el cuentagotas",
+          "pasos": [
+            { "titulo": "Herramientas con atajo.", "texto": "V mover, B pincel, M selección, C recorte…", "marca": null },
+            { "titulo": "Capas.", "texto": "Opacidad, orden y modos de fusión.", "marca": null },
+            { "titulo": "Filtros.", "texto": "Sobre la capa activa o la selección.", "marca": null }
+          ]
+        }
+      ],
+      "beneficio": "Termina el trabajo en el mismo editor, sin pasar a otro programa.",
+      "enlace": { "texto": "Ver el editor por dentro", "url": "/#editor" }
+    },
+    {
+      "clave": "exporta",
+      "titulo": "Exporte",
+      "rol": "Quien edita",
+      "necesidad": "El resultado tiene que salir en el formato que se necesita: una imagen para publicar, las capas para otro programa o el proyecto para seguir otro día.",
+      "como": "La imagen plana sale en PNG; todas las capas, en un ZIP con un PNG por capa y sus datos; y el proyecto entero, en un archivo .photoclone para reabrirlo en el editor. La exportación ocurre en su navegador.",
+      "resumen": "PNG, ZIP de capas o proyecto .photoclone.",
+      "figuras": [
+        {
+          "titulo": "Exporta",
+          "camino": "photoshop.cedula360.tech/editor",
+          "img": "/portada/pc-parada-5.svg", "ancho": 1600, "alto": 900,
+          "alt": "Ilustración: de una pila de capas salen una imagen, un paquete con todas las capas y un archivo de proyecto",
+          "pasos": [
+            { "titulo": ".png", "texto": "La imagen plana.", "marca": null },
+            { "titulo": ".zip", "texto": "Un PNG por capa y sus datos.", "marca": null },
+            { "titulo": ".photoclone", "texto": "El proyecto, para reabrirlo.", "marca": null }
+          ]
+        }
+      ],
+      "beneficio": "Se lleva el resultado como lo necesita, y puede seguir otro día."
+    },
+    {
+      "clave": "privacidad",
+      "titulo": "Qué sale de su navegador, y adónde",
+      "rol": "Todos",
+      "necesidad": "Antes de subir una imagen a un servicio en línea hay que saber quién la ve y si se guarda.",
+      "como": "Abrir la imagen, dibujar, seleccionar, aplicar filtros, ordenar capas y exportar ocurre en su navegador: nada de eso se envía a ningún servidor. Solo si usted pide separar o editar con IA, la imagen pasa por el servidor de PhotoClone hacia Replicate, el servicio externo que ejecuta los modelos, y vuelve como capas; PhotoClone no la guarda en su servidor.",
+      "resumen": "Todo en el navegador, salvo la IA, que pasa por Replicate y no se guarda.",
+      "beneficio": "Sabe exactamente cuándo sale su imagen. Si es confidencial, no use la IA.",
+      "enlace": { "texto": "Leer la sección de privacidad", "url": "/#privacidad" }
+    },
+    {
+      "clave": "api",
+      "titulo": "La misma separación, por API",
+      "rol": "Quien integra",
+      "necesidad": "Otro sistema que necesita separar o editar imágenes no debería tener que abrir el editor.",
+      "como": "La API v1 separa, edita y transforma imágenes desde otro sistema. Cada clave tiene sus alcances (decompose, edit y transform) y la emite un administrador. Los clientes de Cédula 360 llegan por su propia API.",
+      "resumen": "API v1 con claves por alcance.",
+      "beneficio": "La separación en capas trabaja dentro de sus propios procesos.",
+      "enlace": { "texto": "Ver los métodos (JSON)", "url": "/api/v1/capabilities" }
+    }
+  ],
+  "cierre": {
+    "titulo": "Eso es PhotoClone",
+    "texto": "Una imagen, todas sus capas: súbala, sepárela, edítela y expórtela. El editor es público: no pide cuenta ni instalación.",
+    "acciones": [
+      { "texto": "Abrir el editor", "url": "/editor", "acento": true },
+      { "texto": "Acceso", "url": "/login" }
+    ]
+  },
+  "seguridad": true,
+  "contacto_seguridad": "/.well-known/security.txt"
+}

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { Logo, Simbolo } from '@/components/marca/Logo'
 import Recorrido from '@/components/portada/Recorrido'
+import SeguridadComprobada from '@/components/portada/SeguridadComprobada'
 import { TOOLS, TOOL_ORDER } from '@/constants/tools'
 import { BLEND_MODES } from '@/constants/blendModes'
 import './portada.css'
@@ -62,7 +63,7 @@ const FILTROS = ['Invertir', 'Escala de grises', 'Desenfocar', 'Enfocar', 'Rotar
 const PREGUNTAS = [
   {
     p: '¿Necesito una cuenta?',
-    r: 'No. El editor es público y se usa sin registrarse. La cuenta, local o con Cédula 360, solo hace falta para administrar.',
+    r: 'Para el editor, no: es público y se usa sin registrarse. Para separar o editar con IA, sí: una cuenta local o con Cédula 360. También hace falta para administrar.',
   },
   {
     p: '¿Qué pasa con mi imagen?',
@@ -184,6 +185,10 @@ export default function PortadaPage() {
             </ol>
           </section>
         </Recorrido>
+        <div className="pc-recorrido-mas">
+          <a href="/conozca/" className="pc-btn pc-btn-secundario">Ver el recorrido completo</a>
+          <p>Siete capítulos, con modo de diapositivas para presentarlo y un mapa de todo PhotoClone.</p>
+        </div>
 
         <section id="editor" className="pc-seccion" aria-labelledby="editor-titulo">
           <p className="pc-antetitulo">El editor</p>
@@ -248,7 +253,7 @@ export default function PortadaPage() {
               </p>
               <p><a className="pc-enlace" href="/api/v1/capabilities">Ver los métodos (JSON)</a></p>
             </div>
-            <pre className="pc-codigo" aria-label="Ejemplo de llamada a la API" tabIndex={0}>
+            <pre className="pc-codigo" role="region" aria-label="Ejemplo de llamada a la API" tabIndex={0}>
 {`POST /api/v1/decompose
 Authorization: Bearer <su clave>
 
@@ -261,6 +266,8 @@ Authorization: Bearer <su clave>
             </pre>
           </div>
         </section>
+
+        <SeguridadComprobada />
 
         <section id="preguntas" className="pc-seccion" aria-labelledby="preguntas-titulo">
           <p className="pc-antetitulo">Preguntas frecuentes</p>
@@ -294,6 +301,8 @@ Authorization: Bearer <su clave>
             <Link href="/login">Acceso</Link>
             <a href="/api/v1/capabilities">API</a>
             <a href="#preguntas">Preguntas</a>
+            <a href="/conozca/">Recorrido</a>
+            <a href="#seguridad-comprobada">Seguridad comprobada</a>
           </p>
           <p className="pc-pie-legal">PhotoClone es un editor independiente, sin relación con Adobe. Photoshop es una marca registrada de Adobe.</p>
         </div>

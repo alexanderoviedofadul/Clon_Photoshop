@@ -279,6 +279,7 @@ export function MenuBar() {
       items: [
         { label: 'Atajos de Teclado', action: () => setHelpModal('shortcuts') },
         { label: 'Documentación', action: () => setHelpModal('docs') },
+        { label: 'Recorrido del producto', action: () => window.open('/conozca/', '_blank', 'noopener') },
         { divider: true, label: '' },
         { label: 'Acerca de PhotoClone', action: () => setHelpModal('about') },
       ],
@@ -347,7 +348,8 @@ export function MenuBar() {
               <>
                 <h2 className="text-lg font-semibold mb-3">Documentación</h2>
                 <p className="text-sm text-editor-text-muted mb-3">PhotoClone — editor de imágenes por capas con separación por IA. Arrastra una imagen al lienzo o usa el panel IA para descomponerla en capas. Cada menú (Imagen, Filtro, Capa, Selección) opera sobre la capa activa.</p>
-                <a href="https://github.com/alexanderoviedofadul/Clon_Photoshop#readme" target="_blank" rel="noopener noreferrer" className="text-pc-senal text-sm underline">Ver README en GitHub →</a>
+                <p className="text-sm"><a href="/conozca/" target="_blank" rel="noopener" className="text-pc-senal underline">Recorrido del producto, paso a paso →</a></p>
+                <p className="text-sm mt-1"><a href="https://github.com/alexanderoviedofadul/Clon_Photoshop#readme" target="_blank" rel="noopener noreferrer" className="text-pc-senal underline">Ver README en GitHub →</a></p>
               </>
             )}
             {helpModal === 'about' && (

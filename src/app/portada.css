@@ -148,3 +148,14 @@
 @media (prefers-reduced-motion: reduce) {
   .pc-hero-capa, .pc-parada, .pc-parada-poster img, .pc-parada-texto { transition: none !important; transform: none !important; }
 }
+
+/* ── Kit «confianza y recorrido» (25-oct-2026) ─────────────────────────────────────────────────────────────── */
+.pc-recorrido-mas { max-width: var(--pc-ancho); margin: 0 auto; padding: 1rem 16px 0; display: flex; flex-wrap: wrap;
+  align-items: center; gap: .75rem 1.25rem; }
+.pc-recorrido-mas p { margin: 0; color: var(--pc-tenue); }
+/* «Seguridad comprobada»: Texto sobre Noche, Texto Tenue, Azul Señal para datos y enlaces (con Noche encima). */
+.pc-sc { --sc-texto: var(--pc-texto); --sc-tenue: var(--pc-tenue); --sc-acento: var(--pc-senal);
+  --sc-sobre-acento: var(--pc-noche); --sc-tarjeta: var(--pc-panel); --sc-borde: var(--pc-linea); }
+.pc-sc .pc-sc-lead { color: var(--pc-tenue); max-width: 52rem; }
+.pc-sc .sc-resumen { margin-top: 1.5rem; }
+.pc-sc .sc-nota-pie { color: var(--pc-tenue); font-size: .9rem; margin-top: 1.5rem; }

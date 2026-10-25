@@ -1,0 +1,7 @@
+/* marcas.css — PhotoClone: dónde va cada marca sobre cada captura (x, y, ancho y alto en %). Lo escribe
+   generar-conozca.mjs (kit 1.0.4) desde conozca.json: no editar a mano. */
+#cap-sube [data-rc-marco="0"] .rc-vista { aspect-ratio: 1600 / 900; }
+#cap-separa [data-rc-marco="0"] .rc-vista { aspect-ratio: 1600 / 900; }
+#cap-edita [data-rc-marco="0"] .rc-vista { aspect-ratio: 1600 / 900; }
+#cap-retoca [data-rc-marco="0"] .rc-vista { aspect-ratio: 1600 / 900; }
+#cap-exporta [data-rc-marco="0"] .rc-vista { aspect-ratio: 1600 / 900; }

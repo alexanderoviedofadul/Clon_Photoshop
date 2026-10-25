@@ -14,7 +14,7 @@ en capas y edita una capa con una instrucción (Replicate). Editor **público**,
 |---|---|
 | Dominio | `photoshop.cedula360.tech` (Caddy → `127.0.0.1:3024`, `/webhook*` → `:3025`, `request_body` 50 MB) |
 | Servicio | `clon-photoshop.service`: `npm run start` en **este árbol** (`/root/Clon_Photoshop`) con `EnvironmentFile=/root/.clon_photoshop_env` |
-| Webhook | `clon-photoshop-webhook.service` (`/root/scripts/webhook-clon-photoshop.js`, fuera del repo). **GitHub no tiene el webhook registrado**: el log no ha recibido ninguna entrega. Despliegue manual |
+| Webhook | `clon-photoshop-webhook.service` (`/root/scripts/webhook-clon-photoshop.js`, fuera del repo). Registrado en GitHub: un `push` a `main` hace `reset --hard`, `npm install`, `npm run build` y reinicia (entregas en `/var/log/clon-photoshop/webhook.log`; comprobado el 11 y el 25-oct-2026) |
 | Desplegar | `git push` y luego `npm run build && systemctl restart clon-photoshop` en el árbol. Copia de `.next` antes si el cambio es grande |
 
 🔴 **El build se hace en el árbol que se sirve**: `npm run build` sustituye `.next` mientras el servicio corre. Para
@@ -48,6 +48,16 @@ ensayar, copie el repo fuera (sin enlazar `node_modules`) y arranque `next start
 - Privacidad: la separación y la edición reenvían la imagen a Replicate y **no se guarda** en el servidor
   (`api/layers/*`). Si eso cambia, hay que cambiar la portada y el capítulo 02 del manual.
 
+## Recorrido `/conozca/` y «Seguridad comprobada» (kit, 25-oct-2026)
+
+- **`/conozca/` lo sirve Caddy** desde `public/` con CSP estricta propia; enlaces con `<a href="/conozca/">`, nunca
+  `<Link>`. Se genera: `conozca.json` → `node <kit>/generar-conozca.mjs conozca.json` (`--comprobar`); la copia del kit
+  (`public/kit-confianza/`) no se edita aquí (`sincronizar-kit.sh public`).
+- 🔴 **Ninguna cifra a mano** en «Seguridad comprobada» (`src/components/portada/SeguridadComprobada.tsx` lee
+  `/salud-publica/publico.json`) ni en el recorrido (herramientas y modos de fusión se nombran, no se cuentan).
+- Trato de **usted** en el recorrido y la sección, como la portada. Figuras: solo los pósters de `public/portada/`.
+- Doc: [`docs/seguridad-comprobada-y-recorrido-2026-10-25.md`](docs/seguridad-comprobada-y-recorrido-2026-10-25.md).
+
 ## Seguridad conocida (ver `docs/rediseno-2026-10/README.md`)
 
 - 🔴 **La IA exige sesión** desde el 11-oct-2026: `/api/layers/*` devuelven 401 sin sesión y el editor muestra
@@ -55,5 +65,5 @@ ensayar, copie el repo fuera (sin enlazar `node_modules`) y arranque `next start
   del editor vuelve a tener un error.
 - Filtro de contenido de Replicate **activo** (`disable_safety_checker: false`). En jun-2026 rompía la separación
   (1 de N capas): si una separación devuelve una sola capa, es eso.
-- El webhook acepta peticiones sin firma (`if (!signature) return true`) y tiene el secreto escrito en el script.
-- No hay cabecera CSP en Caddy para este host.
+- El webhook exige firma desde el 11-oct-2026, pero el secreto sigue escrito en el script (pendiente: `/etc/webhooks/`).
+- La CSP la pone Caddy (`header @csp_app`, con `'unsafe-inline'` en scripts por Next); `/conozca/` lleva la suya, estricta.
