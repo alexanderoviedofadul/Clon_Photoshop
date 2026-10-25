@@ -15,6 +15,7 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
 ### Corregido
 
+- Medido después: W3C 0 y WAVE 0 (se publican), websec 6/8 → 8/8; Observatory B+ y securityheaders A sin cambio.
 - W3C 1 → 0 (`aria-label` en el `<pre>` de la API). La pregunta «¿Necesito una cuenta?» ya dice que la IA la exige.
 
 ### Seguridad

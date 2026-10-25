@@ -54,14 +54,17 @@ Los enlaces a `/conozca/` son `<a href>` normales, no `<Link>`.
 
 | Herramienta | Antes (25-oct, 00:22 UTC) | Corrección | Después |
 |---|---|---|---|
-| Mozilla Observatory | B+ (80/100), 11 de 12 | El −20 de la CSP con `'unsafe-inline'` sigue (pendiente) | ver abajo |
-| W3C | 1 error | El `<pre aria-label>` del ejemplo de la API lleva `role="region"` | ver abajo |
-| WAVE | 0 errores | — | ver abajo |
-| securityheaders | A | — (la misma CSP) | ver abajo |
-| websec-100 (`check-headers.sh`) | 6/8: faltaban COOP y CORP | Caddy: `Cross-Origin-Opener-Policy: same-origin-allow-popups` (no corta ventanas que abra el acceso) y `Cross-Origin-Resource-Policy: cross-origin` | ver abajo |
-| `security.txt` | contacto genérico `info@alexanderoviedofadul.dev` | Caddy: `import security-txt info@cedula360.tech` (el contacto que publica el pie) | ver abajo |
+| Mozilla Observatory | B+ (80/100), 11 de 12 | El −20 de la CSP con `'unsafe-inline'` sigue (pendiente) | B+ (80/100): COOP ya cuenta, pero Observatory solo suma bonificaciones con la base ≥ 90; no se publica |
+| W3C | 1 error | El `<pre aria-label>` del ejemplo de la API lleva `role="region"` | **0 errores y 0 avisos: se publica** |
+| WAVE | 0 errores | — | **0 errores y 0 de contraste: se publica** (ya lo era) |
+| securityheaders | A | — (la misma CSP) | A: no se publica (umbral A+) |
+| websec-100 (`check-headers.sh`) | 6/8: faltaban COOP y CORP | Caddy: `Cross-Origin-Opener-Policy: same-origin-allow-popups` (no corta ventanas que abra el acceso) y `Cross-Origin-Resource-Policy: cross-origin` | 8/8 |
+| `security.txt` | contacto genérico `info@alexanderoviedofadul.dev` | Caddy: `import security-txt info@cedula360.tech` (el contacto que publica el pie) | `Contact: mailto:info@cedula360.tech`, RFC 9116 |
 | axe-core (a11y-100) | portada y `/login`: 0 | — | 0 (portada, `/login` y el recorrido) |
 | react-doctor | 38 | — | 38 |
+
+Medición «después»: `salud-publica-ronda.sh --solo=observatorio,w3c,wave,securityheaders` del 25-oct (00:54-01:05 UTC),
+tras el despliegue y el cambio de Caddy. PageSpeed y SSL Labs los añade la ronda nocturna (`/etc/salud-publica/sitios.conf`).
 
 ## Pendiente
 
